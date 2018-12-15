@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__shm__buffer" kind="struct" language="C++" prot="public">
+    <compoundname>wl_shm_buffer</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__shm__buffer_1a3d12a4cd03248384cc49f1967344f046" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__resource" kindref="compound">wl_resource</ref> *</type>
+        <definition>struct wl_resource* wl_shm_buffer::resource</definition>
+        <argsstring></argsstring>
+        <name>resource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="65" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__buffer_1a492d59af93895995ccfe29b760a0b811" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t wl_shm_buffer::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="66" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__buffer_1a4c79094063656728405934894c49a90d" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t wl_shm_buffer::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="66" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__buffer_1adccfaf9f4b79f1e3539499ce67c74222" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t wl_shm_buffer::stride</definition>
+        <argsstring></argsstring>
+        <name>stride</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="67" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__buffer_1ab62701b55dde79ce9beb612d40712570" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_shm_buffer::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="68" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__buffer_1a9c942587694f130e247d705ec793d3d7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_shm_buffer::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="69" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__buffer_1a16f66addfe9b94906e8a0bf21653b81b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__shm__pool" kindref="compound">wl_shm_pool</ref> *</type>
+        <definition>struct wl_shm_pool* wl_shm_buffer::pool</definition>
+        <argsstring></argsstring>
+        <name>pool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="70" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structwl__shm__buffer_1a9104a38eae80c5ba92c8ab030c70192f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * wl_shm_buffer_get_data</definition>
+        <argsstring>(struct wl_shm_buffer *buffer)</argsstring>
+        <name>wl_shm_buffer_get_data</name>
+        <param>
+          <type>struct <ref refid="structwl__shm__buffer" kindref="compound">wl_shm_buffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Get a pointer to the memory for the SHM buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns a pointer which can be used to read the data contained in the given SHM buffer.</para><para>As this buffer is memory-mapped, reading from it may generate SIGBUS signals. This can happen if the client claims that the buffer is larger than it is or if something truncates the underlying file. To prevent this signal from causing the compositor to crash you should call wl_shm_buffer_begin_access and wl_shm_buffer_end_access around code that reads from the memory. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="385" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="385" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__shm__buffer_1abc49a49c3586821d6ec4efe7ea915305" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__shm__pool" kindref="compound">wl_shm_pool</ref> *</type>
+        <definition>struct wl_shm_pool * wl_shm_buffer_ref_pool</definition>
+        <argsstring>(struct wl_shm_buffer *buffer)</argsstring>
+        <name>wl_shm_buffer_ref_pool</name>
+        <param>
+          <type>struct <ref refid="structwl__shm__buffer" kindref="compound">wl_shm_buffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Get a reference to a shm_buffer&apos;s shm_pool. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns a pointer to a buffer&apos;s shm_pool and increases the shm_pool refcount.</para><para>The compositor must remember to call wl_shm_pool_unref when it no longer needs the reference to ensure proper destruction of the pool.</para><para><simplesect kind="see"><para><ref refid="structwl__shm__pool_1a2349156a6b7940645a4754e6c1690051" kindref="member">wl_shm_pool_unref</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="433" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="433" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__shm__buffer_1a809cb5d6b33338c62bbca6daa4138667" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_shm_buffer_begin_access</definition>
+        <argsstring>(struct wl_shm_buffer *buffer)</argsstring>
+        <name>wl_shm_buffer_begin_access</name>
+        <param>
+          <type>struct <ref refid="structwl__shm__buffer" kindref="compound">wl_shm_buffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Mark that the given SHM buffer is about to be accessed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SHM buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+An SHM buffer is a memory-mapped file given by the client. According to POSIX, reading from a memory-mapped region that extends off the end of the file will cause a SIGBUS signal to be generated. Normally this would cause the compositor to terminate. In order to make the compositor robust against clients that change the size of the underlying file or lie about its size, you should protect access to the buffer by calling this function before reading from the memory and call wl_shm_buffer_end_access afterwards. This will install a signal handler for SIGBUS which will prevent the compositor from crashing.</para><para>After calling this function the signal handler will remain installed for the lifetime of the compositor process. Note that this function will not work properly if the compositor is also installing its own handler for SIGBUS.</para><para>If a SIGBUS signal is received for an address within the range of the SHM pool of the given buffer then the client will be sent an error event when wl_shm_buffer_end_access is called. If the signal is for an address outside that range then the signal handler will reraise the signal which would will likely cause the compositor to terminate.</para><para>It is safe to nest calls to these functions as long as the nested calls are all accessing the same buffer. The number of calls to wl_shm_buffer_end_access must match the number of calls to wl_shm_buffer_begin_access. These functions are thread-safe and it is allowed to simultaneously access different buffers or the same buffer from multiple threads. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="567" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="567" bodyend="588"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__shm__buffer_1a030db6056ef08836e9dee21a8087e2c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_shm_buffer_end_access</definition>
+        <argsstring>(struct wl_shm_buffer *buffer)</argsstring>
+        <name>wl_shm_buffer_end_access</name>
+        <param>
+          <type>struct <ref refid="structwl__shm__buffer" kindref="compound">wl_shm_buffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Ends the access to a buffer started by wl_shm_buffer_begin_access. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The SHM buffer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This should be called after wl_shm_buffer_begin_access once the buffer is no longer being accessed. If a SIGBUS signal was generated in-between these two calls then the resource for the given buffer will be sent an error. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="602" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="602" bodyend="619"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="126">
+        <label>wl_client</label>
+        <link refid="structwl__client"/>
+        <childnode refid="122" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="120" relation="usage">
+          <edgelabel>display_resource</edgelabel>
+        </childnode>
+        <childnode refid="127" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="128" relation="usage">
+          <edgelabel>display</edgelabel>
+        </childnode>
+      </node>
+      <node id="120">
+        <label>wl_resource</label>
+        <link refid="structwl__resource"/>
+        <childnode refid="121" relation="usage">
+          <edgelabel>deprecated_destroy_signal</edgelabel>
+          <edgelabel>destroy_signal</edgelabel>
+        </childnode>
+        <childnode refid="123" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="126" relation="usage">
+          <edgelabel>client</edgelabel>
+        </childnode>
+        <childnode refid="120" relation="usage">
+          <edgelabel>destroy</edgelabel>
+        </childnode>
+        <childnode refid="125" relation="usage">
+          <edgelabel>dispatcher</edgelabel>
+        </childnode>
+      </node>
+      <node id="119">
+        <label>wl_shm_buffer</label>
+        <link refid="structwl__shm__buffer"/>
+        <childnode refid="120" relation="usage">
+          <edgelabel>resource</edgelabel>
+        </childnode>
+        <childnode refid="131" relation="usage">
+          <edgelabel>pool</edgelabel>
+        </childnode>
+      </node>
+      <node id="130">
+        <label>wl_array</label>
+        <link refid="structwl__array"/>
+      </node>
+      <node id="128">
+        <label>wl_display</label>
+        <link refid="structwl__display"/>
+        <childnode refid="129" relation="usage">
+          <edgelabel>loop</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>client_list</edgelabel>
+          <edgelabel>global_list</edgelabel>
+          <edgelabel>registry_resource_list</edgelabel>
+          <edgelabel>socket_list</edgelabel>
+          <edgelabel>protocol_loggers</edgelabel>
+        </childnode>
+        <childnode refid="126" relation="usage">
+          <edgelabel>global_filter</edgelabel>
+        </childnode>
+        <childnode refid="130" relation="usage">
+          <edgelabel>additional_shm_formats</edgelabel>
+        </childnode>
+      </node>
+      <node id="127">
+        <label>wl_event_source</label>
+        <link refid="structwl__event__source"/>
+      </node>
+      <node id="129">
+        <label>wl_event_loop</label>
+        <link refid="structwl__event__loop"/>
+      </node>
+      <node id="122">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="122" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="125">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="124" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="123">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="124" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="124">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="125" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
+        <label>wl_signal</label>
+        <link refid="structwl__signal"/>
+        <childnode refid="122" relation="usage">
+          <edgelabel>listener_list</edgelabel>
+        </childnode>
+      </node>
+      <node id="131">
+        <label>wl_shm_pool</label>
+        <link refid="structwl__shm__pool"/>
+        <childnode refid="120" relation="usage">
+          <edgelabel>resource</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="64" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="64" bodyend="71"/>
+    <listofallmembers>
+      <member refid="structwl__shm__buffer_1ab62701b55dde79ce9beb612d40712570" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>format</name></member>
+      <member refid="structwl__shm__buffer_1a4c79094063656728405934894c49a90d" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>height</name></member>
+      <member refid="structwl__shm__buffer_1a9c942587694f130e247d705ec793d3d7" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>offset</name></member>
+      <member refid="structwl__shm__buffer_1a16f66addfe9b94906e8a0bf21653b81b" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>pool</name></member>
+      <member refid="structwl__shm__buffer_1a3d12a4cd03248384cc49f1967344f046" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>resource</name></member>
+      <member refid="structwl__shm__buffer_1adccfaf9f4b79f1e3539499ce67c74222" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>stride</name></member>
+      <member refid="structwl__shm__buffer_1a492d59af93895995ccfe29b760a0b811" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>width</name></member>
+      <member refid="structwl__shm__buffer_1a809cb5d6b33338c62bbca6daa4138667" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>wl_shm_buffer_begin_access</name></member>
+      <member refid="structwl__shm__buffer_1a030db6056ef08836e9dee21a8087e2c1" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>wl_shm_buffer_end_access</name></member>
+      <member refid="structwl__shm__buffer_1a9104a38eae80c5ba92c8ab030c70192f" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>wl_shm_buffer_get_data</name></member>
+      <member refid="structwl__shm__buffer_1abc49a49c3586821d6ec4efe7ea915305" prot="public" virt="non-virtual"><scope>wl_shm_buffer</scope><name>wl_shm_buffer_ref_pool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

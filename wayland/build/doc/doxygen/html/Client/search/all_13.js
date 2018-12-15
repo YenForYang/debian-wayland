@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['the_20wl_5fbuffer_20interface',['The wl_buffer interface',['../group__iface__wl__buffer.html',1,'']]],
+  ['the_20wl_5fcallback_20interface',['The wl_callback interface',['../group__iface__wl__callback.html',1,'']]],
+  ['the_20wl_5fcompositor_20interface',['The wl_compositor interface',['../group__iface__wl__compositor.html',1,'']]],
+  ['the_20wl_5fdata_5fdevice_20interface',['The wl_data_device interface',['../group__iface__wl__data__device.html',1,'']]],
+  ['the_20wl_5fdata_5fdevice_5fmanager_20interface',['The wl_data_device_manager interface',['../group__iface__wl__data__device__manager.html',1,'']]],
+  ['the_20wl_5fdata_5foffer_20interface',['The wl_data_offer interface',['../group__iface__wl__data__offer.html',1,'']]],
+  ['the_20wl_5fdata_5fsource_20interface',['The wl_data_source interface',['../group__iface__wl__data__source.html',1,'']]],
+  ['the_20wl_5fdisplay_20interface',['The wl_display interface',['../group__iface__wl__display.html',1,'']]],
+  ['the_20wl_5fkeyboard_20interface',['The wl_keyboard interface',['../group__iface__wl__keyboard.html',1,'']]],
+  ['the_20wl_5foutput_20interface',['The wl_output interface',['../group__iface__wl__output.html',1,'']]],
+  ['the_20wl_5fpointer_20interface',['The wl_pointer interface',['../group__iface__wl__pointer.html',1,'']]],
+  ['the_20wl_5fregion_20interface',['The wl_region interface',['../group__iface__wl__region.html',1,'']]],
+  ['the_20wl_5fregistry_20interface',['The wl_registry interface',['../group__iface__wl__registry.html',1,'']]],
+  ['the_20wl_5fseat_20interface',['The wl_seat interface',['../group__iface__wl__seat.html',1,'']]],
+  ['the_20wl_5fshell_20interface',['The wl_shell interface',['../group__iface__wl__shell.html',1,'']]],
+  ['the_20wl_5fshell_5fsurface_20interface',['The wl_shell_surface interface',['../group__iface__wl__shell__surface.html',1,'']]],
+  ['the_20wl_5fshm_20interface',['The wl_shm interface',['../group__iface__wl__shm.html',1,'']]],
+  ['the_20wl_5fshm_5fpool_20interface',['The wl_shm_pool interface',['../group__iface__wl__shm__pool.html',1,'']]],
+  ['the_20wl_5fsubcompositor_20interface',['The wl_subcompositor interface',['../group__iface__wl__subcompositor.html',1,'']]],
+  ['the_20wl_5fsubsurface_20interface',['The wl_subsurface interface',['../group__iface__wl__subsurface.html',1,'']]],
+  ['the_20wl_5fsurface_20interface',['The wl_surface interface',['../group__iface__wl__surface.html',1,'']]],
+  ['the_20wl_5ftouch_20interface',['The wl_touch interface',['../group__iface__wl__touch.html',1,'']]],
+  ['the_20wayland_20protocol',['The wayland protocol',['../page_wayland.html',1,'']]],
+  ['target',['target',['../structwl__data__source__listener.html#ae79feef532bb5ab03ee94ec1b7d40099',1,'wl_data_source_listener']]],
+  ['types',['types',['../structwl__message.html#ad9239f2c688bcd15e703af81f9b8e3a8',1,'wl_message']]]
+];

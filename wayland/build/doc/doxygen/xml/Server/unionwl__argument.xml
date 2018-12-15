@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="unionwl__argument" kind="union" language="C++" prot="public">
+    <compoundname>wl_argument</compoundname>
+    <includes refid="wayland-util_8h" local="no">wayland-util.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionwl__argument_1ad64fd62947e029bd77e4ff1f7ec0b6f7" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t wl_argument::i</definition>
+        <argsstring></argsstring>
+        <name>i</name>
+        <briefdescription>
+<para><computeroutput>int</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="670" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="670" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwl__argument_1a20de13104c49bcd87ad8e3cc97245515" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_argument::u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <briefdescription>
+<para><computeroutput>uint</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="671" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="671" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwl__argument_1a85b9cba149294b6d0a3a5c6a6d73425b" prot="public" static="no" mutable="no">
+        <type><ref refid="wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb" kindref="member">wl_fixed_t</ref></type>
+        <definition>wl_fixed_t wl_argument::f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <briefdescription>
+<para><computeroutput>fixed</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="672" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="672" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwl__argument_1ae4e24f5f73fb72ad99b64fd4b6132d01" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* wl_argument::s</definition>
+        <argsstring></argsstring>
+        <name>s</name>
+        <briefdescription>
+<para><computeroutput>string</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="673" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="673" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwl__argument_1a2706eeebe2a44634d3c7066867c796ed" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__object" kindref="compound">wl_object</ref> *</type>
+        <definition>struct wl_object* wl_argument::o</definition>
+        <argsstring></argsstring>
+        <name>o</name>
+        <briefdescription>
+<para><computeroutput>object</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="674" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="674" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwl__argument_1ad144c37a3e88e92243829a71953f5292" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_argument::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <briefdescription>
+<para><computeroutput>new_id</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="675" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="675" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwl__argument_1a8af8c9f77f9c4bf85c02d85c33f80d92" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__array" kindref="compound">wl_array</ref> *</type>
+        <definition>struct wl_array* wl_argument::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <briefdescription>
+<para><computeroutput>array</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="676" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="676" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwl__argument_1a49b6a70ba33afaf20ba1b274b9c030ac" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t wl_argument::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+<para><computeroutput>fd</computeroutput> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="677" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="677" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Protocol message argument data types. </para>    </briefdescription>
+    <detaileddescription>
+<para>This union represents all of the argument types in the Wayland protocol wire format. The protocol implementation uses <ref refid="unionwl__argument" kindref="compound">wl_argument</ref> within its marshalling machinery for dispatching messages between a client and a compositor.</para><para><simplesect kind="see"><para><ref refid="structwl__message" kindref="compound">wl_message</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__interface" kindref="compound">wl_interface</ref> </para></simplesect>
+<simplesect kind="see"><para><ulink url="https://wayland.freedesktop.org/docs/html/ch04.html#sect-Protocol-wire-Format">Wire Format</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>wl_array</label>
+        <link refid="structwl__array"/>
+      </node>
+      <node id="1">
+        <label>wl_argument</label>
+        <link refid="unionwl__argument"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>o</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>a</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="669" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="669" bodyend="678"/>
+    <listofallmembers>
+      <member refid="unionwl__argument_1a8af8c9f77f9c4bf85c02d85c33f80d92" prot="public" virt="non-virtual"><scope>wl_argument</scope><name>a</name></member>
+      <member refid="unionwl__argument_1a85b9cba149294b6d0a3a5c6a6d73425b" prot="public" virt="non-virtual"><scope>wl_argument</scope><name>f</name></member>
+      <member refid="unionwl__argument_1a49b6a70ba33afaf20ba1b274b9c030ac" prot="public" virt="non-virtual"><scope>wl_argument</scope><name>h</name></member>
+      <member refid="unionwl__argument_1ad64fd62947e029bd77e4ff1f7ec0b6f7" prot="public" virt="non-virtual"><scope>wl_argument</scope><name>i</name></member>
+      <member refid="unionwl__argument_1ad144c37a3e88e92243829a71953f5292" prot="public" virt="non-virtual"><scope>wl_argument</scope><name>n</name></member>
+      <member refid="unionwl__argument_1a2706eeebe2a44634d3c7066867c796ed" prot="public" virt="non-virtual"><scope>wl_argument</scope><name>o</name></member>
+      <member refid="unionwl__argument_1ae4e24f5f73fb72ad99b64fd4b6132d01" prot="public" virt="non-virtual"><scope>wl_argument</scope><name>s</name></member>
+      <member refid="unionwl__argument_1a20de13104c49bcd87ad8e3cc97245515" prot="public" virt="non-virtual"><scope>wl_argument</scope><name>u</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

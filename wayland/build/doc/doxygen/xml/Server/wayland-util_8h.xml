@@ -1,0 +1,636 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="wayland-util_8h" kind="file" language="C++">
+    <compoundname>wayland-util.h</compoundname>
+    <includes local="no">math.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">inttypes.h</includes>
+    <includes local="no">stdarg.h</includes>
+    <includedby refid="event-loop_8c" local="yes">/dev/shm/libwayland/wayland/src/event-loop.c</includedby>
+    <includedby refid="wayland-server-core_8h" local="yes">/dev/shm/libwayland/wayland/src/wayland-server-core.h</includedby>
+    <includedby refid="wayland-server_8c" local="yes">/dev/shm/libwayland/wayland/src/wayland-server.c</includedby>
+    <includedby refid="wayland-shm_8c" local="yes">/dev/shm/libwayland/wayland/src/wayland-shm.c</includedby>
+    <incdepgraph>
+      <node id="110">
+        <label>stdarg.h</label>
+      </node>
+      <node id="108">
+        <label>stddef.h</label>
+      </node>
+      <node id="107">
+        <label>math.h</label>
+      </node>
+      <node id="106">
+        <label>/dev/shm/libwayland/wayland/src/wayland-util.h</label>
+        <link refid="wayland-util_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="115">
+        <label>/dev/shm/libwayland/wayland/src/wayland-server.c</label>
+        <link refid="wayland-server_8c"/>
+      </node>
+      <node id="114">
+        <label>/dev/shm/libwayland/wayland/src/wayland-server.h</label>
+        <link refid="wayland-server_8h"/>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>/dev/shm/libwayland/wayland/src/wayland-shm.c</label>
+        <link refid="wayland-shm_8c"/>
+      </node>
+      <node id="113">
+        <label>/dev/shm/libwayland/wayland/src/wayland-server-core.h</label>
+        <link refid="wayland-server-core_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>/dev/shm/libwayland/wayland/src/wayland-util.h</label>
+        <link refid="wayland-util_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>/dev/shm/libwayland/wayland/src/event-loop.c</label>
+        <link refid="event-loop_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structwl__message" prot="public">wl_message</innerclass>
+    <innerclass refid="structwl__interface" prot="public">wl_interface</innerclass>
+    <innerclass refid="structwl__list" prot="public">wl_list</innerclass>
+    <innerclass refid="structwl__array" prot="public">wl_array</innerclass>
+    <innerclass refid="unionwl__argument" prot="public">wl_argument</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="wayland-util_8h_1a3b28bd92b6af30b28f13c09e45269d5b" prot="public" static="no">
+        <name>WL_EXPORT</name>
+        <briefdescription>
+<para>Visibility attribute. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="47" column="10" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="wayland-util_8h_1a9ef5a521a018de9c5b28a5ef9909cd33" prot="public" static="no">
+        <name>WL_DEPRECATED</name>
+        <briefdescription>
+<para>Deprecated attribute. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="54" column="10" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="wayland-util_8h_1aa7cbf0ab788d6898c97f322630577424" prot="public" static="no">
+        <name>WL_PRINTF</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <briefdescription>
+<para>Printf-style argument attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ordinality of the format string argument </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ordinality of the argument to check against the format string</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ulink url="https://gcc.gnu.org/onlinedocs/gcc-3.2.1/gcc/Function-Attributes.html">https://gcc.gnu.org/onlinedocs/gcc-3.2.1/gcc/Function-Attributes.html</ulink> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="68" column="10" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" prot="public" static="no">
+        <name>wl_container_of</name>
+        <param><defname>ptr</defname></param>
+        <param><defname>sample</defname></param>
+        <param><defname>member</defname></param>
+        <initializer>(__typeof__(sample))((char *)(ptr) -				\
+			     offsetof(__typeof__(*sample), member))</initializer>
+        <briefdescription>
+<para>Retrieves a pointer to a containing struct, given a member name. </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro allows &quot;conversion&quot; from a pointer to a member to its containing struct. This is useful if you have a contained item like a <ref refid="structwl__list" kindref="compound">wl_list</ref>, <ref refid="structwl__listener" kindref="compound">wl_listener</ref>, or <ref refid="structwl__signal" kindref="compound">wl_signal</ref>, provided via a callback or other means, and would like to retrieve the struct that contains it.</para><para>To demonstrate, the following example retrieves a pointer to <computeroutput>example_container</computeroutput> given only its <computeroutput>destroy_listener</computeroutput> member:</para><para><programlisting><codeline><highlight class="normal">struct<sp/>example_container<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>struct<sp/>wl_listener<sp/>destroy_listener;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>other<sp/>members...</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>example_container_destroy(struct<sp/>wl_listener<sp/>*listener,<sp/>void<sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>struct<sp/>example_container<sp/>*ctr;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctr<sp/>=<sp/>wl_container_of(listener,<sp/>ctr,<sp/>destroy_listener);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>destroy<sp/>ctr...</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para><simplesect kind="note"><para><computeroutput>sample</computeroutput> need not be a valid pointer. A null or uninitialised pointer is sufficient.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valid pointer to the contained member </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sample</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a struct whose type contains <computeroutput>ptr</computeroutput> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>member</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Named location of <computeroutput>ptr</computeroutput> within the <computeroutput>sample</computeroutput> type</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The container for the specified pointer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="394" column="9" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23" prot="public" static="no">
+        <name>wl_iterator_result</name>
+        <enumvalue id="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23a8b3cf4be8e930d821709ba36a836502a" prot="public">
+          <name>WL_ITERATOR_STOP</name>
+          <briefdescription>
+<para>Stop the iteration. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23a1929018870618c4f5bc7511973847edc" prot="public">
+          <name>WL_ITERATOR_CONTINUE</name>
+          <briefdescription>
+<para>Continue the iteration. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Return value of an iterator function. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="wayland-server-core_8h_1a3dfebf4109ca3ff4d66d28019a2c2602" kindref="member">wl_client_for_each_resource_iterator_func_t</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__client_1a4a0a6bb48f63ed80ab4575fda4c5d01a" kindref="member">wl_client_for_each_resource</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="740" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="740" bodyend="745"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t wl_fixed_t</definition>
+        <argsstring></argsstring>
+        <name>wl_fixed_t</name>
+        <briefdescription>
+<para>Fixed-point number. </para>        </briefdescription>
+        <detaileddescription>
+<para>A <computeroutput>wl_fixed_t</computeroutput> is a 24.8 signed fixed-point number with a sign bit, 23 bits of integer precision and 8 bits of decimal precision. Consider <computeroutput>wl_fixed_t</computeroutput> as an opaque struct with methods that facilitate conversion to and from <computeroutput>double</computeroutput> and <computeroutput>int</computeroutput> types. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="590" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="590" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* wl_dispatcher_func_t) (const void *, void *, uint32_t, const struct wl_message *, union wl_argument *)</definition>
+        <argsstring>)(const void *, void *, uint32_t, const struct wl_message *, union wl_argument *)</argsstring>
+        <name>wl_dispatcher_func_t</name>
+        <briefdescription>
+<para>Dispatcher function type alias. </para>        </briefdescription>
+        <detaileddescription>
+<para>A dispatcher is a function that handles the emitting of callbacks in client code. For programs directly using the C library, this is done by using libffi to call function pointers. When binding to languages other than C, dispatchers provide a way to abstract the function calling process to be friendlier to other function calling systems.</para><para>A dispatcher takes five arguments: The first is the dispatcher-specific implementation associated with the target object. The second is the object upon which the callback is being invoked (either wl_proxy or <ref refid="structwl__resource" kindref="compound">wl_resource</ref>). The third and fourth arguments are the opcode and the <ref refid="structwl__message" kindref="compound">wl_message</ref> corresponding to the callback. The final argument is an array of arguments received from the other process via the wire protocol.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const void *</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dispatcher-specific implementation data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>void *</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback invocation target (wl_proxy or <computeroutput><ref refid="structwl__resource" kindref="compound">wl_resource</ref></computeroutput>) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uint32_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback opcode </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const struct wl_message *</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback message signature </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>union wl_argument *</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of received arguments</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, or -1 on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="704" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="704" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="wayland-util_8h_1a8bbe3cc915acdaf00f7a183bf03d809c" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* wl_log_func_t) (const char *, va_list)</definition>
+        <argsstring>)(const char *, va_list)</argsstring>
+        <name>wl_log_func_t</name>
+        <briefdescription>
+<para>Log function type alias. </para>        </briefdescription>
+        <detaileddescription>
+<para>The C implementation of the Wayland protocol abstracts the details of logging. Users may customize the logging behavior, with a function conforming to the <computeroutput>wl_log_func_t</computeroutput> type, via <computeroutput>wl_log_set_handler_client</computeroutput> and <computeroutput>wl_log_set_handler_server</computeroutput>.</para><para>A <computeroutput>wl_log_func_t</computeroutput> must conform to the expectations of <computeroutput>vprintf</computeroutput>, and expects two arguments: a string to write and a corresponding variable argument list. While the string to write may contain format specifiers and use values in the variable argument list, the behavior of any <computeroutput>wl_log_func_t</computeroutput> depends on the implementation.</para><para><simplesect kind="note"><para>Take care to not confuse this with <computeroutput>wl_protocol_logger_func_t</computeroutput>, which is a specific server-side logger for requests and events.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const char *</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to write to the log, containing optional format specifiers </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>va_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable argument list</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>wl_log_set_handler_client </para></simplesect>
+<simplesect kind="see"><para><ref refid="wayland-server-core_8h_1a0a0e1384dce2524161299fcd1669d59f" kindref="member">wl_log_set_handler_server</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="732" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="732" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="wayland-util_8h_1a7b155d75f8d3ad6e3e301ed209b225f9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double wl_fixed_to_double</definition>
+        <argsstring>(wl_fixed_t f)</argsstring>
+        <name>wl_fixed_to_double</name>
+        <param>
+          <type><ref refid="wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb" kindref="member">wl_fixed_t</ref></type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Converts a fixed-point number to a floating-point number. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fixed-point number to convert</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Floating-point representation of the fixed-point argument </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="600" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="600" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-util_8h_1a37fbdd6889dc1a4d0fb06cc29980f661" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb" kindref="member">wl_fixed_t</ref></type>
+        <definition>static wl_fixed_t wl_fixed_from_double</definition>
+        <argsstring>(double d)</argsstring>
+        <name>wl_fixed_from_double</name>
+        <param>
+          <type>double</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>Converts a floating-point number to a fixed-point number. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Floating-point number to convert</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Fixed-point representation of the floating-point argument </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="620" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="620" bodyend="630"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-util_8h_1aa03070423c58beca2d64c2ca652c5c82" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int wl_fixed_to_int</definition>
+        <argsstring>(wl_fixed_t f)</argsstring>
+        <name>wl_fixed_to_int</name>
+        <param>
+          <type><ref refid="wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb" kindref="member">wl_fixed_t</ref></type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Converts a fixed-point number to an integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fixed-point number to convert</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Integer component of the fixed-point argument </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="640" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="640" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-util_8h_1aeaef4ec1f0cd5aef95db06a83846187e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb" kindref="member">wl_fixed_t</ref></type>
+        <definition>static wl_fixed_t wl_fixed_from_int</definition>
+        <argsstring>(int i)</argsstring>
+        <name>wl_fixed_from_int</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Converts an integer to a fixed-point number. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer to convert</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Fixed-point representation of the integer argument </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="653" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="653" bodyend="656"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Utility classes, functions, and macros. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2008<sp/>Kristian<sp/>Høgsberg</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>a<sp/>copy<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>&quot;Software&quot;),<sp/>to<sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>without<sp/>limitation<sp/>the<sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>(including<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>next<sp/>paragraph)<sp/>shall<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>or<sp/>substantial</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>EXPRESS<sp/>OR<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY,<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>NONINFRINGEMENT.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor">#ifndef<sp/>WAYLAND_UTIL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WAYLAND_UTIL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;inttypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor">#if<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>__GNUC__<sp/>&gt;=<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WL_EXPORT<sp/>__attribute__<sp/>((visibility(&quot;default&quot;)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="wayland-util_8h_1a3b28bd92b6af30b28f13c09e45269d5b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WL_EXPORT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor">#if<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>__GNUC__<sp/>&gt;=<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WL_DEPRECATED<sp/>__attribute__<sp/>((deprecated))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="wayland-util_8h_1a9ef5a521a018de9c5b28a5ef9909cd33" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WL_DEPRECATED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor">#if<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>__GNUC__<sp/>&gt;=<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WL_PRINTF(x,<sp/>y)<sp/>__attribute__((__format__(__printf__,<sp/>x,<sp/>y)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="wayland-util_8h_1aa7cbf0ab788d6898c97f322630577424" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WL_PRINTF(x,<sp/>y)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="structwl__message" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__message" kindref="compound">wl_message</ref><sp/>{</highlight></codeline>
+<codeline lineno="149" refid="structwl__message_1a0def81dbfe6ee21dcf1b6ac037badda7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structwl__message_1a0def81dbfe6ee21dcf1b6ac037badda7" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="151" refid="structwl__message_1afacc7f3dab82d04059c1d9879cad6647" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structwl__message_1afacc7f3dab82d04059c1d9879cad6647" kindref="member">signature</ref>;</highlight></codeline>
+<codeline lineno="153" refid="structwl__message_1ad9239f2c688bcd15e703af81f9b8e3a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__interface" kindref="compound">wl_interface</ref><sp/>**<ref refid="structwl__message_1ad9239f2c688bcd15e703af81f9b8e3a8" kindref="member">types</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="structwl__interface" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__interface" kindref="compound">wl_interface</ref><sp/>{</highlight></codeline>
+<codeline lineno="204" refid="structwl__interface_1a3ee0780631cad42bcc90a8deb76caec8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structwl__interface_1a3ee0780631cad42bcc90a8deb76caec8" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="206" refid="structwl__interface_1ac7b9bc6c0352b4100213109094ca55fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structwl__interface_1ac7b9bc6c0352b4100213109094ca55fa" kindref="member">version</ref>;</highlight></codeline>
+<codeline lineno="208" refid="structwl__interface_1a520ae9776d4d26ea132d5a0768098d3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structwl__interface_1a520ae9776d4d26ea132d5a0768098d3d" kindref="member">method_count</ref>;</highlight></codeline>
+<codeline lineno="210" refid="structwl__interface_1a6bc4aaa8fbc7aafd1c9da58deedf50da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__message" kindref="compound">wl_message</ref><sp/>*<ref refid="structwl__interface_1a6bc4aaa8fbc7aafd1c9da58deedf50da" kindref="member">methods</ref>;</highlight></codeline>
+<codeline lineno="212" refid="structwl__interface_1a142461320927b0eb7a8e27c7bcaafc39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structwl__interface_1a142461320927b0eb7a8e27c7bcaafc39" kindref="member">event_count</ref>;</highlight></codeline>
+<codeline lineno="214" refid="structwl__interface_1a67ed5c9c748afbec4ba89d2cad8cfbd0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__message" kindref="compound">wl_message</ref><sp/>*<ref refid="structwl__interface_1a67ed5c9c748afbec4ba89d2cad8cfbd0" kindref="member">events</ref>;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274" refid="structwl__list" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>{</highlight></codeline>
+<codeline lineno="276" refid="structwl__list_1a72c2827d3103691f9e3299babfbf0704" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*<ref refid="structwl__list_1a72c2827d3103691f9e3299babfbf0704" kindref="member">prev</ref>;</highlight></codeline>
+<codeline lineno="278" refid="structwl__list_1aa0454596900ed769fb2f033fbb96bf2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*<ref refid="structwl__list_1aa0454596900ed769fb2f033fbb96bf2c" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><ref refid="structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8" kindref="member">wl_list_init</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*list);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><ref refid="structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98" kindref="member">wl_list_insert</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*list,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*elm);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><ref refid="structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83" kindref="member">wl_list_remove</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*elm);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><ref refid="structwl__list_1a2710186b02864dc2b18a46993aa9c2e0" kindref="member">wl_list_length</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*list);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><ref refid="structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a" kindref="member">wl_list_empty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*list);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><ref refid="structwl__list_1ac714f6eedd52286c8b6d9884cc7c8492" kindref="member">wl_list_insert_list</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*list,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__list" kindref="compound">wl_list</ref><sp/>*other);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394" refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" refkind="member"><highlight class="preprocessor">#define<sp/>wl_container_of(ptr,<sp/>sample,<sp/>member)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="395"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(__typeof__(sample))((char<sp/>*)(ptr)<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="396"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offsetof(__typeof__(*sample),<sp/>member))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428" refid="structwl__list_1a449407fe3c8f273e38bc2253093cb6fb" refkind="member"><highlight class="preprocessor">#define<sp/>wl_list_for_each(pos,<sp/>head,<sp/>member)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="429"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>wl_container_of((head)-&gt;next,<sp/>pos,<sp/>member);<sp/><sp/>\</highlight></codeline>
+<codeline lineno="430"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pos-&gt;member<sp/>!=<sp/>(head);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="431"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>wl_container_of(pos-&gt;member.next,<sp/>pos,<sp/>member))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="448" refid="structwl__list_1a43d51e3b5ae8b58f3391f3d43687f852" refkind="member"><highlight class="preprocessor">#define<sp/>wl_list_for_each_safe(pos,<sp/>tmp,<sp/>head,<sp/>member)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="449"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>wl_container_of((head)-&gt;next,<sp/>pos,<sp/>member),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="450"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>wl_container_of((pos)-&gt;member.next,<sp/>tmp,<sp/>member);<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="451"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pos-&gt;member<sp/>!=<sp/>(head);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="452"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>tmp,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="453"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>wl_container_of(pos-&gt;member.next,<sp/>tmp,<sp/>member))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="466" refid="structwl__list_1a2ee1918119b03d36ed3004984efb9dc9" refkind="member"><highlight class="preprocessor">#define<sp/>wl_list_for_each_reverse(pos,<sp/>head,<sp/>member)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="467"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>wl_container_of((head)-&gt;prev,<sp/>pos,<sp/>member);<sp/><sp/>\</highlight></codeline>
+<codeline lineno="468"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pos-&gt;member<sp/>!=<sp/>(head);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="469"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>wl_container_of(pos-&gt;member.prev,<sp/>pos,<sp/>member))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486" refid="structwl__list_1ac84e06e7914226b2678ff5f351d7f9e8" refkind="member"><highlight class="preprocessor">#define<sp/>wl_list_for_each_reverse_safe(pos,<sp/>tmp,<sp/>head,<sp/>member)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="487"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>wl_container_of((head)-&gt;prev,<sp/>pos,<sp/>member),<sp/><sp/>\</highlight></codeline>
+<codeline lineno="488"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>wl_container_of((pos)-&gt;member.prev,<sp/>tmp,<sp/>member);<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="489"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pos-&gt;member<sp/>!=<sp/>(head);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="490"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>tmp,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="491"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>wl_container_of(pos-&gt;member.prev,<sp/>tmp,<sp/>member))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505" refid="structwl__array" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__array" kindref="compound">wl_array</ref><sp/>{</highlight></codeline>
+<codeline lineno="507" refid="structwl__array_1ae246c66cbd633063e2649c503d764d3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structwl__array_1ae246c66cbd633063e2649c503d764d3f" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="509" refid="structwl__array_1a4b33519c8f628d650631ebecee45b771" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structwl__array_1a4b33519c8f628d650631ebecee45b771" kindref="member">alloc</ref>;</highlight></codeline>
+<codeline lineno="511" refid="structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="512"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"></highlight></codeline>
+<codeline lineno="521"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="522"><highlight class="normal">wl_array_init(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__array" kindref="compound">wl_array</ref><sp/>*array);</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="534"><highlight class="normal">wl_array_release(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__array" kindref="compound">wl_array</ref><sp/>*array);</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"></highlight></codeline>
+<codeline lineno="547"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="548"><highlight class="normal">wl_array_add(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__array" kindref="compound">wl_array</ref><sp/>*array,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"></highlight></codeline>
+<codeline lineno="560"><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="561"><highlight class="normal">wl_array_copy(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__array" kindref="compound">wl_array</ref><sp/>*array,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__array" kindref="compound">wl_array</ref><sp/>*source);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight></codeline>
+<codeline lineno="577" refid="structwl__array_1ab050f7375dcae916506142763080ed80" refkind="member"><highlight class="preprocessor">#define<sp/>wl_array_for_each(pos,<sp/>array)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="578"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>(array)-&gt;data;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="579"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(const<sp/>char<sp/>*)<sp/>pos<sp/>&lt;<sp/>((const<sp/>char<sp/>*)<sp/>(array)-&gt;data<sp/>+<sp/>(array)-&gt;size);<sp/>\</highlight></codeline>
+<codeline lineno="580"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(pos)++)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590" refid="wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb" kindref="member">wl_fixed_t</ref>;</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="600" refid="wayland-util_8h_1a7b155d75f8d3ad6e3e301ed209b225f9" refkind="member"><highlight class="normal"><ref refid="wayland-util_8h_1a7b155d75f8d3ad6e3e301ed209b225f9" kindref="member">wl_fixed_to_double</ref>(wl_fixed_t<sp/>f)</highlight></codeline>
+<codeline lineno="601"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d;</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int64_t<sp/>i;</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>u;</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u.i<sp/>=<sp/>((1023LL<sp/>+<sp/>44LL)<sp/>&lt;&lt;<sp/>52)<sp/>+<sp/>(1LL<sp/>&lt;&lt;<sp/>51)<sp/>+<sp/>f;</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"></highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u.d<sp/>-<sp/>(3LL<sp/>&lt;&lt;<sp/>43);</highlight></codeline>
+<codeline lineno="610"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>wl_fixed_t</highlight></codeline>
+<codeline lineno="620" refid="wayland-util_8h_1a37fbdd6889dc1a4d0fb06cc29980f661" refkind="member"><highlight class="normal"><ref refid="wayland-util_8h_1a37fbdd6889dc1a4d0fb06cc29980f661" kindref="member">wl_fixed_from_double</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d)</highlight></codeline>
+<codeline lineno="621"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d;</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int64_t<sp/>i;</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>u;</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"></highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u.d<sp/>=<sp/>d<sp/>+<sp/>(3LL<sp/>&lt;&lt;<sp/>(51<sp/>-<sp/>8));</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"></highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u.i;</highlight></codeline>
+<codeline lineno="630"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"></highlight></codeline>
+<codeline lineno="639"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="640" refid="wayland-util_8h_1aa03070423c58beca2d64c2ca652c5c82" refkind="member"><highlight class="normal"><ref refid="wayland-util_8h_1aa03070423c58beca2d64c2ca652c5c82" kindref="member">wl_fixed_to_int</ref>(wl_fixed_t<sp/>f)</highlight></codeline>
+<codeline lineno="641"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f<sp/>/<sp/>256;</highlight></codeline>
+<codeline lineno="643"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"></highlight></codeline>
+<codeline lineno="652"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>wl_fixed_t</highlight></codeline>
+<codeline lineno="653" refid="wayland-util_8h_1aeaef4ec1f0cd5aef95db06a83846187e" refkind="member"><highlight class="normal"><ref refid="wayland-util_8h_1aeaef4ec1f0cd5aef95db06a83846187e" kindref="member">wl_fixed_from_int</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)</highlight></codeline>
+<codeline lineno="654"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i<sp/>*<sp/>256;</highlight></codeline>
+<codeline lineno="656"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"></highlight></codeline>
+<codeline lineno="669" refid="unionwl__argument" refkind="compound"><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionwl__argument" kindref="compound">wl_argument</ref><sp/>{</highlight></codeline>
+<codeline lineno="670" refid="unionwl__argument_1ad64fd62947e029bd77e4ff1f7ec0b6f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="unionwl__argument_1ad64fd62947e029bd77e4ff1f7ec0b6f7" kindref="member">i</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="671" refid="unionwl__argument_1a20de13104c49bcd87ad8e3cc97245515" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionwl__argument_1a20de13104c49bcd87ad8e3cc97245515" kindref="member">u</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="672" refid="unionwl__argument_1a85b9cba149294b6d0a3a5c6a6d73425b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wl_fixed_t<sp/><ref refid="unionwl__argument_1a85b9cba149294b6d0a3a5c6a6d73425b" kindref="member">f</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="673" refid="unionwl__argument_1ae4e24f5f73fb72ad99b64fd4b6132d01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="unionwl__argument_1ae4e24f5f73fb72ad99b64fd4b6132d01" kindref="member">s</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="674" refid="unionwl__argument_1a2706eeebe2a44634d3c7066867c796ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__object" kindref="compound">wl_object</ref><sp/>*<ref refid="unionwl__argument_1a2706eeebe2a44634d3c7066867c796ed" kindref="member">o</ref>;<sp/></highlight></codeline>
+<codeline lineno="675" refid="unionwl__argument_1ad144c37a3e88e92243829a71953f5292" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionwl__argument_1ad144c37a3e88e92243829a71953f5292" kindref="member">n</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="676" refid="unionwl__argument_1a8af8c9f77f9c4bf85c02d85c33f80d92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__array" kindref="compound">wl_array</ref><sp/>*<ref refid="unionwl__argument_1a8af8c9f77f9c4bf85c02d85c33f80d92" kindref="member">a</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="677" refid="unionwl__argument_1a49b6a70ba33afaf20ba1b274b9c030ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/><ref refid="unionwl__argument_1a49b6a70ba33afaf20ba1b274b9c030ac" kindref="member">h</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="678"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"></highlight></codeline>
+<codeline lineno="704" refid="wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(*<ref refid="wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd" kindref="member">wl_dispatcher_func_t</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint32_t,</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structwl__message" kindref="compound">wl_message</ref><sp/>*,</highlight></codeline>
+<codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionwl__argument" kindref="compound">wl_argument</ref><sp/>*);</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"></highlight></codeline>
+<codeline lineno="732" refid="wayland-util_8h_1a8bbe3cc915acdaf00f7a183bf03d809c" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="wayland-util_8h_1a8bbe3cc915acdaf00f7a183bf03d809c" kindref="member">wl_log_func_t</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>va_list)<sp/><ref refid="wayland-util_8h_1aa7cbf0ab788d6898c97f322630577424" kindref="member">WL_PRINTF</ref>(1,<sp/>0);</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"></highlight></codeline>
+<codeline lineno="740" refid="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23" kindref="member">wl_iterator_result</ref><sp/>{</highlight></codeline>
+<codeline lineno="742" refid="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23a8b3cf4be8e930d821709ba36a836502a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23a8b3cf4be8e930d821709ba36a836502a" kindref="member">WL_ITERATOR_STOP</ref>,</highlight></codeline>
+<codeline lineno="744" refid="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23a1929018870618c4f5bc7511973847edc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23a1929018870618c4f5bc7511973847edc" kindref="member">WL_ITERATOR_CONTINUE</ref></highlight></codeline>
+<codeline lineno="745"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="746"><highlight class="normal"></highlight></codeline>
+<codeline lineno="747"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="748"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="749"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="750"><highlight class="normal"></highlight></codeline>
+<codeline lineno="751"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-util.h"/>
+  </compounddef>
+</doxygen>

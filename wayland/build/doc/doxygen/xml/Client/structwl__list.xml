@@ -1,0 +1,452 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__list" kind="class" language="C++" prot="public">
+    <compoundname>wl_list</compoundname>
+    <includes refid="wayland-util_8h" local="no">wayland-util.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__list_1a72c2827d3103691f9e3299babfbf0704" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+        <definition>struct wl_list* wl_list::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <briefdescription>
+<para>Previous list element. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="276" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__list_1aa0454596900ed769fb2f033fbb96bf2c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+        <definition>struct wl_list* wl_list::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+<para>Next list element. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="278" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_list_init</definition>
+        <argsstring>(struct wl_list *list)</argsstring>
+        <name>wl_list_init</name>
+        <param>
+          <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the list. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="289" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_list_insert</definition>
+        <argsstring>(struct wl_list *list, struct wl_list *elm)</argsstring>
+        <name>wl_list_insert</name>
+        <param>
+          <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>elm</declname>
+        </param>
+        <briefdescription>
+<para>Inserts an element into the list, after the element represented by <computeroutput>list</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+<para>When <computeroutput>list</computeroutput> is a reference to the list itself (the head), set the containing struct of <computeroutput>elm</computeroutput> as the first element in the list.</para><para><simplesect kind="note"><para>If <computeroutput>elm</computeroutput> is already part of a list, inserting it again will lead to list corruption.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List element after which the new element is inserted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>elm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Link of the containing struct to insert into the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="305" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_list_remove</definition>
+        <argsstring>(struct wl_list *elm)</argsstring>
+        <name>wl_list_remove</name>
+        <param>
+          <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>elm</declname>
+        </param>
+        <briefdescription>
+<para>Removes an element from the list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This operation leaves <computeroutput>elm</computeroutput> in an invalid state.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Link of the containing struct to remove from the list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="317" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__list_1a2710186b02864dc2b18a46993aa9c2e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_list_length</definition>
+        <argsstring>(const struct wl_list *list)</argsstring>
+        <name>wl_list_length</name>
+        <param>
+          <type>const struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Determines the length of the list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This is an O(n) operation.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List whose length is to be determined</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of elements in the list </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="331" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_list_empty</definition>
+        <argsstring>(const struct wl_list *list)</argsstring>
+        <name>wl_list_empty</name>
+        <param>
+          <type>const struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Determines if the list is empty. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List whose emptiness is to be determined</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 if empty, or 0 if not empty </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="343" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__list_1ac714f6eedd52286c8b6d9884cc7c8492" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_list_insert_list</definition>
+        <argsstring>(struct wl_list *list, struct wl_list *other)</argsstring>
+        <name>wl_list_insert_list</name>
+        <param>
+          <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Inserts all of the elements of one list into another, after the element represented by <computeroutput>list</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This leaves <computeroutput>other</computeroutput> in an invalid state.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List element after which the other list elements will be inserted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of elements to insert </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="357" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="related">
+      <memberdef kind="define" id="structwl__list_1a449407fe3c8f273e38bc2253093cb6fb" prot="public" static="no">
+        <name>wl_list_for_each</name>
+        <param><defname>pos</defname></param>
+        <param><defname>head</defname></param>
+        <param><defname>member</defname></param>
+        <initializer>for (pos = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>((head)-&gt;<ref refid="structwl__list_1aa0454596900ed769fb2f033fbb96bf2c" kindref="member">next</ref>, pos, member);	\
+	     &amp;pos-&gt;member != (head);					\
+	     pos = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>(pos-&gt;member.next, pos, member))</initializer>
+        <briefdescription>
+<para>Iterates over a list. </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro expresses a for-each iterator for <ref refid="structwl__list" kindref="compound">wl_list</ref>. Given a list and <ref refid="structwl__list" kindref="compound">wl_list</ref> link member name (often named <computeroutput>link</computeroutput> by convention), this macro assigns each element in the list to <computeroutput>pos</computeroutput>, which can then be referenced in a trailing code block. For example, given a <ref refid="structwl__list" kindref="compound">wl_list</ref> of <computeroutput>struct message</computeroutput> elements:</para><para><programlisting><codeline><highlight class="normal">struct<sp/>message<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>char<sp/>*contents;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wl_list<sp/>link;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">struct<sp/>wl_list<sp/>*message_list;</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Assume<sp/>message_list<sp/>now<sp/>&quot;contains&quot;<sp/>many<sp/>messages</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">struct<sp/>message<sp/>*m;</highlight></codeline>
+<codeline><highlight class="normal">wl_list_for_each(m,<sp/>message_list,<sp/>link)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_something_with_message(m);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cursor that each list element will be assigned to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>head</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Head of the list to iterate over </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>member</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the link member within the element struct </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="429" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="structwl__list_1a43d51e3b5ae8b58f3391f3d43687f852" prot="public" static="no">
+        <name>wl_list_for_each_safe</name>
+        <param><defname>pos</defname></param>
+        <param><defname>tmp</defname></param>
+        <param><defname>head</defname></param>
+        <param><defname>member</defname></param>
+        <initializer>for (pos = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>((head)-&gt;<ref refid="structwl__list_1aa0454596900ed769fb2f033fbb96bf2c" kindref="member">next</ref>, pos, member),		\
+	     tmp = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>((pos)-&gt;member.next, tmp, member);	\
+	     &amp;pos-&gt;member != (head);					\
+	     pos = tmp,							\
+	     tmp = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>(pos-&gt;member.next, tmp, member))</initializer>
+        <briefdescription>
+<para>Iterates over a list, safe against removal of the list element. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Only removal of the current element, <computeroutput>pos</computeroutput>, is safe. Removing any other element during traversal may lead to a loop malfunction.</para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__list_1a449407fe3c8f273e38bc2253093cb6fb" kindref="member">wl_list_for_each()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cursor that each list element will be assigned to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Temporary pointer of the same type as <computeroutput>pos</computeroutput> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>head</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Head of the list to iterate over </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>member</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the link member within the element struct </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="449" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="structwl__list_1a2ee1918119b03d36ed3004984efb9dc9" prot="public" static="no">
+        <name>wl_list_for_each_reverse</name>
+        <param><defname>pos</defname></param>
+        <param><defname>head</defname></param>
+        <param><defname>member</defname></param>
+        <initializer>for (pos = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>((head)-&gt;<ref refid="structwl__list_1a72c2827d3103691f9e3299babfbf0704" kindref="member">prev</ref>, pos, member);	\
+	     &amp;pos-&gt;member != (head);					\
+	     pos = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>(pos-&gt;member.prev, pos, member))</initializer>
+        <briefdescription>
+<para>Iterates backwards over a list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structwl__list_1a449407fe3c8f273e38bc2253093cb6fb" kindref="member">wl_list_for_each()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cursor that each list element will be assigned to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>head</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Head of the list to iterate over </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>member</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the link member within the element struct </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="467" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="466" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="structwl__list_1ac84e06e7914226b2678ff5f351d7f9e8" prot="public" static="no">
+        <name>wl_list_for_each_reverse_safe</name>
+        <param><defname>pos</defname></param>
+        <param><defname>tmp</defname></param>
+        <param><defname>head</defname></param>
+        <param><defname>member</defname></param>
+        <initializer>for (pos = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>((head)-&gt;<ref refid="structwl__list_1a72c2827d3103691f9e3299babfbf0704" kindref="member">prev</ref>, pos, member),	\
+	     tmp = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>((pos)-&gt;member.prev, tmp, member);	\
+	     &amp;pos-&gt;member != (head);					\
+	     pos = tmp,							\
+	     tmp = <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref>(pos-&gt;member.prev, tmp, member))</initializer>
+        <briefdescription>
+<para>Iterates backwards over a list, safe against removal of the list element. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Only removal of the current element, <computeroutput>pos</computeroutput>, is safe. Removing any other element during traversal may lead to a loop malfunction.</para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__list_1a449407fe3c8f273e38bc2253093cb6fb" kindref="member">wl_list_for_each()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cursor that each list element will be assigned to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Temporary pointer of the same type as <computeroutput>pos</computeroutput> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>head</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Head of the list to iterate over </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>member</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the link member within the element struct </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="487" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="486" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Doubly-linked list. </para>    </briefdescription>
+    <detaileddescription>
+<para>On its own, an instance of <computeroutput>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></computeroutput> represents the sentinel head of a doubly-linked list, and must be initialized using <ref refid="structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8" kindref="member">wl_list_init()</ref>. When empty, the list head&apos;s <computeroutput>next</computeroutput> and <computeroutput>prev</computeroutput> members point to the list head itself, otherwise <computeroutput>next</computeroutput> references the first element in the list, and <computeroutput>prev</computeroutput> refers to the last element in the list.</para><para>Use the <computeroutput>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></computeroutput> type to represent both the list head and the links between elements within the list. Use <ref refid="structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a" kindref="member">wl_list_empty()</ref> to determine if the list is empty in O(1).</para><para>All elements in the list must be of the same type. The element type must have a <computeroutput>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></computeroutput> member, often named <computeroutput>link</computeroutput> by convention. Prior to insertion, there is no need to initialize an element&apos;s <computeroutput>link</computeroutput> - invoking <ref refid="structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8" kindref="member">wl_list_init()</ref> on an individual list element&apos;s <computeroutput>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></computeroutput> member is unnecessary if the very next operation is <ref refid="structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98" kindref="member">wl_list_insert()</ref>. However, a common idiom is to initialize an element&apos;s <computeroutput>link</computeroutput> prior to removal - ensure safety by invoking <ref refid="structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8" kindref="member">wl_list_init()</ref> before <ref refid="structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83" kindref="member">wl_list_remove()</ref>.</para><para>Consider a list reference <computeroutput>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> foo_list</computeroutput>, an element type as <computeroutput>struct element</computeroutput>, and an element&apos;s link member as <computeroutput>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> link</computeroutput>.</para><para>The following code initializes a list and adds three elements to it.</para><para><programlisting><codeline><highlight class="normal">struct<sp/>wl_list<sp/>foo_list;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">struct<sp/>element<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>foo;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>struct<sp/>wl_list<sp/>link;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal">struct<sp/>element<sp/>e1,<sp/>e2,<sp/>e3;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wl_list_init(&amp;foo_list);</highlight></codeline>
+<codeline><highlight class="normal">wl_list_insert(&amp;foo_list,<sp/>&amp;e1.link);<sp/><sp/><sp/>//<sp/>e1<sp/>is<sp/>the<sp/>first<sp/>element</highlight></codeline>
+<codeline><highlight class="normal">wl_list_insert(&amp;foo_list,<sp/>&amp;e2.link);<sp/><sp/><sp/>//<sp/>e2<sp/>is<sp/>now<sp/>the<sp/>first<sp/>element</highlight></codeline>
+<codeline><highlight class="normal">wl_list_insert(&amp;e2.link,<sp/>&amp;e3.link);<sp/>//<sp/>insert<sp/>e3<sp/>after<sp/>e2</highlight></codeline>
+</programlisting></para><para>The list now looks like <emphasis>[e2, e3, e1]</emphasis>.</para><para>The <computeroutput><ref refid="structwl__list" kindref="compound">wl_list</ref></computeroutput> API provides some iterator macros. For example, to iterate a list in ascending order:</para><para><programlisting><codeline><highlight class="normal">struct<sp/>element<sp/>*e;</highlight></codeline>
+<codeline><highlight class="normal">wl_list_for_each(e,<sp/>foo_list,<sp/>link)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_something_with_element(e);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para>See the documentation of each iterator for details. <simplesect kind="see"><para><ulink url="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/list.h">http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/list.h</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="13">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="274" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="274" bodyend="279"/>
+    <listofallmembers>
+      <member refid="structwl__list_1aa0454596900ed769fb2f033fbb96bf2c" prot="public" virt="non-virtual"><scope>wl_list</scope><name>next</name></member>
+      <member refid="structwl__list_1a72c2827d3103691f9e3299babfbf0704" prot="public" virt="non-virtual"><scope>wl_list</scope><name>prev</name></member>
+      <member refid="structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_empty</name></member>
+      <member refid="structwl__list_1a449407fe3c8f273e38bc2253093cb6fb" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_for_each</name></member>
+      <member refid="structwl__list_1a2ee1918119b03d36ed3004984efb9dc9" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_for_each_reverse</name></member>
+      <member refid="structwl__list_1ac84e06e7914226b2678ff5f351d7f9e8" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_for_each_reverse_safe</name></member>
+      <member refid="structwl__list_1a43d51e3b5ae8b58f3391f3d43687f852" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_for_each_safe</name></member>
+      <member refid="structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_init</name></member>
+      <member refid="structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_insert</name></member>
+      <member refid="structwl__list_1ac714f6eedd52286c8b6d9884cc7c8492" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_insert_list</name></member>
+      <member refid="structwl__list_1a2710186b02864dc2b18a46993aa9c2e0" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_length</name></member>
+      <member refid="structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83" prot="public" virt="non-virtual"><scope>wl_list</scope><name>wl_list_remove</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

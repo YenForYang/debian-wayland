@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__message" kind="struct" language="C++" prot="public">
+    <compoundname>wl_message</compoundname>
+    <includes refid="wayland-util_8h" local="no">wayland-util.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__message_1a0def81dbfe6ee21dcf1b6ac037badda7" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* wl_message::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Message name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="149" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__message_1afacc7f3dab82d04059c1d9879cad6647" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* wl_message::signature</definition>
+        <argsstring></argsstring>
+        <name>signature</name>
+        <briefdescription>
+<para>Message signature. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="151" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__message_1ad9239f2c688bcd15e703af81f9b8e3a8" prot="public" static="no" mutable="no">
+        <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> **</type>
+        <definition>const struct wl_interface** wl_message::types</definition>
+        <argsstring></argsstring>
+        <name>types</name>
+        <briefdescription>
+<para>Object argument interfaces. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="153" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Protocol message signature. </para>    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="structwl__message" kindref="compound">wl_message</ref> describes the signature of an actual protocol message, such as a request or event, that adheres to the Wayland protocol wire format. The protocol implementation uses a <ref refid="structwl__message" kindref="compound">wl_message</ref> within its demarshal machinery for decoding messages between a compositor and its clients. In a sense, a <ref refid="structwl__message" kindref="compound">wl_message</ref> is to a protocol message like a class is to an object.</para><para>The <computeroutput>name</computeroutput> of a <ref refid="structwl__message" kindref="compound">wl_message</ref> is the name of the corresponding protocol message.</para><para>The <computeroutput>signature</computeroutput> is an ordered list of symbols representing the data types of message arguments and, optionally, a protocol version and indicators for nullability. A leading integer in the <computeroutput>signature</computeroutput> indicates the <emphasis>since</emphasis> version of the protocol message. A <computeroutput>?</computeroutput> preceding a data type symbol indicates that the following argument type is nullable. While it is a protocol violation to send messages with non-nullable arguments set to <computeroutput>NULL</computeroutput>, event handlers in clients might still get called with non-nullable object arguments set to <computeroutput>NULL</computeroutput>. This can happen when the client destroyed the object being used as argument on its side and an event referencing that object was sent before the server knew about its destruction. As this race cannot be prevented, clients should - as a general rule - program their event handlers such that they can handle object arguments declared non-nullable being <computeroutput>NULL</computeroutput> gracefully.</para><para>When no arguments accompany a message, <computeroutput>signature</computeroutput> is an empty string.</para><para>Symbols:</para><para><itemizedlist>
+<listitem><para><computeroutput>i</computeroutput>: int</para></listitem><listitem><para><computeroutput>u</computeroutput>: uint</para></listitem><listitem><para><computeroutput>f</computeroutput>: fixed</para></listitem><listitem><para><computeroutput>s</computeroutput>: string</para></listitem><listitem><para><computeroutput>o</computeroutput>: object</para></listitem><listitem><para><computeroutput>n</computeroutput>: new_id</para></listitem><listitem><para><computeroutput>a</computeroutput>: array</para></listitem><listitem><para><computeroutput>h</computeroutput>: fd</para></listitem><listitem><para><computeroutput>?</computeroutput>: following argument is nullable</para></listitem></itemizedlist>
+</para><para>While demarshaling primitive arguments is straightforward, when demarshaling messages containing <computeroutput>object</computeroutput> or <computeroutput>new_id</computeroutput> arguments, the protocol implementation often must determine the type of the object. The <computeroutput>types</computeroutput> of a <ref refid="structwl__message" kindref="compound">wl_message</ref> is an array of <ref refid="structwl__interface" kindref="compound">wl_interface</ref> references that correspond to <computeroutput>o</computeroutput> and <computeroutput>n</computeroutput> arguments in <computeroutput>signature</computeroutput>, with <computeroutput>NULL</computeroutput> placeholders for arguments with non-object types.</para><para>Consider the protocol event <ref refid="structwl__display" kindref="compound">wl_display</ref> <computeroutput>delete_id</computeroutput> that has a single <computeroutput>uint</computeroutput> argument. The <ref refid="structwl__message" kindref="compound">wl_message</ref> is:</para><para><programlisting><codeline><highlight class="normal">{<sp/>&quot;delete_id&quot;,<sp/>&quot;u&quot;,<sp/>[NULL]<sp/>}</highlight></codeline>
+</programlisting></para><para>Here, the message <computeroutput>name</computeroutput> is <computeroutput>&quot;delete_id&quot;</computeroutput>, the <computeroutput>signature</computeroutput> is <computeroutput>&quot;u&quot;</computeroutput>, and the argument <computeroutput>types</computeroutput> is <computeroutput>[NULL]</computeroutput>, indicating that the <computeroutput>uint</computeroutput> argument has no corresponding <ref refid="structwl__interface" kindref="compound">wl_interface</ref> since it is a primitive argument.</para><para>In contrast, consider a <computeroutput>wl_foo</computeroutput> interface supporting protocol request <computeroutput>bar</computeroutput> that has existed since version 2, and has two arguments: a <computeroutput>uint</computeroutput> and an object of type <computeroutput>wl_baz_interface</computeroutput> that may be <computeroutput>NULL</computeroutput>. Such a <computeroutput><ref refid="structwl__message" kindref="compound">wl_message</ref></computeroutput> might be:</para><para><programlisting><codeline><highlight class="normal">{<sp/>&quot;bar&quot;,<sp/>&quot;2u?o&quot;,<sp/>[NULL,<sp/>&amp;wl_baz_interface]<sp/>}</highlight></codeline>
+</programlisting></para><para>Here, the message <computeroutput>name</computeroutput> is <computeroutput>&quot;bar&quot;</computeroutput>, and the <computeroutput>signature</computeroutput> is <computeroutput>&quot;2u?o&quot;</computeroutput>. Notice how the <computeroutput>2</computeroutput> indicates the protocol version, the <computeroutput>u</computeroutput> indicates the first argument type is <computeroutput>uint</computeroutput>, and the <computeroutput>?o</computeroutput> indicates that the second argument is an object that may be <computeroutput>NULL</computeroutput>. Lastly, the argument <computeroutput>types</computeroutput> array indicates that no <ref refid="structwl__interface" kindref="compound">wl_interface</ref> corresponds to the first argument, while the type <computeroutput>wl_baz_interface</computeroutput> corresponds to the second argument.</para><para><simplesect kind="see"><para><ref refid="unionwl__argument" kindref="compound">wl_argument</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__interface" kindref="compound">wl_interface</ref> </para></simplesect>
+<simplesect kind="see"><para><ulink url="https://wayland.freedesktop.org/docs/html/ch04.html#sect-Protocol-Wire-Format">Wire Format</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="58">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="59" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="58" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="147" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="147" bodyend="154"/>
+    <listofallmembers>
+      <member refid="structwl__message_1a0def81dbfe6ee21dcf1b6ac037badda7" prot="public" virt="non-virtual"><scope>wl_message</scope><name>name</name></member>
+      <member refid="structwl__message_1afacc7f3dab82d04059c1d9879cad6647" prot="public" virt="non-virtual"><scope>wl_message</scope><name>signature</name></member>
+      <member refid="structwl__message_1ad9239f2c688bcd15e703af81f9b8e3a8" prot="public" virt="non-virtual"><scope>wl_message</scope><name>types</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

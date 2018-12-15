@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__object" kind="struct" language="C++" prot="public">
+    <compoundname>wl_object</compoundname>
+    <includes refid="wayland-server_8h" local="no">wayland-server.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__object_1af663788be73eae7d567f044f8f9cbfb9" prot="public" static="no" mutable="no">
+        <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+        <definition>const struct wl_interface* wl_object::interface</definition>
+        <argsstring></argsstring>
+        <name>interface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.h" line="59" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__object_1a7478578f273f986624ecc26acfd4e6c2" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* wl_object::implementation</definition>
+        <argsstring></argsstring>
+        <name>implementation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.h" line="60" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__object_1a96193ebafbba8785e03ff9dd8e39d30c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_object::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.h" line="61" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="63">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="62" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="62" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="62">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="63" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server.h" line="58" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.h" bodystart="58" bodyend="62"/>
+    <listofallmembers>
+      <member refid="structwl__object_1a96193ebafbba8785e03ff9dd8e39d30c" prot="public" virt="non-virtual"><scope>wl_object</scope><name>id</name></member>
+      <member refid="structwl__object_1a7478578f273f986624ecc26acfd4e6c2" prot="public" virt="non-virtual"><scope>wl_object</scope><name>implementation</name></member>
+      <member refid="structwl__object_1af663788be73eae7d567f044f8f9cbfb9" prot="public" virt="non-virtual"><scope>wl_object</scope><name>interface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

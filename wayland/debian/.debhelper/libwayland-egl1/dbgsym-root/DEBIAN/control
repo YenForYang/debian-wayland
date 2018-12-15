@@ -1,0 +1,13 @@
+Package: libwayland-egl1-dbgsym
+Source: wayland
+Version: 1.16.0-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 17
+Depends: libwayland-egl1 (= 1.16.0-2)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libwayland-egl1
+Build-Ids: f16a206fdf683b88e2b6f5ffec94d04deaf3f22e

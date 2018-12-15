@@ -1,0 +1,70 @@
+Format: 1.8
+Date: Thu, 06 Sep 2018 16:02:11 +0300
+Source: wayland
+Binary: libwayland-client0 libwayland-egl1 libwayland-server0 libwayland-cursor0 libwayland-dev libwayland-egl-backend-dev libwayland-doc libwayland-bin
+Built-For-Profiles: nobiarch nocheck nodoc
+Architecture: amd64 all
+Version: 1.16.0-2
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Changed-By: Timo Aaltonen <tjaalton@debian.org>
+Description:
+ libwayland-bin - wayland compositor infrastructure - binary utilities
+ libwayland-client0 - wayland compositor infrastructure - client library
+ libwayland-cursor0 - wayland compositor infrastructure - cursor library
+ libwayland-dev - wayland compositor infrastructure - development files
+ libwayland-doc - wayland compositor infrastructure - documentation files
+ libwayland-egl-backend-dev - wayland compositor infrastructure - EGL backend development files
+ libwayland-egl1 - wayland compositor infrastructure - EGL library
+ libwayland-server0 - wayland compositor infrastructure - server library
+Changes:
+ wayland (1.16.0-2) UNRELEASED; urgency=medium
+ .
+   * control: Bump breaks/replaces on libwayland-egl-mesa/libegl1-mesa-
+     dev, which got updated on Ubuntu.
+Checksums-Sha1:
+ d803b60c332f227a81f0cc2cf9eb17a4fe1f1df8 27684 libwayland-bin-dbgsym_1.16.0-2_amd64.deb
+ be3c8c7e9511a02e41358dbf5744ef891d09cb0b 39752 libwayland-bin_1.16.0-2_amd64.deb
+ 7051b4ef12f6e0d24b76e6b2bf3d2ecc8462b4c8 38200 libwayland-client0-dbgsym_1.16.0-2_amd64.deb
+ fbcf8c3e34e4bb9e1b8b6ecec7ed78dcd95f9756 43992 libwayland-client0_1.16.0-2_amd64.deb
+ 7c878200f455a5a1e1d98fa9500c76f53bdc06d0 15732 libwayland-cursor0-dbgsym_1.16.0-2_amd64.deb
+ 699ab9195b073148f6137546209bef600b677818 19396 libwayland-cursor0_1.16.0-2_amd64.deb
+ d868598eee2d0b1826602efdeb3d46a4ad4147af 66912 libwayland-dev_1.16.0-2_amd64.deb
+ 15dc22a0123854e206f6222f963e05bd9fa6bbef 189320 libwayland-doc_1.16.0-2_all.deb
+ 673229192fdd9e63a640d7d94ced0c4665fad794 7496 libwayland-egl-backend-dev_1.16.0-2_amd64.deb
+ d801ec0bc9a43e41546203cf6ad817d5fc3f2eae 3960 libwayland-egl1-dbgsym_1.16.0-2_amd64.deb
+ 6b86fc231d4fae7a45f67a57142150259deb4f78 8356 libwayland-egl1_1.16.0-2_amd64.deb
+ 8f16d380199a73ce7ebf73fe88fe66fee2739fa1 52508 libwayland-server0-dbgsym_1.16.0-2_amd64.deb
+ 2da735da50b6b3db1a2299421ccdc091e23861fb 51592 libwayland-server0_1.16.0-2_amd64.deb
+ ae4f6067674b9ec25d1d9a971027314a49678354 11486 wayland_1.16.0-2_amd64.buildinfo
+Checksums-Sha256:
+ 1866497aea7a138de7a4d90dffe0deec601b947d0b8430252b762c88a9994f75 27684 libwayland-bin-dbgsym_1.16.0-2_amd64.deb
+ aa9f61bb43d17d00902cb86ee982c2274ab9407d023259af07293a9665580ec4 39752 libwayland-bin_1.16.0-2_amd64.deb
+ acc679b542ac063eaa81b2b7c82714b6e7eceef094cefe6781f8e0e130ded743 38200 libwayland-client0-dbgsym_1.16.0-2_amd64.deb
+ bb7d55e20c1b4ea5eeaba0e3557b33504f49536f403479954dfcfee93c602d1f 43992 libwayland-client0_1.16.0-2_amd64.deb
+ 2537b23bda79b332fc966b2340925e64127c6cb350d74f83d5e371a7934bfa84 15732 libwayland-cursor0-dbgsym_1.16.0-2_amd64.deb
+ fd2c590325d886240c0265ca772b64187bf2d3abd8fecd8038170cb7e15e3e0e 19396 libwayland-cursor0_1.16.0-2_amd64.deb
+ cb5af9ca2861db6d3af736897ed6833e2cf25798d2fc8487d925f87d97823442 66912 libwayland-dev_1.16.0-2_amd64.deb
+ 064d8e94a8ec856f9e6d5fa712b51b2e522a616edc5ea690e5bedf06a51aac7d 189320 libwayland-doc_1.16.0-2_all.deb
+ 8e979138398807bfe8670733de824928fb84db9460adf82b931b856b1b0b62e6 7496 libwayland-egl-backend-dev_1.16.0-2_amd64.deb
+ d9bf3072991c820b9d7f97eb931f14076edd9a41adffa99da5169c3dde6c4872 3960 libwayland-egl1-dbgsym_1.16.0-2_amd64.deb
+ 6f8a4cf3bc8a46d86940d63d9e6ca1c87f45b541728722b8d7f5c683e2444615 8356 libwayland-egl1_1.16.0-2_amd64.deb
+ 2aaf6d9d473bde287934b81d24da97c61ec83f4560a6eb9eca076013a2bbb62b 52508 libwayland-server0-dbgsym_1.16.0-2_amd64.deb
+ b8a0bf526935cf1cfecb3395782521e72f5892ccafc1d9acb3b0508b86d31332 51592 libwayland-server0_1.16.0-2_amd64.deb
+ 70cc252320e29dce2fc41c4b2ea94d4b248ba63b915d55d56665e016593469ca 11486 wayland_1.16.0-2_amd64.buildinfo
+Files:
+ df20173c11df543924c14d0079211f65 27684 debug optional libwayland-bin-dbgsym_1.16.0-2_amd64.deb
+ 6fc8ab7c0fecc4d7046ba7fcdeacf69b 39752 libdevel optional libwayland-bin_1.16.0-2_amd64.deb
+ 45fb8dee6a0a06012e6b6ef0af62c96f 38200 debug optional libwayland-client0-dbgsym_1.16.0-2_amd64.deb
+ 744df384272e2167712f00fbfb6368f6 43992 libs optional libwayland-client0_1.16.0-2_amd64.deb
+ 1e0ee87db5003e49724a7b92d3072d76 15732 debug optional libwayland-cursor0-dbgsym_1.16.0-2_amd64.deb
+ 527a335a299f90fa7c670fdeac4300d3 19396 libs optional libwayland-cursor0_1.16.0-2_amd64.deb
+ a2e252bca7ce66e106d81bdba5dbfe03 66912 libdevel optional libwayland-dev_1.16.0-2_amd64.deb
+ eb23b22e070c95340306d17c05ec795c 189320 doc optional libwayland-doc_1.16.0-2_all.deb
+ 6f6e01f96d9808d44a10093d39a30664 7496 libdevel optional libwayland-egl-backend-dev_1.16.0-2_amd64.deb
+ 5e93a6fbf124aa0fc12a007090e39766 3960 debug optional libwayland-egl1-dbgsym_1.16.0-2_amd64.deb
+ b0916e77995c205d42d06f4e0631263d 8356 libs optional libwayland-egl1_1.16.0-2_amd64.deb
+ 26499e2e99f3af763d36d4b35c216501 52508 debug optional libwayland-server0-dbgsym_1.16.0-2_amd64.deb
+ c84872848808cf142df043ab89d2ab2e 51592 libs optional libwayland-server0_1.16.0-2_amd64.deb
+ 5bb1affc00e5cd379fbe90c91fe9e455 11486 x11 optional wayland_1.16.0-2_amd64.buildinfo

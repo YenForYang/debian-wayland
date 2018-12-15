@@ -1,0 +1,12 @@
+<map id="wl_resource" name="wl_resource">
+<area shape="rect" id="node7" href="$structwl__client.html" title="wl_client" alt="" coords="160,381,240,408"/>
+<area shape="rect" id="node2" href="$structwl__signal.html" title="A source of a type of observable event. " alt="" coords="271,112,353,139"/>
+<area shape="rect" id="node3" href="$structwl__list.html" title="Doubly&#45;linked list. " alt="" coords="155,7,219,33"/>
+<area shape="rect" id="node9" href="$structwl__display.html" title="wl_display" alt="" coords="165,471,256,497"/>
+<area shape="rect" id="node4" href="$structwl__object.html" title="wl_object" alt="" coords="505,112,589,139"/>
+<area shape="rect" id="node5" href="$structwl__interface.html" title="Protocol object interface. " alt="" coords="423,7,526,33"/>
+<area shape="rect" id="node6" href="$structwl__message.html" title="Protocol message signature. " alt="" coords="378,112,481,139"/>
+<area shape="rect" id="node8" href="$structwl__event__source.html" title="An abstract event source. " alt="" coords="417,261,548,288"/>
+<area shape="rect" id="node10" href="$structwl__event__loop.html" title="An event loop context. " alt="" coords="265,381,381,408"/>
+<area shape="rect" id="node11" href="$structwl__array.html" title="Dynamic array. " alt="" coords="405,381,483,408"/>
+</map>

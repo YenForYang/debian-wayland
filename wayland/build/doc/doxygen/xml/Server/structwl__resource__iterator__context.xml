@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__resource__iterator__context" kind="struct" language="C++" prot="public">
+    <compoundname>wl_resource_iterator_context</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__resource__iterator__context_1af5ac0180ba34e298106bde8cb060f6dd" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* wl_resource_iterator_context::user_data</definition>
+        <argsstring></argsstring>
+        <name>user_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="1890" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="1890" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__resource__iterator__context_1aba992bce2ad676ddea0234e51d5ec79d" prot="public" static="no" mutable="no">
+        <type><ref refid="wayland-server-core_8h_1a3dfebf4109ca3ff4d66d28019a2c2602" kindref="member">wl_client_for_each_resource_iterator_func_t</ref></type>
+        <definition>wl_client_for_each_resource_iterator_func_t wl_resource_iterator_context::it</definition>
+        <argsstring></argsstring>
+        <name>it</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="1891" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="1891" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="106">
+        <label>wl_resource_iterator_context</label>
+        <link refid="structwl__resource__iterator__context"/>
+        <childnode refid="107" relation="usage">
+          <edgelabel>it</edgelabel>
+        </childnode>
+      </node>
+      <node id="113">
+        <label>wl_client</label>
+        <link refid="structwl__client"/>
+        <childnode refid="109" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="107" relation="usage">
+          <edgelabel>display_resource</edgelabel>
+        </childnode>
+        <childnode refid="114" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="115" relation="usage">
+          <edgelabel>display</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>wl_resource</label>
+        <link refid="structwl__resource"/>
+        <childnode refid="108" relation="usage">
+          <edgelabel>deprecated_destroy_signal</edgelabel>
+          <edgelabel>destroy_signal</edgelabel>
+        </childnode>
+        <childnode refid="110" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="113" relation="usage">
+          <edgelabel>client</edgelabel>
+        </childnode>
+        <childnode refid="107" relation="usage">
+          <edgelabel>destroy</edgelabel>
+        </childnode>
+        <childnode refid="112" relation="usage">
+          <edgelabel>dispatcher</edgelabel>
+        </childnode>
+      </node>
+      <node id="117">
+        <label>wl_array</label>
+        <link refid="structwl__array"/>
+      </node>
+      <node id="115">
+        <label>wl_display</label>
+        <link refid="structwl__display"/>
+        <childnode refid="116" relation="usage">
+          <edgelabel>loop</edgelabel>
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>client_list</edgelabel>
+          <edgelabel>global_list</edgelabel>
+          <edgelabel>registry_resource_list</edgelabel>
+          <edgelabel>socket_list</edgelabel>
+          <edgelabel>protocol_loggers</edgelabel>
+        </childnode>
+        <childnode refid="113" relation="usage">
+          <edgelabel>global_filter</edgelabel>
+        </childnode>
+        <childnode refid="117" relation="usage">
+          <edgelabel>additional_shm_formats</edgelabel>
+        </childnode>
+      </node>
+      <node id="114">
+        <label>wl_event_source</label>
+        <link refid="structwl__event__source"/>
+      </node>
+      <node id="116">
+        <label>wl_event_loop</label>
+        <link refid="structwl__event__loop"/>
+      </node>
+      <node id="109">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="109" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="112">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="111" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="111" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="111">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="112" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+      <node id="108">
+        <label>wl_signal</label>
+        <link refid="structwl__signal"/>
+        <childnode refid="109" relation="usage">
+          <edgelabel>listener_list</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="1889" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="1889" bodyend="1892"/>
+    <listofallmembers>
+      <member refid="structwl__resource__iterator__context_1aba992bce2ad676ddea0234e51d5ec79d" prot="public" virt="non-virtual"><scope>wl_resource_iterator_context</scope><name>it</name></member>
+      <member refid="structwl__resource__iterator__context_1af5ac0180ba34e298106bde8cb060f6dd" prot="public" virt="non-virtual"><scope>wl_resource_iterator_context</scope><name>user_data</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

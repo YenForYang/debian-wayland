@@ -1,0 +1,14 @@
+libwayland-bin-dbgsym_1.16.0-2_amd64.deb debug optional automatic=yes
+libwayland-bin_1.16.0-2_amd64.deb libdevel optional
+libwayland-client0-dbgsym_1.16.0-2_amd64.deb debug optional automatic=yes
+libwayland-client0_1.16.0-2_amd64.deb libs optional
+libwayland-cursor0-dbgsym_1.16.0-2_amd64.deb debug optional automatic=yes
+libwayland-cursor0_1.16.0-2_amd64.deb libs optional
+libwayland-dev_1.16.0-2_amd64.deb libdevel optional
+libwayland-doc_1.16.0-2_all.deb doc optional
+libwayland-egl-backend-dev_1.16.0-2_amd64.deb libdevel optional
+libwayland-egl1-dbgsym_1.16.0-2_amd64.deb debug optional automatic=yes
+libwayland-egl1_1.16.0-2_amd64.deb libs optional
+libwayland-server0-dbgsym_1.16.0-2_amd64.deb debug optional automatic=yes
+libwayland-server0_1.16.0-2_amd64.deb libs optional
+wayland_1.16.0-2_amd64.buildinfo x11 optional

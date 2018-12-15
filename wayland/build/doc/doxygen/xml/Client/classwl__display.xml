@@ -1,0 +1,599 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classwl__display" kind="class" language="C++" prot="public">
+    <compoundname>wl_display</compoundname>
+    <includes refid="wayland-client-core_8h" local="no">wayland-client-core.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwl__display_1a9a44f497851dc7bd5b683121104015ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+        <definition>struct wl_event_queue * wl_display_create_queue</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_create_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Create a new event queue for this display. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new event queue associated with this display or NULL on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="338" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="338" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a90663db371e1b11704be98c1568c5206" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+        <definition>struct wl_display * wl_display_connect_to_fd</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>wl_display_connect_to_fd</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+<para>Connect to Wayland display on an already open fd. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fd to use for the connection </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classwl__display" kindref="compound">wl_display</ref> object or <computeroutput>NULL</computeroutput> on failure</para></simplesect>
+The <ref refid="classwl__display" kindref="compound">wl_display</ref> takes ownership of the fd and will close it when the display is destroyed. The fd will also be closed in case of failure. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1024" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1024" bodyend="1092"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1af048371dfef7577bd39a3c04b78d0374" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+        <definition>struct wl_display * wl_display_connect</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>wl_display_connect</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Connect to a Wayland display. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the Wayland display to connect to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classwl__display" kindref="compound">wl_display</ref> object or <computeroutput>NULL</computeroutput> on failure</para></simplesect>
+Connect to the Wayland display named <computeroutput>name</computeroutput>. If <computeroutput>name</computeroutput> is <computeroutput>NULL</computeroutput>, its value will be replaced with the WAYLAND_DISPLAY environment variable if it is set, otherwise display &quot;wayland-0&quot; will be used.</para><para>If <computeroutput>name</computeroutput> is an absolute path, then that path is used as-is for the location of the socket at which the Wayland server is listening; no qualification inside XDG_RUNTIME_DIR is attempted.</para><para>If <computeroutput>name</computeroutput> is <computeroutput>NULL</computeroutput> and the WAYLAND_DISPLAY environment variable is set to an absolute pathname, then that pathname is used as-is for the socket in the same manner as if <computeroutput>name</computeroutput> held an absolute path. Support for absolute paths in <computeroutput>name</computeroutput> and WAYLAND_DISPLAY is present since Wayland version 1.15. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1116" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1116" bodyend="1141"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a9150a7e3213a58b469a6966e60a9f108" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_display_disconnect</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_disconnect</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Close a connection to a Wayland display. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Close the connection to <computeroutput>display</computeroutput> and free all resources associated with it. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1153" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1153" bodyend="1165"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a2d5d249e81cbf43c3521d4bce575f1ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_get_fd</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_get_fd</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Get a display context&apos;s file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Display object file descriptor</para></simplesect>
+Return the file descriptor associated with a display so it can be integrated into the client&apos;s main loop. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1178" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1178" bodyend="1181"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a73f44c38fa4e535f5eaf700933b0b2e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_roundtrip_queue</definition>
+        <argsstring>(struct wl_display *display, struct wl_event_queue *queue)</argsstring>
+        <name>wl_display_roundtrip_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+<para>Block until all pending request are processed by the server. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The queue on which to run the roundtrip </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of dispatched events on success or -1 on failure</para></simplesect>
+This function blocks until the server has processed all currently issued requests by sending a request to the display server and waiting for a reply before returning.</para><para>This function uses <ref refid="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" kindref="member">wl_display_dispatch_queue()</ref> internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</para><para><simplesect kind="note"><para>This function may dispatch other events being received on the given queue.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__display_1ab60f38c2f80980ac84f347e932793390" kindref="member">wl_display_roundtrip()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1217" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1217" bodyend="1244"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1ab60f38c2f80980ac84f347e932793390" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_roundtrip</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_roundtrip</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Block until all pending request are processed by the server. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of dispatched events on success or -1 on failure</para></simplesect>
+This function blocks until the server has processed all currently issued requests by sending a request to the display server and waiting for a reply before returning.</para><para>This function uses <ref refid="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" kindref="member">wl_display_dispatch_queue()</ref> internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</para><para><simplesect kind="note"><para>This function may dispatch other events being received on the default queue. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1265" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1265" bodyend="1268"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_read_events</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_read_events</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Read events from display file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success or -1 on error. In case of error errno will be set accordingly</para></simplesect>
+Calling this function will result in data available on the display file descriptor being read and read events will be queued on their corresponding event queues.</para><para>Before calling this function, depending on what thread it is to be called from, <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> or <ref refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" kindref="member">wl_display_prepare_read()</ref> needs to be called. See <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> for more details.</para><para>When being called at a point where other threads have been prepared to read (using <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> or <ref refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" kindref="member">wl_display_prepare_read()</ref>) this function will sleep until all other prepared threads have either been cancelled (using <ref refid="classwl__display_1a978fcabf13f1915e565435ab097bd590" kindref="member">wl_display_cancel_read()</ref>) or them self entered this function. The last thread that calls this function will then read and queue events on their corresponding event queues, and finally wake up all other <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref> calls causing them to return.</para><para>If a thread cancels a read preparation when all other threads that have prepared to read has either called <ref refid="classwl__display_1a978fcabf13f1915e565435ab097bd590" kindref="member">wl_display_cancel_read()</ref> or <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref>, all reader threads will return without having read any data.</para><para>To dispatch events that may have been queued, call <ref refid="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" kindref="member">wl_display_dispatch_pending()</ref> or <ref refid="classwl__display_1a8a14a809eb2c083a806db2ee15523041" kindref="member">wl_display_dispatch_queue_pending()</ref>.</para><para><simplesect kind="see"><para><ref refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" kindref="member">wl_display_prepare_read()</ref>, <ref refid="classwl__display_1a978fcabf13f1915e565435ab097bd590" kindref="member">wl_display_cancel_read()</ref>, <ref refid="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" kindref="member">wl_display_dispatch_pending()</ref>, <ref refid="classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d" kindref="member">wl_display_dispatch()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1535" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1535" bodyend="1554"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_prepare_read_queue</definition>
+        <argsstring>(struct wl_display *display, struct wl_event_queue *queue)</argsstring>
+        <name>wl_display_prepare_read_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+<para>Prepare to read events from the display&apos;s file descriptor to a queue. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event queue to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success or -1 if event queue was not empty</para></simplesect>
+This function (or <ref refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" kindref="member">wl_display_prepare_read()</ref>) must be called before reading from the file descriptor using <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref>. Calling <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> announces the calling thread&apos;s intention to read and ensures that until the thread is ready to read and calls <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref>, no other thread will read from the file descriptor. This only succeeds if the event queue is empty, and if not -1 is returned and errno set to EAGAIN.</para><para>If a thread successfully calls <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref>, it must either call <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref> when it&apos;s ready or cancel the read intention by calling <ref refid="classwl__display_1a978fcabf13f1915e565435ab097bd590" kindref="member">wl_display_cancel_read()</ref>.</para><para>Use this function before polling on the display fd or integrate the fd into a toolkit event loop in a race-free way. A correct usage would be (with most error checking left out):</para><para><programlisting><codeline><highlight class="normal">while<sp/>(wl_display_prepare_read_queue(display,<sp/>queue)<sp/>!=<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wl_display_dispatch_queue_pending(display,<sp/>queue);</highlight></codeline>
+<codeline><highlight class="normal">wl_display_flush(display);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">ret<sp/>=<sp/>poll(fds,<sp/>nfds,<sp/>-1);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(has_error(ret))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wl_display_cancel_read(display);</highlight></codeline>
+<codeline><highlight class="normal">else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wl_display_read_events(display);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wl_display_dispatch_queue_pending(display,<sp/>queue);</highlight></codeline>
+</programlisting></para><para>Here we call <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref>, which ensures that between returning from that call and eventually calling <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref>, no other thread will read from the fd and queue events in our queue. If the call to <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> fails, we dispatch the pending events and try again until we&apos;re successful.</para><para>The <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> function doesn&apos;t acquire exclusive access to the display&apos;s fd. It only registers that the thread calling this function has intention to read from fd. When all registered readers call <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref>, only one (at random) eventually reads and queues the events and the others are sleeping meanwhile. This way we avoid races and still can read from more threads.</para><para><simplesect kind="see"><para><ref refid="classwl__display_1a978fcabf13f1915e565435ab097bd590" kindref="member">wl_display_cancel_read()</ref>, <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref>, <ref refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" kindref="member">wl_display_prepare_read()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1642" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1642" bodyend="1660"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a040dca18775e3177883f06bd6fdf395f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_prepare_read</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_prepare_read</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Prepare to read events from the display&apos;s file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success or -1 if event queue was not empty</para></simplesect>
+This function does the same thing as <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> with the default queue passed as the queue.</para><para><simplesect kind="see"><para><ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1674" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1674" bodyend="1677"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a978fcabf13f1915e565435ab097bd590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_display_cancel_read</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_cancel_read</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Cancel read intention on display&apos;s fd. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+After a thread successfully called <ref refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" kindref="member">wl_display_prepare_read()</ref> it must either call <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref> or <ref refid="classwl__display_1a978fcabf13f1915e565435ab097bd590" kindref="member">wl_display_cancel_read()</ref>. If the threads do not follow this rule it will lead to deadlock.</para><para><simplesect kind="see"><para><ref refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" kindref="member">wl_display_prepare_read()</ref>, <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1692" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1692" bodyend="1699"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_dispatch_queue</definition>
+        <argsstring>(struct wl_display *display, struct wl_event_queue *queue)</argsstring>
+        <name>wl_display_dispatch_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+<para>Dispatch events in an event queue. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event queue to dispatch </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of dispatched events on success or -1 on failure</para></simplesect>
+Dispatch events on the given event queue.</para><para>If the given event queue is empty, this function blocks until there are events to be read from the display fd. Events are read and queued on the appropriate event queues. Finally, events on given event queue are dispatched. On failure -1 is returned and errno set appropriately.</para><para>In a multi threaded environment, do not manually wait using poll() (or equivalent) before calling this function, as doing so might cause a dead lock. If external reliance on poll() (or equivalent) is required, see <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> of how to do so.</para><para>This function is thread safe as long as it dispatches the right queue on the right thread. It is also compatible with the multi thread event reading preparation API (see <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref>), and uses the equivalent functionality internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</para><para>It can be used as a helper function to ease the procedure of reading and dispatching events.</para><para><simplesect kind="note"><para>Since Wayland 1.5 the display has an extra queue for its own events (i. e. delete_id). This queue is dispatched always, no matter what queue we passed as an argument to this function. That means that this function can return non-0 value even when it haven&apos;t dispatched any event for the given queue.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d" kindref="member">wl_display_dispatch()</ref>, <ref refid="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" kindref="member">wl_display_dispatch_pending()</ref>, <ref refid="classwl__display_1a8a14a809eb2c083a806db2ee15523041" kindref="member">wl_display_dispatch_queue_pending()</ref>, <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1756" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1756" bodyend="1792"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a8a14a809eb2c083a806db2ee15523041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_dispatch_queue_pending</definition>
+        <argsstring>(struct wl_display *display, struct wl_event_queue *queue)</argsstring>
+        <name>wl_display_dispatch_queue_pending</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+<para>Dispatch pending events in an event queue. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event queue to dispatch </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of dispatched events on success or -1 on failure</para></simplesect>
+Dispatch all incoming events for objects assigned to the given event queue. On failure -1 is returned and errno set appropriately. If there are no events queued, this function returns immediately.</para><para><simplesect kind="since"><para>1.0.2 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1808" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1808" bodyend="1820"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_dispatch</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_dispatch</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Process incoming events. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of dispatched events on success or -1 on failure</para></simplesect>
+Dispatch events on the default event queue.</para><para>If the default event queue is empty, this function blocks until there are events to be read from the display fd. Events are read and queued on the appropriate event queues. Finally, events on the default event queue are dispatched. On failure -1 is returned and errno set appropriately.</para><para>In a multi threaded environment, do not manually wait using poll() (or equivalent) before calling this function, as doing so might cause a dead lock. If external reliance on poll() (or equivalent) is required, see <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref> of how to do so.</para><para>This function is thread safe as long as it dispatches the right queue on the right thread. It is also compatible with the multi thread event reading preparation API (see <ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue()</ref>), and uses the equivalent functionality internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</para><para><simplesect kind="note"><para>It is not possible to check if there are events on the queue or not. For dispatching default queue events without blocking, see <ref refid="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" kindref="member">wl_display_dispatch_pending()</ref>.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" kindref="member">wl_display_dispatch_pending()</ref>, <ref refid="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" kindref="member">wl_display_dispatch_queue()</ref>, <ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1856" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1856" bodyend="1859"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_dispatch_pending</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_dispatch_pending</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Dispatch default queue events without reading from the display fd. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of dispatched events or -1 on failure</para></simplesect>
+This function dispatches events on the main event queue. It does not attempt to read the display fd and simply returns zero if the main queue is empty, i.e., it doesn&apos;t block.</para><para><simplesect kind="see"><para><ref refid="classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d" kindref="member">wl_display_dispatch()</ref>, <ref refid="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" kindref="member">wl_display_dispatch_queue()</ref>, <ref refid="classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429" kindref="member">wl_display_flush()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1876" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1876" bodyend="1880"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a1ceca1c6f280ac1308ee0e16cd186f94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_get_error</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_get_error</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the last error that occurred on a display. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The last error that occurred on <computeroutput>display</computeroutput> or 0 if no error occurred</para></simplesect>
+Return the last error that occurred on the display. This may be an error sent by the server or caused by the local client.</para><para><simplesect kind="note"><para>Errors are <bold>fatal</bold>. If this function returns non-zero the display can no longer be used. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1896" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1896" bodyend="1907"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a8fbec062c9430f8cbdf71a12ec443f7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_display_get_protocol_error</definition>
+        <argsstring>(struct wl_display *display, const struct wl_interface **interface, uint32_t *id)</argsstring>
+        <name>wl_display_get_protocol_error</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> **</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the information about a protocol error: </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Wayland display </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if not NULL, stores the interface where the error occurred, or NULL, if unknown. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if not NULL, stores the object id that generated the error, or 0, if the object id is unknown. There&apos;s no guarantee the object is still valid; the client must know if it deleted the object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The error code as defined in the interface specification.</para></simplesect>
+<programlisting><codeline><highlight class="normal">int<sp/>err<sp/>=<sp/>wl_display_get_error(display);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(err<sp/>==<sp/>EPROTO)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>code<sp/>=<sp/>wl_display_get_protocol_error(display,<sp/>&amp;interface,<sp/>&amp;id);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handle_error(code,<sp/>interface,<sp/>id);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1933" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1933" bodyend="1951"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_flush</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_flush</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Send all buffered requests on the display to the server. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display context object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of bytes sent on success or -1 on failure</para></simplesect>
+Send all buffered data on the client side to the server. Clients should always call this function before blocking on input from the display fd. On success, the number of bytes sent to the server is returned. On failure, this function returns -1 and errno is set appropriately.</para><para><ref refid="classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429" kindref="member">wl_display_flush()</ref> never blocks. It will write as much data as possible, but if all data could not be written, errno will be set to EAGAIN and -1 returned. In that case, use poll on the display file descriptor to wait for it to become writable again. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="1972" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="1972" bodyend="1994"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a connection to the compositor and acts as a proxy to the <ref refid="classwl__display" kindref="compound">wl_display</ref> singleton object. </para>    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classwl__display" kindref="compound">wl_display</ref> object represents a client connection to a Wayland compositor. It is created with either <ref refid="classwl__display_1af048371dfef7577bd39a3c04b78d0374" kindref="member">wl_display_connect()</ref> or <ref refid="classwl__display_1a90663db371e1b11704be98c1568c5206" kindref="member">wl_display_connect_to_fd()</ref>. A connection is terminated using <ref refid="classwl__display_1a9150a7e3213a58b469a6966e60a9f108" kindref="member">wl_display_disconnect()</ref>.</para><para>A <ref refid="classwl__display" kindref="compound">wl_display</ref> is also used as the <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> for the <ref refid="classwl__display" kindref="compound">wl_display</ref> singleton object on the compositor side.</para><para>A <ref refid="classwl__display" kindref="compound">wl_display</ref> object handles all the data sent from and to the compositor. When a <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> marshals a request, it will write its wire representation to the display&apos;s write buffer. The data is sent to the compositor when the client calls <ref refid="classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429" kindref="member">wl_display_flush()</ref>.</para><para>Incoming data is handled in two steps: queueing and dispatching. In the queue step, the data coming from the display fd is interpreted and added to a queue. On the dispatch step, the handler for the incoming event set by the client on the corresponding <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> is called.</para><para>A <ref refid="classwl__display" kindref="compound">wl_display</ref> has at least one event queue, called the <emphasis>default queue</emphasis>. Clients can create additional event queues with <ref refid="classwl__display_1a9a44f497851dc7bd5b683121104015ac" kindref="member">wl_display_create_queue()</ref> and assign <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref>&apos;s to it. Events occurring in a particular proxy are always queued in its assigned queue. A client can ensure that a certain assumption, such as holding a lock or running from a given thread, is true when a proxy event handler is called by assigning that proxy to an event queue and making sure that this queue is only dispatched when the assumption holds.</para><para>The default queue is dispatched by calling <ref refid="classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d" kindref="member">wl_display_dispatch()</ref>. This will dispatch any events queued on the default queue and attempt to read from the display fd if it&apos;s empty. Events read are then queued on the appropriate queues according to the proxy assignment.</para><para>A user created queue is dispatched with <ref refid="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" kindref="member">wl_display_dispatch_queue()</ref>. This function behaves exactly the same as <ref refid="classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d" kindref="member">wl_display_dispatch()</ref> but it dispatches given queue instead of the default queue.</para><para>A real world example of event queue usage is Mesa&apos;s implementation of eglSwapBuffers() for the Wayland platform. This function might need to block until a frame callback is received, but dispatching the default queue could cause an event handler on the client to start drawing again. This problem is solved using another event queue, so that only the events handled by the EGL code are dispatched during the block.</para><para>This creates a problem where a thread dispatches a non-default queue, reading all the data from the display fd. If the application would call <emphasis>poll(2)</emphasis> after that it would block, even though there might be events queued on the default queue. Those events should be dispatched with <ref refid="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" kindref="member">wl_display_dispatch_pending()</ref> or <ref refid="classwl__display_1a8a14a809eb2c083a806db2ee15523041" kindref="member">wl_display_dispatch_queue_pending()</ref> before flushing and blocking. </para>    </detaileddescription>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="55" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client-core.h" bodystart="53" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="classwl__display_1a978fcabf13f1915e565435ab097bd590" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_cancel_read</name></member>
+      <member refid="classwl__display_1af048371dfef7577bd39a3c04b78d0374" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_connect</name></member>
+      <member refid="classwl__display_1a90663db371e1b11704be98c1568c5206" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_connect_to_fd</name></member>
+      <member refid="classwl__display_1a9a44f497851dc7bd5b683121104015ac" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_create_queue</name></member>
+      <member refid="classwl__display_1a9150a7e3213a58b469a6966e60a9f108" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_disconnect</name></member>
+      <member refid="classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_dispatch</name></member>
+      <member refid="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_dispatch_pending</name></member>
+      <member refid="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_dispatch_queue</name></member>
+      <member refid="classwl__display_1a8a14a809eb2c083a806db2ee15523041" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_dispatch_queue_pending</name></member>
+      <member refid="classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_flush</name></member>
+      <member refid="classwl__display_1a1ceca1c6f280ac1308ee0e16cd186f94" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_get_error</name></member>
+      <member refid="classwl__display_1a2d5d249e81cbf43c3521d4bce575f1ca" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_get_fd</name></member>
+      <member refid="classwl__display_1a8fbec062c9430f8cbdf71a12ec443f7d" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_get_protocol_error</name></member>
+      <member refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_prepare_read</name></member>
+      <member refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_prepare_read_queue</name></member>
+      <member refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_read_events</name></member>
+      <member refid="classwl__display_1ab60f38c2f80980ac84f347e932793390" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_roundtrip</name></member>
+      <member refid="classwl__display_1a73f44c38fa4e535f5eaf700933b0b2e6" prot="public" virt="non-virtual"><scope>wl_display</scope><name>wl_display_roundtrip_queue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

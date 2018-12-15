@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/dev/shm/libwayland/wayland/src</compoundname>
+    <innerfile refid="event-loop_8c">event-loop.c</innerfile>
+    <innerfile refid="wayland-server-core_8h">wayland-server-core.h</innerfile>
+    <innerfile refid="wayland-server_8c">wayland-server.c</innerfile>
+    <innerfile refid="wayland-server_8h">wayland-server.h</innerfile>
+    <innerfile refid="wayland-shm_8c">wayland-shm.c</innerfile>
+    <innerfile refid="wayland-util_8h">wayland-util.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/dev/shm/libwayland/wayland/src/"/>
+  </compounddef>
+</doxygen>

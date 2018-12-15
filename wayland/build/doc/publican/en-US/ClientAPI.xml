@@ -1,0 +1,1387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section id="Client-unionwl__argument">
+  <title>wl_argument
+                - 
+Protocol message argument data types.     </title>
+  <para>This union represents all of the argument types in the Wayland protocol wire format. The protocol implementation uses <link linkend="Client-unionwl__argument">wl_argument</link> within its marshalling machinery for dispatching messages between a client and a compositor.</para>
+  <para>
+  See also: <link linkend="Client-structwl__message">wl_message</link> 
+
+  See also: <link linkend="Client-structwl__interface">wl_interface</link> 
+
+  See also: Wire Format 
+</para>
+</section><section id="Client-structwl__array">
+  <title>wl_array
+                - 
+Dynamic array.     </title>
+  <para>A <link linkend="Client-structwl__array">wl_array</link> is a dynamic array that can only grow until released. It is intended for relatively small allocations whose size is variable or not known in advance. While construction of a <link linkend="Client-structwl__array">wl_array</link> does not require all elements to be of the same size, <link linkend="Client-structwl__array_1ab050f7375dcae916506142763080ed80">wl_array_for_each()</link> does require all elements to have the same type and size. </para>
+  <variablelist>
+    <varlistentry id="Client-structwl__array_1ae246c66cbd633063e2649c503d764d3f">
+      <term>size
+            - 
+Array size.         </term>
+      <listitem>
+        <synopsis>size_t wl_array::size</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__array_1a4b33519c8f628d650631ebecee45b771">
+      <term>alloc
+            - 
+Allocated space.         </term>
+      <listitem>
+        <synopsis>size_t wl_array::alloc</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b">
+      <term>data
+            - 
+Array data.         </term>
+      <listitem>
+        <synopsis>void* wl_array::data</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__array_1ada9b770427b901be34eaf3683cf04d5a">
+      <term>wl_array_init
+            - 
+Initializes the array.         </term>
+      <listitem>
+        <synopsis>void wl_array_init(struct wl_array *array)</synopsis>
+        <para><variablelist><varlistentry><term>array</term><listitem><simpara>
+Array to initialize </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__array_1a0e8845f61f1e1fccfce050830ed5b279">
+      <term>wl_array_release
+            - 
+Releases the array data.         </term>
+      <listitem>
+        <synopsis>void wl_array_release(struct wl_array *array)</synopsis>
+        <para><emphasis>Note: Leaves the array in an invalid state.</emphasis>
+<variablelist><varlistentry><term>array</term><listitem><simpara>
+Array whose data is to be released </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__array_1a3c3d1079a20b0609f6e4914ea21c2d03">
+      <term>wl_array_add
+            - 
+Increases the size of the array by size bytes.         </term>
+      <listitem>
+        <synopsis>void * wl_array_add(struct wl_array *array, size_t size)</synopsis>
+        <para><variablelist><varlistentry><term>array</term><listitem><simpara>
+Array whose size is to be increased </simpara></listitem></varlistentry><varlistentry><term>size</term><listitem><simpara>
+Number of bytes to increase the size of the array by</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A pointer to the beginning of the newly appended space, or NULL when resizing fails. </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__array_1a4de64390294de78da813dcfb16f47617">
+      <term>wl_array_copy
+            - 
+Copies the contents of source to array.         </term>
+      <listitem>
+        <synopsis>int wl_array_copy(struct wl_array *array, struct wl_array *source)</synopsis>
+        <para><variablelist><varlistentry><term>array</term><listitem><simpara>
+Destination array to copy to </simpara></listitem></varlistentry><varlistentry><term>source</term><listitem><simpara>
+Source array to copy from</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success, or -1 on failure </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__array_1ab050f7375dcae916506142763080ed80">
+      <term>wl_array_for_each
+            - 
+Iterates over an array.         </term>
+      <listitem>
+        <synopsis/>
+        <para>This macro expresses a for-each iterator for <link linkend="Client-structwl__array">wl_array</link>. It assigns each element in the array to pos, which can then be referenced in a trailing code block. pos must be a pointer to the array element type, and all array elements must be of the same type and size.</para>
+        <para><variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each array element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>array</term><listitem><simpara>
+Array to iterate over</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Client-classwl__display">
+  <title>wl_display
+                - 
+Represents a connection to the compositor and acts as a proxy to the wl_display singleton object.     </title>
+  <para>A <link linkend="Client-classwl__display">wl_display</link> object represents a client connection to a Wayland compositor. It is created with either <link linkend="Client-classwl__display_1af048371dfef7577bd39a3c04b78d0374">wl_display_connect()</link> or <link linkend="Client-classwl__display_1a90663db371e1b11704be98c1568c5206">wl_display_connect_to_fd()</link>. A connection is terminated using <link linkend="Client-classwl__display_1a9150a7e3213a58b469a6966e60a9f108">wl_display_disconnect()</link>.</para>
+  <para>A <link linkend="Client-classwl__display">wl_display</link> is also used as the <link linkend="Client-classwl__proxy">wl_proxy</link> for the <link linkend="Client-classwl__display">wl_display</link> singleton object on the compositor side.</para>
+  <para>A <link linkend="Client-classwl__display">wl_display</link> object handles all the data sent from and to the compositor. When a <link linkend="Client-classwl__proxy">wl_proxy</link> marshals a request, it will write its wire representation to the display's write buffer. The data is sent to the compositor when the client calls <link linkend="Client-classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429">wl_display_flush()</link>.</para>
+  <para>Incoming data is handled in two steps: queueing and dispatching. In the queue step, the data coming from the display fd is interpreted and added to a queue. On the dispatch step, the handler for the incoming event set by the client on the corresponding <link linkend="Client-classwl__proxy">wl_proxy</link> is called.</para>
+  <para>A <link linkend="Client-classwl__display">wl_display</link> has at least one event queue, called the default queue. Clients can create additional event queues with <link linkend="Client-classwl__display_1a9a44f497851dc7bd5b683121104015ac">wl_display_create_queue()</link> and assign <link linkend="Client-classwl__proxy">wl_proxy</link>'s to it. Events occurring in a particular proxy are always queued in its assigned queue. A client can ensure that a certain assumption, such as holding a lock or running from a given thread, is true when a proxy event handler is called by assigning that proxy to an event queue and making sure that this queue is only dispatched when the assumption holds.</para>
+  <para>The default queue is dispatched by calling <link linkend="Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</link>. This will dispatch any events queued on the default queue and attempt to read from the display fd if it's empty. Events read are then queued on the appropriate queues according to the proxy assignment.</para>
+  <para>A user created queue is dispatched with <link linkend="Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</link>. This function behaves exactly the same as <link linkend="Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</link> but it dispatches given queue instead of the default queue.</para>
+  <para>A real world example of event queue usage is Mesa's implementation of eglSwapBuffers() for the Wayland platform. This function might need to block until a frame callback is received, but dispatching the default queue could cause an event handler on the client to start drawing again. This problem is solved using another event queue, so that only the events handled by the EGL code are dispatched during the block.</para>
+  <para>This creates a problem where a thread dispatches a non-default queue, reading all the data from the display fd. If the application would call poll(2) after that it would block, even though there might be events queued on the default queue. Those events should be dispatched with <link linkend="Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</link> or <link linkend="Client-classwl__display_1a8a14a809eb2c083a806db2ee15523041">wl_display_dispatch_queue_pending()</link> before flushing and blocking. </para>
+  <variablelist>
+    <varlistentry id="Client-classwl__display_1a9a44f497851dc7bd5b683121104015ac">
+      <term>wl_display_create_queue
+            - 
+Create a new event queue for this display.         </term>
+      <listitem>
+        <synopsis>struct wl_event_queue * wl_display_create_queue(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A new event queue associated with this display or NULL on failure. </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a90663db371e1b11704be98c1568c5206">
+      <term>wl_display_connect_to_fd
+            - 
+Connect to Wayland display on an already open fd.         </term>
+      <listitem>
+        <synopsis>struct wl_display * wl_display_connect_to_fd(int fd)</synopsis>
+        <para><variablelist><varlistentry><term>fd</term><listitem><simpara>
+The fd to use for the connection </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A <link linkend="Client-classwl__display">wl_display</link> object or NULL on failure</simpara></listitem></varlistentry></variablelist>
+The <link linkend="Client-classwl__display">wl_display</link> takes ownership of the fd and will close it when the display is destroyed. The fd will also be closed in case of failure. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1af048371dfef7577bd39a3c04b78d0374">
+      <term>wl_display_connect
+            - 
+Connect to a Wayland display.         </term>
+      <listitem>
+        <synopsis>struct wl_display * wl_display_connect(const char *name)</synopsis>
+        <para><variablelist><varlistentry><term>name</term><listitem><simpara>
+Name of the Wayland display to connect to </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A <link linkend="Client-classwl__display">wl_display</link> object or NULL on failure</simpara></listitem></varlistentry></variablelist>
+Connect to the Wayland display named name. If name is NULL, its value will be replaced with the WAYLAND_DISPLAY environment variable if it is set, otherwise display "wayland-0" will be used.</para>
+        <para>If name is an absolute path, then that path is used as-is for the location of the socket at which the Wayland server is listening; no qualification inside XDG_RUNTIME_DIR is attempted.</para>
+        <para>If name is NULL and the WAYLAND_DISPLAY environment variable is set to an absolute pathname, then that pathname is used as-is for the socket in the same manner as if name held an absolute path. Support for absolute paths in name and WAYLAND_DISPLAY is present since Wayland version 1.15. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a9150a7e3213a58b469a6966e60a9f108">
+      <term>wl_display_disconnect
+            - 
+Close a connection to a Wayland display.         </term>
+      <listitem>
+        <synopsis>void wl_display_disconnect(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object</simpara></listitem></varlistentry></variablelist>
+Close the connection to display and free all resources associated with it. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a2d5d249e81cbf43c3521d4bce575f1ca">
+      <term>wl_display_get_fd
+            - 
+Get a display context's file descriptor.         </term>
+      <listitem>
+        <synopsis>int wl_display_get_fd(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>Display object file descriptor</simpara></listitem></varlistentry></variablelist>
+Return the file descriptor associated with a display so it can be integrated into the client's main loop. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a73f44c38fa4e535f5eaf700933b0b2e6">
+      <term>wl_display_roundtrip_queue
+            - 
+Block until all pending request are processed by the server.         </term>
+      <listitem>
+        <synopsis>int wl_display_roundtrip_queue(struct wl_display *display, struct wl_event_queue *queue)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry><varlistentry><term>queue</term><listitem><simpara>
+The queue on which to run the roundtrip </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The number of dispatched events on success or -1 on failure</simpara></listitem></varlistentry></variablelist>
+This function blocks until the server has processed all currently issued requests by sending a request to the display server and waiting for a reply before returning.</para>
+        <para>This function uses <link linkend="Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</link> internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</para>
+        <para><emphasis>Note: This function may dispatch other events being received on the given queue.</emphasis>
+
+  See also: <link linkend="Client-classwl__display_1ab60f38c2f80980ac84f347e932793390">wl_display_roundtrip()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1ab60f38c2f80980ac84f347e932793390">
+      <term>wl_display_roundtrip
+            - 
+Block until all pending request are processed by the server.         </term>
+      <listitem>
+        <synopsis>int wl_display_roundtrip(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The number of dispatched events on success or -1 on failure</simpara></listitem></varlistentry></variablelist>
+This function blocks until the server has processed all currently issued requests by sending a request to the display server and waiting for a reply before returning.</para>
+        <para>This function uses <link linkend="Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</link> internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</para>
+        <para><emphasis>Note: This function may dispatch other events being received on the default queue. </emphasis>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">
+      <term>wl_display_read_events
+            - 
+Read events from display file descriptor.         </term>
+      <listitem>
+        <synopsis>int wl_display_read_events(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success or -1 on error. In case of error errno will be set accordingly</simpara></listitem></varlistentry></variablelist>
+Calling this function will result in data available on the display file descriptor being read and read events will be queued on their corresponding event queues.</para>
+        <para>Before calling this function, depending on what thread it is to be called from, <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> or <link linkend="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</link> needs to be called. See <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> for more details.</para>
+        <para>When being called at a point where other threads have been prepared to read (using <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> or <link linkend="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</link>) this function will sleep until all other prepared threads have either been cancelled (using <link linkend="Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</link>) or them self entered this function. The last thread that calls this function will then read and queue events on their corresponding event queues, and finally wake up all other <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link> calls causing them to return.</para>
+        <para>If a thread cancels a read preparation when all other threads that have prepared to read has either called <link linkend="Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</link> or <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link>, all reader threads will return without having read any data.</para>
+        <para>To dispatch events that may have been queued, call <link linkend="Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</link> or <link linkend="Client-classwl__display_1a8a14a809eb2c083a806db2ee15523041">wl_display_dispatch_queue_pending()</link>.</para>
+        <para>
+  See also: <link linkend="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</link>, <link linkend="Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</link>, <link linkend="Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</link>, <link linkend="Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">
+      <term>wl_display_prepare_read_queue
+            - 
+Prepare to read events from the display's file descriptor to a queue.         </term>
+      <listitem>
+        <synopsis>int wl_display_prepare_read_queue(struct wl_display *display, struct wl_event_queue *queue)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry><varlistentry><term>queue</term><listitem><simpara>
+The event queue to use </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success or -1 if event queue was not empty</simpara></listitem></varlistentry></variablelist>
+This function (or <link linkend="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</link>) must be called before reading from the file descriptor using <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link>. Calling <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> announces the calling thread's intention to read and ensures that until the thread is ready to read and calls <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link>, no other thread will read from the file descriptor. This only succeeds if the event queue is empty, and if not -1 is returned and errno set to EAGAIN.</para>
+        <para>If a thread successfully calls <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link>, it must either call <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link> when it's ready or cancel the read intention by calling <link linkend="Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</link>.</para>
+        <para>Use this function before polling on the display fd or integrate the fd into a toolkit event loop in a race-free way. A correct usage would be (with most error checking left out):</para>
+        <para>
+          <programlisting>while (wl_display_prepare_read_queue(display, queue) != 0)
+        wl_display_dispatch_queue_pending(display, queue);
+wl_display_flush(display);
+
+ret = poll(fds, nfds, -1);
+if (has_error(ret))
+        wl_display_cancel_read(display);
+else
+        wl_display_read_events(display);
+
+wl_display_dispatch_queue_pending(display, queue);
+</programlisting>
+        </para>
+        <para>Here we call <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link>, which ensures that between returning from that call and eventually calling <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link>, no other thread will read from the fd and queue events in our queue. If the call to <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> fails, we dispatch the pending events and try again until we're successful.</para>
+        <para>The <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> function doesn't acquire exclusive access to the display's fd. It only registers that the thread calling this function has intention to read from fd. When all registered readers call <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link>, only one (at random) eventually reads and queues the events and the others are sleeping meanwhile. This way we avoid races and still can read from more threads.</para>
+        <para>
+  See also: <link linkend="Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</link>, <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link>, <link linkend="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">
+      <term>wl_display_prepare_read
+            - 
+Prepare to read events from the display's file descriptor.         </term>
+      <listitem>
+        <synopsis>int wl_display_prepare_read(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success or -1 if event queue was not empty</simpara></listitem></varlistentry></variablelist>
+This function does the same thing as <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> with the default queue passed as the queue.</para>
+        <para>
+  See also: <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">
+      <term>wl_display_cancel_read
+            - 
+Cancel read intention on display's fd.         </term>
+      <listitem>
+        <synopsis>void wl_display_cancel_read(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object</simpara></listitem></varlistentry></variablelist>
+After a thread successfully called <link linkend="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</link> it must either call <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link> or <link linkend="Client-classwl__display_1a978fcabf13f1915e565435ab097bd590">wl_display_cancel_read()</link>. If the threads do not follow this rule it will lead to deadlock.</para>
+        <para>
+  See also: <link linkend="Client-classwl__display_1a040dca18775e3177883f06bd6fdf395f">wl_display_prepare_read()</link>, <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">
+      <term>wl_display_dispatch_queue
+            - 
+Dispatch events in an event queue.         </term>
+      <listitem>
+        <synopsis>int wl_display_dispatch_queue(struct wl_display *display, struct wl_event_queue *queue)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry><varlistentry><term>queue</term><listitem><simpara>
+The event queue to dispatch </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The number of dispatched events on success or -1 on failure</simpara></listitem></varlistentry></variablelist>
+Dispatch events on the given event queue.</para>
+        <para>If the given event queue is empty, this function blocks until there are events to be read from the display fd. Events are read and queued on the appropriate event queues. Finally, events on given event queue are dispatched. On failure -1 is returned and errno set appropriately.</para>
+        <para>In a multi threaded environment, do not manually wait using poll() (or equivalent) before calling this function, as doing so might cause a dead lock. If external reliance on poll() (or equivalent) is required, see <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> of how to do so.</para>
+        <para>This function is thread safe as long as it dispatches the right queue on the right thread. It is also compatible with the multi thread event reading preparation API (see <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link>), and uses the equivalent functionality internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</para>
+        <para>It can be used as a helper function to ease the procedure of reading and dispatching events.</para>
+        <para><emphasis>Note: Since Wayland 1.5 the display has an extra queue for its own events (i. e. delete_id). This queue is dispatched always, no matter what queue we passed as an argument to this function. That means that this function can return non-0 value even when it haven't dispatched any event for the given queue.</emphasis>
+
+  See also: <link linkend="Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</link>, <link linkend="Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</link>, <link linkend="Client-classwl__display_1a8a14a809eb2c083a806db2ee15523041">wl_display_dispatch_queue_pending()</link>, <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a8a14a809eb2c083a806db2ee15523041">
+      <term>wl_display_dispatch_queue_pending
+            - 
+Dispatch pending events in an event queue.         </term>
+      <listitem>
+        <synopsis>int wl_display_dispatch_queue_pending(struct wl_display *display, struct wl_event_queue *queue)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry><varlistentry><term>queue</term><listitem><simpara>
+The event queue to dispatch </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The number of dispatched events on success or -1 on failure</simpara></listitem></varlistentry></variablelist>
+Dispatch all incoming events for objects assigned to the given event queue. On failure -1 is returned and errno set appropriately. If there are no events queued, this function returns immediately.</para>
+        <para>
+  Since: 1.0.2 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">
+      <term>wl_display_dispatch
+            - 
+Process incoming events.         </term>
+      <listitem>
+        <synopsis>int wl_display_dispatch(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The number of dispatched events on success or -1 on failure</simpara></listitem></varlistentry></variablelist>
+Dispatch events on the default event queue.</para>
+        <para>If the default event queue is empty, this function blocks until there are events to be read from the display fd. Events are read and queued on the appropriate event queues. Finally, events on the default event queue are dispatched. On failure -1 is returned and errno set appropriately.</para>
+        <para>In a multi threaded environment, do not manually wait using poll() (or equivalent) before calling this function, as doing so might cause a dead lock. If external reliance on poll() (or equivalent) is required, see <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link> of how to do so.</para>
+        <para>This function is thread safe as long as it dispatches the right queue on the right thread. It is also compatible with the multi thread event reading preparation API (see <link linkend="Client-classwl__display_1a40039c1169b153269a3dc0796a54ddb0">wl_display_prepare_read_queue()</link>), and uses the equivalent functionality internally. It is not allowed to call this function while the thread is being prepared for reading events, and doing so will cause a dead lock.</para>
+        <para><emphasis>Note: It is not possible to check if there are events on the queue or not. For dispatching default queue events without blocking, see <link linkend="Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</link>.</emphasis>
+
+  See also: <link linkend="Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">wl_display_dispatch_pending()</link>, <link linkend="Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</link>, <link linkend="Client-classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4">wl_display_read_events()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1ac4b6b5ad31932bc3830ff362d2938560">
+      <term>wl_display_dispatch_pending
+            - 
+Dispatch default queue events without reading from the display fd.         </term>
+      <listitem>
+        <synopsis>int wl_display_dispatch_pending(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The number of dispatched events or -1 on failure</simpara></listitem></varlistentry></variablelist>
+This function dispatches events on the main event queue. It does not attempt to read the display fd and simply returns zero if the main queue is empty, i.e., it doesn't block.</para>
+        <para>
+  See also: <link linkend="Client-classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d">wl_display_dispatch()</link>, <link linkend="Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</link>, <link linkend="Client-classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429">wl_display_flush()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a1ceca1c6f280ac1308ee0e16cd186f94">
+      <term>wl_display_get_error
+            - 
+Retrieve the last error that occurred on a display.         </term>
+      <listitem>
+        <synopsis>int wl_display_get_error(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The last error that occurred on display or 0 if no error occurred</simpara></listitem></varlistentry></variablelist>
+Return the last error that occurred on the display. This may be an error sent by the server or caused by the local client.</para>
+        <para><emphasis>Note: Errors are fatal. If this function returns non-zero the display can no longer be used. </emphasis>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a8fbec062c9430f8cbdf71a12ec443f7d">
+      <term>wl_display_get_protocol_error
+            - 
+Retrieves the information about a protocol error:         </term>
+      <listitem>
+        <synopsis>uint32_t wl_display_get_protocol_error(struct wl_display *display, const struct wl_interface **interface, uint32_t *id)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The Wayland display </simpara></listitem></varlistentry><varlistentry><term>interface</term><listitem><simpara>
+if not NULL, stores the interface where the error occurred, or NULL, if unknown. </simpara></listitem></varlistentry><varlistentry><term>id</term><listitem><simpara>
+if not NULL, stores the object id that generated the error, or 0, if the object id is unknown. There's no guarantee the object is still valid; the client must know if it deleted the object. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The error code as defined in the interface specification.</simpara></listitem></varlistentry></variablelist>
+<programlisting>int err = wl_display_get_error(display);
+
+if (err == EPROTO) {
+       code = wl_display_get_protocol_error(display, &amp;interface, &amp;id);
+       handle_error(code, interface, id);
+}
+
+...
+</programlisting> </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429">
+      <term>wl_display_flush
+            - 
+Send all buffered requests on the display to the server.         </term>
+      <listitem>
+        <synopsis>int wl_display_flush(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display context object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The number of bytes sent on success or -1 on failure</simpara></listitem></varlistentry></variablelist>
+Send all buffered data on the client side to the server. Clients should always call this function before blocking on input from the display fd. On success, the number of bytes sent to the server is returned. On failure, this function returns -1 and errno is set appropriately.</para>
+        <para><link linkend="Client-classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429">wl_display_flush()</link> never blocks. It will write as much data as possible, but if all data could not be written, errno will be set to EAGAIN and -1 returned. In that case, use poll on the display file descriptor to wait for it to become writable again. </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Client-classwl__event__queue">
+  <title>wl_event_queue
+                - 
+A queue for wl_proxy object events.     </title>
+  <para>Event queues allows the events on a display to be handled in a thread-safe manner. See <link linkend="Client-classwl__display">wl_display</link> for details. </para>
+  <variablelist>
+    <varlistentry id="Client-classwl__event__queue_1acfbc75d82d1f8a90e805712b972c4edf">
+      <term>wl_event_queue_destroy
+            - 
+Destroy an event queue.         </term>
+      <listitem>
+        <synopsis>void wl_event_queue_destroy(struct wl_event_queue *queue)</synopsis>
+        <para><variablelist><varlistentry><term>queue</term><listitem><simpara>
+The event queue to be destroyed</simpara></listitem></varlistentry></variablelist>
+Destroy the given event queue. Any pending event on that queue is discarded.</para>
+        <para>The <link linkend="Client-classwl__display">wl_display</link> object used to create the queue should not be destroyed until all event queues created with it are destroyed with this function. </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Client-structwl__interface">
+  <title>wl_interface
+                - 
+Protocol object interface.     </title>
+  <para>A <link linkend="Client-structwl__interface">wl_interface</link> describes the API of a protocol object defined in the Wayland protocol specification. The protocol implementation uses a <link linkend="Client-structwl__interface">wl_interface</link> within its marshalling machinery for encoding client requests.</para>
+  <para>The name of a <link linkend="Client-structwl__interface">wl_interface</link> is the name of the corresponding protocol interface, and version represents the version of the interface. The members method_count and event_count represent the number of methods (requests) and events in the respective <link linkend="Client-structwl__message">wl_message</link> members.</para>
+  <para>For example, consider a protocol interface foo, marked as version 1, with two requests and one event.</para>
+  <para>
+    <programlisting>&lt;interface name="foo" version="1"&gt;
+  &lt;request name="a"&gt;&lt;/request&gt;
+  &lt;request name="b"&gt;&lt;/request&gt;
+  &lt;event name="c"&gt;&lt;/event&gt;
+&lt;/interface&gt;
+</programlisting>
+  </para>
+  <para>Given two <link linkend="Client-structwl__message">wl_message</link> arrays foo_requests and foo_events, a <link linkend="Client-structwl__interface">wl_interface</link> for foo might be:</para>
+  <para>
+    <programlisting>struct wl_interface foo_interface = {
+        "foo", 1,
+        2, foo_requests,
+        1, foo_events
+};
+</programlisting>
+  </para>
+  <para><emphasis>Note: The server side of the protocol may define interface implementation types that incorporate the term interface in their name. Take care to not confuse these server-side structs with a <link linkend="Client-structwl__interface">wl_interface</link> variable whose name also ends in interface. For example, while the server may define a type struct wl_foo_interface, the client may define a struct <link linkend="Client-structwl__interface">wl_interface</link> wl_foo_interface.</emphasis>
+
+  See also: <link linkend="Client-structwl__message">wl_message</link> 
+
+  See also: <link linkend="Client-classwl__proxy">wl_proxy</link> 
+
+  See also: Interfaces 
+
+  See also: Versioning 
+</para>
+</section><section id="Client-structwl__list">
+  <title>wl_list
+                - 
+Doubly-linked list.     </title>
+  <para>On its own, an instance of struct <link linkend="Client-structwl__list">wl_list</link> represents the sentinel head of a doubly-linked list, and must be initialized using <link linkend="Client-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</link>. When empty, the list head's next and prev members point to the list head itself, otherwise next references the first element in the list, and prev refers to the last element in the list.</para>
+  <para>Use the struct <link linkend="Client-structwl__list">wl_list</link> type to represent both the list head and the links between elements within the list. Use <link linkend="Client-structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a">wl_list_empty()</link> to determine if the list is empty in O(1).</para>
+  <para>All elements in the list must be of the same type. The element type must have a struct <link linkend="Client-structwl__list">wl_list</link> member, often named link by convention. Prior to insertion, there is no need to initialize an element's link - invoking <link linkend="Client-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</link> on an individual list element's struct <link linkend="Client-structwl__list">wl_list</link> member is unnecessary if the very next operation is <link linkend="Client-structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98">wl_list_insert()</link>. However, a common idiom is to initialize an element's link prior to removal - ensure safety by invoking <link linkend="Client-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</link> before <link linkend="Client-structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83">wl_list_remove()</link>.</para>
+  <para>Consider a list reference struct <link linkend="Client-structwl__list">wl_list</link> foo_list, an element type as struct element, and an element's link member as struct <link linkend="Client-structwl__list">wl_list</link> link.</para>
+  <para>The following code initializes a list and adds three elements to it.</para>
+  <para>
+    <programlisting>struct wl_list foo_list;
+
+struct element {
+        int foo;
+        struct wl_list link;
+};
+struct element e1, e2, e3;
+
+wl_list_init(&amp;foo_list);
+wl_list_insert(&amp;foo_list, &amp;e1.link);   // e1 is the first element
+wl_list_insert(&amp;foo_list, &amp;e2.link);   // e2 is now the first element
+wl_list_insert(&amp;e2.link, &amp;e3.link); // insert e3 after e2
+</programlisting>
+  </para>
+  <para>The list now looks like [e2, e3, e1].</para>
+  <para>The <link linkend="Client-structwl__list">wl_list</link> API provides some iterator macros. For example, to iterate a list in ascending order:</para>
+  <para>
+    <programlisting>struct element *e;
+wl_list_for_each(e, foo_list, link) {
+        do_something_with_element(e);
+}
+</programlisting>
+  </para>
+  <para>See the documentation of each iterator for details. 
+  See also: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/list.h 
+</para>
+  <variablelist>
+    <varlistentry id="Client-structwl__list_1a72c2827d3103691f9e3299babfbf0704">
+      <term>prev
+            - 
+Previous list element.         </term>
+      <listitem>
+        <synopsis>struct wl_list* wl_list::prev</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1aa0454596900ed769fb2f033fbb96bf2c">
+      <term>next
+            - 
+Next list element.         </term>
+      <listitem>
+        <synopsis>struct wl_list* wl_list::next</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">
+      <term>wl_list_init
+            - 
+Initializes the list.         </term>
+      <listitem>
+        <synopsis>void wl_list_init(struct wl_list *list)</synopsis>
+        <para><variablelist><varlistentry><term>list</term><listitem><simpara>
+List to initialize </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98">
+      <term>wl_list_insert
+            - 
+Inserts an element into the list, after the element represented by list.         </term>
+      <listitem>
+        <synopsis>void wl_list_insert(struct wl_list *list, struct wl_list *elm)</synopsis>
+        <para>When list is a reference to the list itself (the head), set the containing struct of elm as the first element in the list.</para>
+        <para><emphasis>Note: If elm is already part of a list, inserting it again will lead to list corruption.</emphasis>
+<variablelist><varlistentry><term>list</term><listitem><simpara>
+List element after which the new element is inserted </simpara></listitem></varlistentry><varlistentry><term>elm</term><listitem><simpara>
+Link of the containing struct to insert into the list </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83">
+      <term>wl_list_remove
+            - 
+Removes an element from the list.         </term>
+      <listitem>
+        <synopsis>void wl_list_remove(struct wl_list *elm)</synopsis>
+        <para><emphasis>Note: This operation leaves elm in an invalid state.</emphasis>
+<variablelist><varlistentry><term>elm</term><listitem><simpara>
+Link of the containing struct to remove from the list </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1a2710186b02864dc2b18a46993aa9c2e0">
+      <term>wl_list_length
+            - 
+Determines the length of the list.         </term>
+      <listitem>
+        <synopsis>int wl_list_length(const struct wl_list *list)</synopsis>
+        <para><emphasis>Note: This is an O(n) operation.</emphasis>
+<variablelist><varlistentry><term>list</term><listitem><simpara>
+List whose length is to be determined</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>Number of elements in the list </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a">
+      <term>wl_list_empty
+            - 
+Determines if the list is empty.         </term>
+      <listitem>
+        <synopsis>int wl_list_empty(const struct wl_list *list)</synopsis>
+        <para><variablelist><varlistentry><term>list</term><listitem><simpara>
+List whose emptiness is to be determined</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>1 if empty, or 0 if not empty </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1ac714f6eedd52286c8b6d9884cc7c8492">
+      <term>wl_list_insert_list
+            - 
+Inserts all of the elements of one list into another, after the element represented by list.         </term>
+      <listitem>
+        <synopsis>void wl_list_insert_list(struct wl_list *list, struct wl_list *other)</synopsis>
+        <para><emphasis>Note: This leaves other in an invalid state.</emphasis>
+<variablelist><varlistentry><term>list</term><listitem><simpara>
+List element after which the other list elements will be inserted </simpara></listitem></varlistentry><varlistentry><term>other</term><listitem><simpara>
+List of elements to insert </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">
+      <term>wl_list_for_each
+            - 
+Iterates over a list.         </term>
+      <listitem>
+        <synopsis/>
+        <para>This macro expresses a for-each iterator for <link linkend="Client-structwl__list">wl_list</link>. Given a list and <link linkend="Client-structwl__list">wl_list</link> link member name (often named link by convention), this macro assigns each element in the list to pos, which can then be referenced in a trailing code block. For example, given a <link linkend="Client-structwl__list">wl_list</link> of struct message elements:</para>
+        <para>
+          <programlisting>struct message {
+        char *contents;
+        wl_list link;
+};
+
+struct wl_list *message_list;
+// Assume message_list now "contains" many messages
+
+struct message *m;
+wl_list_for_each(m, message_list, link) {
+        do_something_with_message(m);
+}
+</programlisting>
+        </para>
+        <para><variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each list element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>head</term><listitem><simpara>
+Head of the list to iterate over </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Name of the link member within the element struct </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1a43d51e3b5ae8b58f3391f3d43687f852">
+      <term>wl_list_for_each_safe
+            - 
+Iterates over a list, safe against removal of the list element.         </term>
+      <listitem>
+        <synopsis/>
+        <para><emphasis>Note: Only removal of the current element, pos, is safe. Removing any other element during traversal may lead to a loop malfunction.</emphasis>
+
+  See also: <link linkend="Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</link>
+<variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each list element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>tmp</term><listitem><simpara>
+Temporary pointer of the same type as pos </simpara></listitem></varlistentry><varlistentry><term>head</term><listitem><simpara>
+Head of the list to iterate over </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Name of the link member within the element struct </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1a2ee1918119b03d36ed3004984efb9dc9">
+      <term>wl_list_for_each_reverse
+            - 
+Iterates backwards over a list.         </term>
+      <listitem>
+        <synopsis/>
+        <para>
+  See also: <link linkend="Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</link>
+<variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each list element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>head</term><listitem><simpara>
+Head of the list to iterate over </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Name of the link member within the element struct </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-structwl__list_1ac84e06e7914226b2678ff5f351d7f9e8">
+      <term>wl_list_for_each_reverse_safe
+            - 
+Iterates backwards over a list, safe against removal of the list element.         </term>
+      <listitem>
+        <synopsis/>
+        <para><emphasis>Note: Only removal of the current element, pos, is safe. Removing any other element during traversal may lead to a loop malfunction.</emphasis>
+
+  See also: <link linkend="Client-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</link>
+<variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each list element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>tmp</term><listitem><simpara>
+Temporary pointer of the same type as pos </simpara></listitem></varlistentry><varlistentry><term>head</term><listitem><simpara>
+Head of the list to iterate over </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Name of the link member within the element struct </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Client-structwl__message">
+  <title>wl_message
+                - 
+Protocol message signature.     </title>
+  <para>A <link linkend="Client-structwl__message">wl_message</link> describes the signature of an actual protocol message, such as a request or event, that adheres to the Wayland protocol wire format. The protocol implementation uses a <link linkend="Client-structwl__message">wl_message</link> within its demarshal machinery for decoding messages between a compositor and its clients. In a sense, a <link linkend="Client-structwl__message">wl_message</link> is to a protocol message like a class is to an object.</para>
+  <para>The name of a <link linkend="Client-structwl__message">wl_message</link> is the name of the corresponding protocol message.</para>
+  <para>The signature is an ordered list of symbols representing the data types of message arguments and, optionally, a protocol version and indicators for nullability. A leading integer in the signature indicates the since version of the protocol message. A ? preceding a data type symbol indicates that the following argument type is nullable. While it is a protocol violation to send messages with non-nullable arguments set to NULL, event handlers in clients might still get called with non-nullable object arguments set to NULL. This can happen when the client destroyed the object being used as argument on its side and an event referencing that object was sent before the server knew about its destruction. As this race cannot be prevented, clients should - as a general rule - program their event handlers such that they can handle object arguments declared non-nullable being NULL gracefully.</para>
+  <para>When no arguments accompany a message, signature is an empty string.</para>
+  <para>Symbols:</para>
+  <para><itemizedlist><listitem><simpara>i: int</simpara></listitem><listitem><simpara>u: uint</simpara></listitem><listitem><simpara>f: fixed</simpara></listitem><listitem><simpara>s: string</simpara></listitem><listitem><simpara>o: object</simpara></listitem><listitem><simpara>n: new_id</simpara></listitem><listitem><simpara>a: array</simpara></listitem><listitem><simpara>h: fd</simpara></listitem><listitem><simpara>?: following argument is nullable</simpara></listitem></itemizedlist>
+</para>
+  <para>While demarshaling primitive arguments is straightforward, when demarshaling messages containing object or new_id arguments, the protocol implementation often must determine the type of the object. The types of a <link linkend="Client-structwl__message">wl_message</link> is an array of <link linkend="Client-structwl__interface">wl_interface</link> references that correspond to o and n arguments in signature, with NULL placeholders for arguments with non-object types.</para>
+  <para>Consider the protocol event <link linkend="Client-classwl__display">wl_display</link> delete_id that has a single uint argument. The <link linkend="Client-structwl__message">wl_message</link> is:</para>
+  <para>
+    <programlisting>{ "delete_id", "u", [NULL] }
+</programlisting>
+  </para>
+  <para>Here, the message name is "delete_id", the signature is "u", and the argument types is [NULL], indicating that the uint argument has no corresponding <link linkend="Client-structwl__interface">wl_interface</link> since it is a primitive argument.</para>
+  <para>In contrast, consider a wl_foo interface supporting protocol request bar that has existed since version 2, and has two arguments: a uint and an object of type wl_baz_interface that may be NULL. Such a <link linkend="Client-structwl__message">wl_message</link> might be:</para>
+  <para>
+    <programlisting>{ "bar", "2u?o", [NULL, &amp;wl_baz_interface] }
+</programlisting>
+  </para>
+  <para>Here, the message name is "bar", and the signature is "2u?o". Notice how the 2 indicates the protocol version, the u indicates the first argument type is uint, and the ?o indicates that the second argument is an object that may be NULL. Lastly, the argument types array indicates that no <link linkend="Client-structwl__interface">wl_interface</link> corresponds to the first argument, while the type wl_baz_interface corresponds to the second argument.</para>
+  <para>
+  See also: <link linkend="Client-unionwl__argument">wl_argument</link> 
+
+  See also: <link linkend="Client-structwl__interface">wl_interface</link> 
+
+  See also: Wire Format 
+</para>
+</section><section id="Client-classwl__proxy">
+  <title>wl_proxy
+                - 
+Represents a protocol object on the client side.     </title>
+  <para>A <link linkend="Client-classwl__proxy">wl_proxy</link> acts as a client side proxy to an object existing in the compositor. The proxy is responsible for converting requests made by the clients with <link linkend="Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</link> into Wayland's wire format. Events coming from the compositor are also handled by the proxy, which will in turn call the handler set with <link linkend="Client-classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7">wl_proxy_add_listener()</link>.</para>
+  <para><emphasis>Note: With the exception of function <link linkend="Client-classwl__proxy_1acc5f51ea5d172df68f61018b2879e0cc">wl_proxy_set_queue()</link>, functions accessing a <link linkend="Client-classwl__proxy">wl_proxy</link> are not normally used by client code. Clients should normally use the higher level interface generated by the scanner to interact with compositor objects. </emphasis>
+</para>
+  <variablelist>
+    <varlistentry id="Client-classwl__proxy_1a5917991abd28c23949ad200e9399e813">
+      <term>wl_proxy_create
+            - 
+Create a proxy object with a given interface.         </term>
+      <listitem>
+        <synopsis>struct wl_proxy * wl_proxy_create(struct wl_proxy *factory, const struct wl_interface *interface)</synopsis>
+        <para><variablelist><varlistentry><term>factory</term><listitem><simpara>
+Factory proxy object </simpara></listitem></varlistentry><varlistentry><term>interface</term><listitem><simpara>
+Interface the proxy object should use </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A newly allocated proxy object or NULL on failure</simpara></listitem></varlistentry></variablelist>
+This function creates a new proxy object with the supplied interface. The proxy object will have an id assigned from the client id space. The id should be created on the compositor side by sending an appropriate request with <link linkend="Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</link>.</para>
+        <para>The proxy will inherit the display and event queue of the factory object.</para>
+        <para><emphasis>Note: This should not normally be used by non-generated code.</emphasis>
+
+  See also: <link linkend="Client-classwl__display">wl_display</link>, <link linkend="Client-classwl__event__queue">wl_event_queue</link>, <link linkend="Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a2d3fe909fed5b7ace56ca01178763381">
+      <term>wl_proxy_destroy
+            - 
+Destroy a proxy object.         </term>
+      <listitem>
+        <synopsis>void wl_proxy_destroy(struct wl_proxy *proxy)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy to be destroyed</simpara></listitem></varlistentry></variablelist>
+proxy must not be a proxy wrapper. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7">
+      <term>wl_proxy_add_listener
+            - 
+Set a proxy's listener.         </term>
+      <listitem>
+        <synopsis>int wl_proxy_add_listener(struct wl_proxy *proxy, void(**implementation)(void), void *data)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>implementation</term><listitem><simpara>
+The listener to be added to proxy </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+User data to be associated with the proxy </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success or -1 on failure</simpara></listitem></varlistentry></variablelist>
+Set proxy's listener to implementation and its user data to data. If a listener has already been set, this function fails and nothing is changed.</para>
+        <para>implementation is a vector of function pointers. For an opcode n, implementation[n] should point to the handler of n for the given object.</para>
+        <para>proxy must not be a proxy wrapper. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a30175804b647e683773172d50812c88f">
+      <term>wl_proxy_get_listener
+            - 
+Get a proxy's listener.         </term>
+      <listitem>
+        <synopsis>const void * wl_proxy_get_listener(struct wl_proxy *proxy)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The address of the proxy's listener or NULL if no listener is set</simpara></listitem></varlistentry></variablelist>
+Gets the address to the proxy's listener; which is the listener set with <link linkend="Client-classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7">wl_proxy_add_listener</link>.</para>
+        <para>This function is useful in clients with multiple listeners on the same interface to allow the identification of which code to execute. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a45ec4f95c2cead639976b27bf4af55c1">
+      <term>wl_proxy_add_dispatcher
+            - 
+Set a proxy's listener (with dispatcher)         </term>
+      <listitem>
+        <synopsis>int wl_proxy_add_dispatcher(struct wl_proxy *proxy, wl_dispatcher_func_t dispatcher, const void *implementation, void *data)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>dispatcher</term><listitem><simpara>
+The dispatcher to be used for this proxy </simpara></listitem></varlistentry><varlistentry><term>implementation</term><listitem><simpara>
+The dispatcher-specific listener implementation </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+User data to be associated with the proxy </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success or -1 on failure</simpara></listitem></varlistentry></variablelist>
+Set proxy's listener to use dispatcher_func as its dispatcher and dispatcher_data as its dispatcher-specific implementation and its user data to data. If a listener has already been set, this function fails and nothing is changed.</para>
+        <para>The exact details of dispatcher_data depend on the dispatcher used. This function is intended to be used by language bindings, not user code.</para>
+        <para>proxy must not be a proxy wrapper. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a8e89b859b28d48949a1b4b00e9a39f05">
+      <term>wl_proxy_marshal_array_constructor
+            - 
+Prepare a request to be sent to the compositor.         </term>
+      <listitem>
+        <synopsis>struct wl_proxy * wl_proxy_marshal_array_constructor(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>opcode</term><listitem><simpara>
+Opcode of the request to be sent </simpara></listitem></varlistentry><varlistentry><term>args</term><listitem><simpara>
+Extra arguments for the given request </simpara></listitem></varlistentry><varlistentry><term>interface</term><listitem><simpara>
+The interface to use for the new proxy</simpara></listitem></varlistentry></variablelist>
+This function translates a request given an opcode, an interface and a <link linkend="Client-unionwl__argument">wl_argument</link> array to the wire format and writes it to the connection buffer.</para>
+        <para>For new-id arguments, this function will allocate a new <link linkend="Client-classwl__proxy">wl_proxy</link> and send the ID to the server. The new <link linkend="Client-classwl__proxy">wl_proxy</link> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will inherit their version from their parent.</para>
+        <para><emphasis>Note: This is intended to be used by language bindings and not in non-generated code.</emphasis>
+
+  See also: <link linkend="Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1ae61b4c579eba754bdbefd04c0e3f8b13">
+      <term>wl_proxy_marshal_array_constructor_versioned
+            - 
+Prepare a request to be sent to the compositor.         </term>
+      <listitem>
+        <synopsis>struct wl_proxy * wl_proxy_marshal_array_constructor_versioned(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface, uint32_t version)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>opcode</term><listitem><simpara>
+Opcode of the request to be sent </simpara></listitem></varlistentry><varlistentry><term>args</term><listitem><simpara>
+Extra arguments for the given request </simpara></listitem></varlistentry><varlistentry><term>interface</term><listitem><simpara>
+The interface to use for the new proxy </simpara></listitem></varlistentry><varlistentry><term>version</term><listitem><simpara>
+The protocol object version for the new proxy</simpara></listitem></varlistentry></variablelist>
+Translates the request given by opcode and the extra arguments into the wire format and write it to the connection buffer. This version takes an array of the union type <link linkend="Client-unionwl__argument">wl_argument</link>.</para>
+        <para>For new-id arguments, this function will allocate a new <link linkend="Client-classwl__proxy">wl_proxy</link> and send the ID to the server. The new <link linkend="Client-classwl__proxy">wl_proxy</link> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will have the version specified.</para>
+        <para><emphasis>Note: This is intended to be used by language bindings and not in non-generated code.</emphasis>
+
+  See also: <link linkend="Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">
+      <term>wl_proxy_marshal
+            - 
+Prepare a request to be sent to the compositor.         </term>
+      <listitem>
+        <synopsis>void wl_proxy_marshal(struct wl_proxy *proxy, uint32_t opcode,...)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>opcode</term><listitem><simpara>
+Opcode of the request to be sent </simpara></listitem></varlistentry><varlistentry><term>...</term><listitem><simpara>
+Extra arguments for the given request</simpara></listitem></varlistentry></variablelist>
+This function is similar to <link linkend="Client-classwl__proxy_1aa2d70d86a2467bf20867fb93699a6d28">wl_proxy_marshal_constructor()</link>, except it doesn't create proxies for new-id arguments.</para>
+        <para><emphasis>Note: This should not normally be used by non-generated code.</emphasis>
+
+  See also: <link linkend="Client-classwl__proxy_1a5917991abd28c23949ad200e9399e813">wl_proxy_create()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1aa2d70d86a2467bf20867fb93699a6d28">
+      <term>wl_proxy_marshal_constructor
+            - 
+Prepare a request to be sent to the compositor.         </term>
+      <listitem>
+        <synopsis>struct wl_proxy * wl_proxy_marshal_constructor(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface,...)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>opcode</term><listitem><simpara>
+Opcode of the request to be sent </simpara></listitem></varlistentry><varlistentry><term>interface</term><listitem><simpara>
+The interface to use for the new proxy </simpara></listitem></varlistentry><varlistentry><term>...</term><listitem><simpara>
+Extra arguments for the given request </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A new <link linkend="Client-classwl__proxy">wl_proxy</link> for the new_id argument or NULL on error</simpara></listitem></varlistentry></variablelist>
+This function translates a request given an opcode, an interface and extra arguments to the wire format and writes it to the connection buffer. The types of the extra arguments must correspond to the argument types of the method associated with the opcode in the interface.</para>
+        <para>For new-id arguments, this function will allocate a new <link linkend="Client-classwl__proxy">wl_proxy</link> and send the ID to the server. The new <link linkend="Client-classwl__proxy">wl_proxy</link> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will inherit their version from their parent.</para>
+        <para><emphasis>Note: This should not normally be used by non-generated code. </emphasis>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a397e6d324ce0c262afe09d365be2b8e2">
+      <term>wl_proxy_marshal_constructor_versioned
+            - 
+Prepare a request to be sent to the compositor.         </term>
+      <listitem>
+        <synopsis>struct wl_proxy * wl_proxy_marshal_constructor_versioned(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface, uint32_t version,...)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>opcode</term><listitem><simpara>
+Opcode of the request to be sent </simpara></listitem></varlistentry><varlistentry><term>interface</term><listitem><simpara>
+The interface to use for the new proxy </simpara></listitem></varlistentry><varlistentry><term>version</term><listitem><simpara>
+The protocol object version of the new proxy </simpara></listitem></varlistentry><varlistentry><term>...</term><listitem><simpara>
+Extra arguments for the given request </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A new <link linkend="Client-classwl__proxy">wl_proxy</link> for the new_id argument or NULL on error</simpara></listitem></varlistentry></variablelist>
+Translates the request given by opcode and the extra arguments into the wire format and write it to the connection buffer.</para>
+        <para>For new-id arguments, this function will allocate a new <link linkend="Client-classwl__proxy">wl_proxy</link> and send the ID to the server. The new <link linkend="Client-classwl__proxy">wl_proxy</link> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will have the version specified.</para>
+        <para><emphasis>Note: This should not normally be used by non-generated code. </emphasis>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a8f4cc90edff2f7bd3dfbb2db57f7d873">
+      <term>wl_proxy_marshal_array
+            - 
+Prepare a request to be sent to the compositor.         </term>
+      <listitem>
+        <synopsis>void wl_proxy_marshal_array(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>opcode</term><listitem><simpara>
+Opcode of the request to be sent </simpara></listitem></varlistentry><varlistentry><term>args</term><listitem><simpara>
+Extra arguments for the given request</simpara></listitem></varlistentry></variablelist>
+This function is similar to <link linkend="Client-classwl__proxy_1a8e89b859b28d48949a1b4b00e9a39f05">wl_proxy_marshal_array_constructor()</link>, except it doesn't create proxies for new-id arguments.</para>
+        <para><emphasis>Note: This is intended to be used by language bindings and not in non-generated code.</emphasis>
+
+  See also: <link linkend="Client-classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f">wl_proxy_marshal()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a97fa4ee5b728a372cff9ac5164153fef">
+      <term>wl_proxy_set_user_data
+            - 
+Set the user data associated with a proxy.         </term>
+      <listitem>
+        <synopsis>void wl_proxy_set_user_data(struct wl_proxy *proxy, void *user_data)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>user_data</term><listitem><simpara>
+The data to be associated with proxy</simpara></listitem></varlistentry></variablelist>
+Set the user data associated with proxy. When events for this proxy are received, user_data will be supplied to its listener. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1abc50a9d788e0007f144a7bea7f170c3f">
+      <term>wl_proxy_get_user_data
+            - 
+Get the user data associated with a proxy.         </term>
+      <listitem>
+        <synopsis>void * wl_proxy_get_user_data(struct wl_proxy *proxy)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The user data associated with proxy </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a918c3bff4543bcfd0d6cb689d0666db2">
+      <term>wl_proxy_get_version
+            - 
+Get the protocol object version of a proxy object.         </term>
+      <listitem>
+        <synopsis>uint32_t wl_proxy_get_version(struct wl_proxy *proxy)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The protocol object version of the proxy or 0</simpara></listitem></varlistentry></variablelist>
+Gets the protocol object version of a proxy object, or 0 if the proxy was created with unversioned API.</para>
+        <para>A returned value of 0 means that no version information is available, so the caller must make safe assumptions about the object's real version.</para>
+        <para><link linkend="Client-classwl__display">wl_display</link>'s version will always return 0. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1acd609baf53e8691c5307fdaf12d4d176">
+      <term>wl_proxy_get_id
+            - 
+Get the id of a proxy object.         </term>
+      <listitem>
+        <synopsis>uint32_t wl_proxy_get_id(struct wl_proxy *proxy)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The id the object associated with the proxy </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a365697bb1c59f3714e5654348d7b480a">
+      <term>wl_proxy_get_class
+            - 
+Get the interface name (class) of a proxy object.         </term>
+      <listitem>
+        <synopsis>const char * wl_proxy_get_class(struct wl_proxy *proxy)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The interface name of the object associated with the proxy </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1acc5f51ea5d172df68f61018b2879e0cc">
+      <term>wl_proxy_set_queue
+            - 
+Assign a proxy to an event queue.         </term>
+      <listitem>
+        <synopsis>void wl_proxy_set_queue(struct wl_proxy *proxy, struct wl_event_queue *queue)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object </simpara></listitem></varlistentry><varlistentry><term>queue</term><listitem><simpara>
+The event queue that will handle this proxy or NULL</simpara></listitem></varlistentry></variablelist>
+Assign proxy to event queue. Events coming from proxy will be queued in queue from now. If queue is NULL, then the display's default queue is set to the proxy.</para>
+        <para><emphasis>Note: By default, the queue set in proxy is the one inherited from parent.</emphasis>
+
+  See also: <link linkend="Client-classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17">wl_display_dispatch_queue()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1afb9d0eb81d1fd4931f566aed090d6f28">
+      <term>wl_proxy_create_wrapper
+            - 
+Create a proxy wrapper for making queue assignments thread-safe.         </term>
+      <listitem>
+        <synopsis>void * wl_proxy_create_wrapper(void *proxy)</synopsis>
+        <para><variablelist><varlistentry><term>proxy</term><listitem><simpara>
+The proxy object to be wrapped </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A proxy wrapper for the given proxy or NULL on failure</simpara></listitem></varlistentry></variablelist>
+A proxy wrapper is type of 'struct <link linkend="Client-classwl__proxy">wl_proxy</link>' instance that can be used when sending requests instead of using the original proxy. A proxy wrapper does not have an implementation or dispatcher, and events received on the object is still emitted on the original proxy. Trying to set an implementation or dispatcher will have no effect but result in a warning being logged.</para>
+        <para>Setting the proxy queue of the proxy wrapper will make new objects created using the proxy wrapper use the set proxy queue. Even though there is no implementation nor dispatcher, the proxy queue can be changed. This will affect the default queue of new objects created by requests sent via the proxy wrapper.</para>
+        <para>A proxy wrapper can only be destroyed using <link linkend="Client-classwl__proxy_1a0261dbfa5f690667643940ab2ec1ee99">wl_proxy_wrapper_destroy()</link>.</para>
+        <para>A proxy wrapper must be destroyed before the proxy it was created from.</para>
+        <para>If a user reads and dispatches events on more than one thread, it is necessary to use a proxy wrapper when sending requests on objects when the intention is that a newly created proxy is to use a proxy queue different from the proxy the request was sent on, as creating the new proxy and then setting the queue is not thread safe.</para>
+        <para>For example, a module that runs using its own proxy queue that needs to do display roundtrip must wrap the <link linkend="Client-classwl__display">wl_display</link> proxy object before sending the wl_display.sync request. For example:</para>
+        <para><programlisting>struct wl_event_queue *queue = ...;
+struct wl_display *wrapped_display;
+struct wl_callback *callback;
+
+wrapped_display = wl_proxy_create_wrapper(display);
+wl_proxy_set_queue((struct wl_proxy *) wrapped_display, queue);
+callback = wl_display_sync(wrapped_display);
+wl_proxy_wrapper_destroy(wrapped_display);
+wl_callback_add_listener(callback, ...);
+</programlisting> </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-classwl__proxy_1a0261dbfa5f690667643940ab2ec1ee99">
+      <term>wl_proxy_wrapper_destroy
+            - 
+Destroy a proxy wrapper.         </term>
+      <listitem>
+        <synopsis>void wl_proxy_wrapper_destroy(void *proxy_wrapper)</synopsis>
+        <para><variablelist><varlistentry><term>proxy_wrapper</term><listitem><simpara>
+The proxy wrapper to be destroyed </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Client-Functions">
+  <title>Functions</title>
+  <para/>
+  <variablelist>
+    <varlistentry id="Client-wayland-client-core_8h_1acfbc75d82d1f8a90e805712b972c4edf">
+      <term>wl_event_queue_destroy</term>
+      <listitem>
+        <synopsis>void wl_event_queue_destroy(struct wl_event_queue *queue)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a090ac75892250e69176e0bebabfc9dff">
+      <term>wl_proxy_marshal</term>
+      <listitem>
+        <synopsis>void wl_proxy_marshal(struct wl_proxy *p, uint32_t opcode,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1ac73b3ca33662501fd71e564d29f80fc2">
+      <term>wl_proxy_marshal_array</term>
+      <listitem>
+        <synopsis>void wl_proxy_marshal_array(struct wl_proxy *p, uint32_t opcode, union wl_argument *args)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a83b0c474e347e65075246d239c227eca">
+      <term>wl_proxy_create</term>
+      <listitem>
+        <synopsis>struct wl_proxy* wl_proxy_create(struct wl_proxy *factory, const struct wl_interface *interface)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a9fc96dd300247a74b07e5e97e7779d78">
+      <term>wl_proxy_create_wrapper</term>
+      <listitem>
+        <synopsis>void* wl_proxy_create_wrapper(void *proxy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a0261dbfa5f690667643940ab2ec1ee99">
+      <term>wl_proxy_wrapper_destroy</term>
+      <listitem>
+        <synopsis>void wl_proxy_wrapper_destroy(void *proxy_wrapper)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a74b1e45b6cf8d73885bf60a0973ac27b">
+      <term>wl_proxy_marshal_constructor</term>
+      <listitem>
+        <synopsis>struct wl_proxy* wl_proxy_marshal_constructor(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1ac50a545bda02164d6a8998df8656702f">
+      <term>wl_proxy_marshal_constructor_versioned</term>
+      <listitem>
+        <synopsis>struct wl_proxy* wl_proxy_marshal_constructor_versioned(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface, uint32_t version,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a7f71ea679958ca01e5febf391795a256">
+      <term>wl_proxy_marshal_array_constructor</term>
+      <listitem>
+        <synopsis>struct wl_proxy* wl_proxy_marshal_array_constructor(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a4d365f3486201a1c8da23d93a649dfa9">
+      <term>wl_proxy_marshal_array_constructor_versioned</term>
+      <listitem>
+        <synopsis>struct wl_proxy* wl_proxy_marshal_array_constructor_versioned(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface, uint32_t version)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a2d3fe909fed5b7ace56ca01178763381">
+      <term>wl_proxy_destroy</term>
+      <listitem>
+        <synopsis>void wl_proxy_destroy(struct wl_proxy *proxy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a29a8596b88ede807f96a63c128c6e8b7">
+      <term>wl_proxy_add_listener</term>
+      <listitem>
+        <synopsis>int wl_proxy_add_listener(struct wl_proxy *proxy, void(**implementation)(void), void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1acb35a3a56239c15ad86856b4753d0684">
+      <term>wl_proxy_get_listener</term>
+      <listitem>
+        <synopsis>const void* wl_proxy_get_listener(struct wl_proxy *proxy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a1d4975c4e2f01bddd3beaf28dd3e2818">
+      <term>wl_proxy_add_dispatcher</term>
+      <listitem>
+        <synopsis>int wl_proxy_add_dispatcher(struct wl_proxy *proxy, wl_dispatcher_func_t dispatcher_func, const void *dispatcher_data, void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a97fa4ee5b728a372cff9ac5164153fef">
+      <term>wl_proxy_set_user_data</term>
+      <listitem>
+        <synopsis>void wl_proxy_set_user_data(struct wl_proxy *proxy, void *user_data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a46da640b2112269327958ff4efd3e79f">
+      <term>wl_proxy_get_user_data</term>
+      <listitem>
+        <synopsis>void* wl_proxy_get_user_data(struct wl_proxy *proxy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a918c3bff4543bcfd0d6cb689d0666db2">
+      <term>wl_proxy_get_version</term>
+      <listitem>
+        <synopsis>uint32_t wl_proxy_get_version(struct wl_proxy *proxy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1acd609baf53e8691c5307fdaf12d4d176">
+      <term>wl_proxy_get_id</term>
+      <listitem>
+        <synopsis>uint32_t wl_proxy_get_id(struct wl_proxy *proxy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a26926726c79c73604235728d23c10b1a">
+      <term>wl_proxy_get_class</term>
+      <listitem>
+        <synopsis>const char* wl_proxy_get_class(struct wl_proxy *proxy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1acc5f51ea5d172df68f61018b2879e0cc">
+      <term>wl_proxy_set_queue</term>
+      <listitem>
+        <synopsis>void wl_proxy_set_queue(struct wl_proxy *proxy, struct wl_event_queue *queue)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a86382b9754bbb891860e6ab4ff5efa20">
+      <term>wl_display_connect</term>
+      <listitem>
+        <synopsis>struct wl_display* wl_display_connect(const char *name)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a7ef5808b89561fb447cd012e9b9c7235">
+      <term>wl_display_connect_to_fd</term>
+      <listitem>
+        <synopsis>struct wl_display* wl_display_connect_to_fd(int fd)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a9150a7e3213a58b469a6966e60a9f108">
+      <term>wl_display_disconnect</term>
+      <listitem>
+        <synopsis>void wl_display_disconnect(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a2d5d249e81cbf43c3521d4bce575f1ca">
+      <term>wl_display_get_fd</term>
+      <listitem>
+        <synopsis>int wl_display_get_fd(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a30a9c4f020f3e77581c7a81ecdb4913d">
+      <term>wl_display_dispatch</term>
+      <listitem>
+        <synopsis>int wl_display_dispatch(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1ae027b09801474ac7c6b0f1ef25ff6e17">
+      <term>wl_display_dispatch_queue</term>
+      <listitem>
+        <synopsis>int wl_display_dispatch_queue(struct wl_display *display, struct wl_event_queue *queue)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a8a14a809eb2c083a806db2ee15523041">
+      <term>wl_display_dispatch_queue_pending</term>
+      <listitem>
+        <synopsis>int wl_display_dispatch_queue_pending(struct wl_display *display, struct wl_event_queue *queue)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1ac4b6b5ad31932bc3830ff362d2938560">
+      <term>wl_display_dispatch_pending</term>
+      <listitem>
+        <synopsis>int wl_display_dispatch_pending(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a1ceca1c6f280ac1308ee0e16cd186f94">
+      <term>wl_display_get_error</term>
+      <listitem>
+        <synopsis>int wl_display_get_error(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a8fbec062c9430f8cbdf71a12ec443f7d">
+      <term>wl_display_get_protocol_error</term>
+      <listitem>
+        <synopsis>uint32_t wl_display_get_protocol_error(struct wl_display *display, const struct wl_interface **interface, uint32_t *id)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a8463b6e5f4cf9a2a3ad2d543aedcf429">
+      <term>wl_display_flush</term>
+      <listitem>
+        <synopsis>int wl_display_flush(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a73f44c38fa4e535f5eaf700933b0b2e6">
+      <term>wl_display_roundtrip_queue</term>
+      <listitem>
+        <synopsis>int wl_display_roundtrip_queue(struct wl_display *display, struct wl_event_queue *queue)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1ab60f38c2f80980ac84f347e932793390">
+      <term>wl_display_roundtrip</term>
+      <listitem>
+        <synopsis>int wl_display_roundtrip(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a6607ab92946184c1ecefba21987b0a83">
+      <term>wl_display_create_queue</term>
+      <listitem>
+        <synopsis>struct wl_event_queue* wl_display_create_queue(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a40039c1169b153269a3dc0796a54ddb0">
+      <term>wl_display_prepare_read_queue</term>
+      <listitem>
+        <synopsis>int wl_display_prepare_read_queue(struct wl_display *display, struct wl_event_queue *queue)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a040dca18775e3177883f06bd6fdf395f">
+      <term>wl_display_prepare_read</term>
+      <listitem>
+        <synopsis>int wl_display_prepare_read(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a978fcabf13f1915e565435ab097bd590">
+      <term>wl_display_cancel_read</term>
+      <listitem>
+        <synopsis>void wl_display_cancel_read(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a1b1619d9b0930a6d1b70ccd1488335b4">
+      <term>wl_display_read_events</term>
+      <listitem>
+        <synopsis>int wl_display_read_events(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client-core_8h_1a2201f511aa0db7cdb2ecdcb01d61dc9f">
+      <term>wl_log_set_handler_client</term>
+      <listitem>
+        <synopsis>void wl_log_set_handler_client(wl_log_func_t handler)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-client_8c_1a2201f511aa0db7cdb2ecdcb01d61dc9f">
+      <term>wl_log_set_handler_client</term>
+      <listitem>
+        <synopsis>void wl_log_set_handler_client(wl_log_func_t handler)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-util_8h_1a3b28bd92b6af30b28f13c09e45269d5b">
+      <term>WL_EXPORT
+            - 
+Visibility attribute.         </term>
+      <listitem>
+        <synopsis/>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-util_8h_1a9ef5a521a018de9c5b28a5ef9909cd33">
+      <term>WL_DEPRECATED
+            - 
+Deprecated attribute.         </term>
+      <listitem>
+        <synopsis/>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-util_8h_1aa7cbf0ab788d6898c97f322630577424">
+      <term>WL_PRINTF
+            - 
+Printf-style argument attribute.         </term>
+      <listitem>
+        <synopsis/>
+        <para><variablelist><varlistentry><term>x</term><listitem><simpara>
+Ordinality of the format string argument </simpara></listitem></varlistentry><varlistentry><term>y</term><listitem><simpara>
+Ordinality of the argument to check against the format string</simpara></listitem></varlistentry></variablelist>
+
+  See also: https://gcc.gnu.org/onlinedocs/gcc-3.2.1/gcc/Function-Attributes.html 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa">
+      <term>wl_container_of
+            - 
+Retrieves a pointer to a containing struct, given a member name.         </term>
+      <listitem>
+        <synopsis/>
+        <para>This macro allows "conversion" from a pointer to a member to its containing struct. This is useful if you have a contained item like a <link linkend="Client-structwl__list">wl_list</link>, wl_listener, or wl_signal, provided via a callback or other means, and would like to retrieve the struct that contains it.</para>
+        <para>To demonstrate, the following example retrieves a pointer to example_container given only its destroy_listener member:</para>
+        <para>
+          <programlisting>struct example_container {
+        struct wl_listener destroy_listener;
+        // other members...
+};
+
+void example_container_destroy(struct wl_listener *listener, void *data)
+{
+        struct example_container *ctr;
+
+        ctr = wl_container_of(listener, ctr, destroy_listener);
+        // destroy ctr...
+}
+</programlisting>
+        </para>
+        <para><emphasis>Note: sample need not be a valid pointer. A null or uninitialised pointer is sufficient.</emphasis>
+<variablelist><varlistentry><term>ptr</term><listitem><simpara>
+Valid pointer to the contained member </simpara></listitem></varlistentry><varlistentry><term>sample</term><listitem><simpara>
+Pointer to a struct whose type contains ptr </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Named location of ptr within the sample type</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The container for the specified pointer </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23">
+      <term>wl_iterator_result
+            - 
+Return value of an iterator function.         </term>
+      <listitem>
+        <synopsis/>
+        <para>
+  See also: wl_client_for_each_resource_iterator_func_t 
+
+  See also: wl_client_for_each_resource 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb">
+      <term>wl_fixed_t
+            - 
+Fixed-point number.         </term>
+      <listitem>
+        <synopsis>typedef int32_t wl_fixed_t</synopsis>
+        <para>A wl_fixed_t is a 24.8 signed fixed-point number with a sign bit, 23 bits of integer precision and 8 bits of decimal precision. Consider wl_fixed_t as an opaque struct with methods that facilitate conversion to and from double and int types. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd">
+      <term>wl_dispatcher_func_t
+            - 
+Dispatcher function type alias.         </term>
+      <listitem>
+        <synopsis>typedef int(* wl_dispatcher_func_t) (const void *, void *, uint32_t, const struct wl_message *, union wl_argument *))(const void *, void *, uint32_t, const struct wl_message *, union wl_argument *)</synopsis>
+        <para>A dispatcher is a function that handles the emitting of callbacks in client code. For programs directly using the C library, this is done by using libffi to call function pointers. When binding to languages other than C, dispatchers provide a way to abstract the function calling process to be friendlier to other function calling systems.</para>
+        <para>A dispatcher takes five arguments: The first is the dispatcher-specific implementation associated with the target object. The second is the object upon which the callback is being invoked (either <link linkend="Client-classwl__proxy">wl_proxy</link> or wl_resource). The third and fourth arguments are the opcode and the <link linkend="Client-structwl__message">wl_message</link> corresponding to the callback. The final argument is an array of arguments received from the other process via the wire protocol.</para>
+        <para><variablelist><varlistentry><term>const void *</term><listitem><simpara>
+Dispatcher-specific implementation data </simpara></listitem></varlistentry><varlistentry><term>void *</term><listitem><simpara>
+Callback invocation target (<link linkend="Client-classwl__proxy">wl_proxy</link> or wl_resource) </simpara></listitem></varlistentry><varlistentry><term>uint32_t</term><listitem><simpara>
+Callback opcode </simpara></listitem></varlistentry><varlistentry><term>const struct wl_message *</term><listitem><simpara>
+Callback message signature </simpara></listitem></varlistentry><varlistentry><term>union wl_argument *</term><listitem><simpara>
+Array of received arguments</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success, or -1 on failure </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Client-wayland-util_8h_1a8bbe3cc915acdaf00f7a183bf03d809c">
+      <term>wl_log_func_t
+            - 
+Log function type alias.         </term>
+      <listitem>
+        <synopsis>typedef void(* wl_log_func_t) (const char *, va_list))(const char *, va_list)</synopsis>
+        <para>The C implementation of the Wayland protocol abstracts the details of logging. Users may customize the logging behavior, with a function conforming to the wl_log_func_t type, via wl_log_set_handler_client and wl_log_set_handler_server.</para>
+        <para>A wl_log_func_t must conform to the expectations of vprintf, and expects two arguments: a string to write and a corresponding variable argument list. While the string to write may contain format specifiers and use values in the variable argument list, the behavior of any wl_log_func_t depends on the implementation.</para>
+        <para><emphasis>Note: Take care to not confuse this with wl_protocol_logger_func_t, which is a specific server-side logger for requests and events.</emphasis>
+<variablelist><varlistentry><term>const char *</term><listitem><simpara>
+String to write to the log, containing optional format specifiers </simpara></listitem></varlistentry><varlistentry><term>va_list</term><listitem><simpara>
+Variable argument list</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Client-wayland-client-core_8h_1a2201f511aa0db7cdb2ecdcb01d61dc9f">wl_log_set_handler_client</link> 
+
+  See also: wl_log_set_handler_server 
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section>

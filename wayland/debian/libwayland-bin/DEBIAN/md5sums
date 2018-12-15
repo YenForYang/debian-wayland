@@ -1,0 +1,5 @@
+3e8496b4342cef935a4cc29e1bbc246a  usr/bin/wayland-scanner
+bed4d5dd1e0e42e16f0cea76be97cfda  usr/share/aclocal/wayland-scanner.m4
+49e3ef1a401892a24d5186f528e1557f  usr/share/doc/libwayland-bin/changelog.Debian.gz
+a8e9f946ac71d81f456f678ce3845546  usr/share/doc/libwayland-bin/copyright
+2c2a360e4c4a3a99a95b975417d6af7f  usr/share/wayland/wayland-scanner.mk

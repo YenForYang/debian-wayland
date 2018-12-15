@@ -1,0 +1,12 @@
+Package: libwayland-bin-dbgsym
+Source: wayland
+Version: 1.16.0-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 47
+Depends: libwayland-bin (= 1.16.0-2)
+Section: debug
+Priority: optional
+Description: debug symbols for libwayland-bin
+Build-Ids: 42d05210af4bf2aa9e8cb30a22118d9c04b6b9c3

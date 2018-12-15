@@ -1,0 +1,14 @@
+<map id="arch_x" name="arch_x">
+<area shape="rect" id="node1" href="#c1" title="&lt;TABLE&gt;" alt="" coords="5,5,116,53"/>
+<area shape="rect" id="node3" href="#c2" title="&lt;TABLE&gt;" alt="" coords="111,103,221,151"/>
+<area shape="rect" id="node4" href="#xserver" title="X Server" alt="" coords="106,200,226,300"/>
+<area shape="rect" id="edge1-taillabel" href="#step_3" title="③" alt="" coords="37,65,60,92"/>
+<area shape="rect" id="node2" href="#c3" title="&lt;TABLE&gt;" alt="" coords="216,5,327,53"/>
+<area shape="rect" id="edge4-taillabel" href="#step_2" title="②" alt="" coords="124,160,146,187"/>
+<area shape="rect" id="node5" href="#comp" title="Compositor" alt="" coords="273,200,429,300"/>
+<area shape="rect" id="edge11-taillabel" href="#step_4" title="④" alt="" coords="230,265,252,292"/>
+<area shape="rect" id="node6" href="#impl" title="KMS evdev Kernel" alt="" coords="89,375,243,455"/>
+<area shape="rect" id="edge7-taillabel" href="#step_6" title="⑥" alt="" coords="118,305,141,332"/>
+<area shape="rect" id="edge12-taillabel" href="#step_5" title="⑤" alt="" coords="250,211,273,238"/>
+<area shape="rect" id="edge9-taillabel" href="#step_1" title="①" alt="" coords="198,346,221,373"/>
+</map>

@@ -1,0 +1,15 @@
+Package: libwayland-client0-dbgsym
+Source: wayland
+Version: 1.16.0-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 60
+Depends: libwayland-client0 (= 1.16.0-2)
+Breaks: libwayland-client0 (<< 1.10.0-2)
+Replaces: libwayland-client0 (<< 1.10.0-2)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libwayland-client0
+Build-Ids: 6470f0d90a2b9177c09b22b14a49b5805648c2fe

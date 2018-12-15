@@ -1,0 +1,2219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section id="Server-unionwl__argument">
+  <title>wl_argument
+                - 
+Protocol message argument data types.     </title>
+  <para>This union represents all of the argument types in the Wayland protocol wire format. The protocol implementation uses <link linkend="Server-unionwl__argument">wl_argument</link> within its marshalling machinery for dispatching messages between a client and a compositor.</para>
+  <para>
+  See also: <link linkend="Server-structwl__message">wl_message</link> 
+
+  See also: <link linkend="Server-structwl__interface">wl_interface</link> 
+
+  See also: Wire Format 
+</para>
+</section><section id="Server-structwl__array">
+  <title>wl_array
+                - 
+Dynamic array.     </title>
+  <para>A <link linkend="Server-structwl__array">wl_array</link> is a dynamic array that can only grow until released. It is intended for relatively small allocations whose size is variable or not known in advance. While construction of a <link linkend="Server-structwl__array">wl_array</link> does not require all elements to be of the same size, <link linkend="Server-structwl__array_1ab050f7375dcae916506142763080ed80">wl_array_for_each()</link> does require all elements to have the same type and size. </para>
+  <variablelist>
+    <varlistentry id="Server-structwl__array_1ae246c66cbd633063e2649c503d764d3f">
+      <term>size
+            - 
+Array size.         </term>
+      <listitem>
+        <synopsis>size_t wl_array::size</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__array_1a4b33519c8f628d650631ebecee45b771">
+      <term>alloc
+            - 
+Allocated space.         </term>
+      <listitem>
+        <synopsis>size_t wl_array::alloc</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b">
+      <term>data
+            - 
+Array data.         </term>
+      <listitem>
+        <synopsis>void* wl_array::data</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__array_1ada9b770427b901be34eaf3683cf04d5a">
+      <term>wl_array_init
+            - 
+Initializes the array.         </term>
+      <listitem>
+        <synopsis>void wl_array_init(struct wl_array *array)</synopsis>
+        <para><variablelist><varlistentry><term>array</term><listitem><simpara>
+Array to initialize </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__array_1a0e8845f61f1e1fccfce050830ed5b279">
+      <term>wl_array_release
+            - 
+Releases the array data.         </term>
+      <listitem>
+        <synopsis>void wl_array_release(struct wl_array *array)</synopsis>
+        <para><emphasis>Note: Leaves the array in an invalid state.</emphasis>
+<variablelist><varlistentry><term>array</term><listitem><simpara>
+Array whose data is to be released </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__array_1a3c3d1079a20b0609f6e4914ea21c2d03">
+      <term>wl_array_add
+            - 
+Increases the size of the array by size bytes.         </term>
+      <listitem>
+        <synopsis>void * wl_array_add(struct wl_array *array, size_t size)</synopsis>
+        <para><variablelist><varlistentry><term>array</term><listitem><simpara>
+Array whose size is to be increased </simpara></listitem></varlistentry><varlistentry><term>size</term><listitem><simpara>
+Number of bytes to increase the size of the array by</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A pointer to the beginning of the newly appended space, or NULL when resizing fails. </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__array_1a4de64390294de78da813dcfb16f47617">
+      <term>wl_array_copy
+            - 
+Copies the contents of source to array.         </term>
+      <listitem>
+        <synopsis>int wl_array_copy(struct wl_array *array, struct wl_array *source)</synopsis>
+        <para><variablelist><varlistentry><term>array</term><listitem><simpara>
+Destination array to copy to </simpara></listitem></varlistentry><varlistentry><term>source</term><listitem><simpara>
+Source array to copy from</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success, or -1 on failure </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__array_1ab050f7375dcae916506142763080ed80">
+      <term>wl_array_for_each
+            - 
+Iterates over an array.         </term>
+      <listitem>
+        <synopsis/>
+        <para>This macro expresses a for-each iterator for <link linkend="Server-structwl__array">wl_array</link>. It assigns each element in the array to pos, which can then be referenced in a trailing code block. pos must be a pointer to the array element type, and all array elements must be of the same type and size.</para>
+        <para><variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each array element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>array</term><listitem><simpara>
+Array to iterate over</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__client">
+  <title>wl_client</title>
+  <para/>
+  <variablelist>
+    <varlistentry id="Server-structwl__client_1a6a045ad15d6ca216c4da41ba67c9ef4a">
+      <term>wl_client_flush
+            - 
+Flush pending events to the client.         </term>
+      <listitem>
+        <synopsis>void wl_client_flush(struct wl_client *client)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The client object</simpara></listitem></varlistentry></variablelist>
+Events sent to clients are queued in a buffer and written to the socket later - typically when the compositor has handled all requests and goes back to block in the event loop. This function flushes all queued up events for a client immediately. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__client_1a9b2abda633c67a4cd06ea5d9be0482f3">
+      <term>wl_client_get_display
+            - 
+Get the display object for the given client.         </term>
+      <listitem>
+        <synopsis>struct wl_display * wl_client_get_display(struct wl_client *client)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The client object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The display object the client is associated with. </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9">
+      <term>wl_client_get_credentials
+            - 
+Return Unix credentials for the client.         </term>
+      <listitem>
+        <synopsis>void wl_client_get_credentials(struct wl_client *client, pid_t *pid, uid_t *uid, gid_t *gid)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The display object </simpara></listitem></varlistentry><varlistentry><term>pid</term><listitem><simpara>
+Returns the process ID </simpara></listitem></varlistentry><varlistentry><term>uid</term><listitem><simpara>
+Returns the user ID </simpara></listitem></varlistentry><varlistentry><term>gid</term><listitem><simpara>
+Returns the group ID</simpara></listitem></varlistentry></variablelist>
+This function returns the process ID, the user ID and the group ID for the given client. The credentials come from getsockopt() with SO_PEERCRED, on the client socket fd. All the pointers can be NULL, if the caller is not interested in a particular ID.</para>
+        <para>Be aware that for clients that a compositor forks and execs and then connects using socketpair(), this function will return the credentials for the compositor. The credentials for the socketpair are set at creation time in the compositor. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__client_1ad5a94921b39efad0985632e865479ca2">
+      <term>wl_client_get_fd
+            - 
+Get the file descriptor for the client.         </term>
+      <listitem>
+        <synopsis>int wl_client_get_fd(struct wl_client *client)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The display object </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The file descriptor to use for the connection</simpara></listitem></varlistentry></variablelist>
+This function returns the file descriptor for the given client.</para>
+        <para>Be sure to use the file descriptor from the client for inspection only. If the caller does anything to the file descriptor that changes its state, it will likely cause problems.</para>
+        <para>See also <link linkend="Server-structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9">wl_client_get_credentials()</link>. It is recommended that you evaluate whether <link linkend="Server-structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9">wl_client_get_credentials()</link> can be applied to your use case instead of this function.</para>
+        <para>If you would like to distinguish just between the client and the compositor itself from the client's request, it can be done by getting the client credentials and by checking the PID of the client and the compositor's PID. Regarding the case in which the socketpair() is being used, you need to be careful. Please note the documentation for <link linkend="Server-structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9">wl_client_get_credentials()</link>.</para>
+        <para>This function can be used for a compositor to validate a request from a client if there are additional information provided from the client's file descriptor. For instance, suppose you can get the security contexts from the client's file descriptor. The compositor can validate the client's request with the contexts and make a decision whether it permits or deny it. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__client_1ab9d04dffa9409db43154230c64bc1f84">
+      <term>wl_client_get_object
+            - 
+Look up an object in the client name space.         </term>
+      <listitem>
+        <synopsis>struct wl_resource * wl_client_get_object(struct wl_client *client, uint32_t id)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The client object </simpara></listitem></varlistentry><varlistentry><term>id</term><listitem><simpara>
+The object id </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The object or NULL if there is not object for the given ID</simpara></listitem></varlistentry></variablelist>
+This looks up an object in the client object name space by its object ID. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__client_1ade7bddc335d60cb95f9d1bd4fb60d25b">
+      <term>wl_client_get_link
+            - 
+Get the link by which a client is inserted in the client list.         </term>
+      <listitem>
+        <synopsis>struct wl_list * wl_client_get_link(struct wl_client *client)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The client object</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-wayland-server-core_8h_1af1e9ad8dd32ea89265936930cd173ec5">wl_client_for_each()</link> 
+
+  See also: <link linkend="Server-structwl__display_1a99b9c187d88633fa5ba86d1424f06d7f">wl_display_get_client_list()</link> 
+
+  See also: <link linkend="Server-structwl__client_1aec831218471327f37b4e1f11b571545d">wl_client_from_link()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__client_1aec831218471327f37b4e1f11b571545d">
+      <term>wl_client_from_link
+            - 
+Get a wl_client by its link.         </term>
+      <listitem>
+        <synopsis>struct wl_client * wl_client_from_link(struct wl_list *link)</synopsis>
+        <para><variablelist><varlistentry><term>link</term><listitem><simpara>
+The link of a <link linkend="Server-structwl__client">wl_client</link></simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-wayland-server-core_8h_1af1e9ad8dd32ea89265936930cd173ec5">wl_client_for_each()</link> 
+
+  See also: <link linkend="Server-structwl__display_1a99b9c187d88633fa5ba86d1424f06d7f">wl_display_get_client_list()</link> 
+
+  See also: <link linkend="Server-structwl__client_1ade7bddc335d60cb95f9d1bd4fb60d25b">wl_client_get_link()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__client_1a62a52be27947e43ce7884a68759d1b4e">
+      <term>wl_client_add_resource_created_listener
+            - 
+Add a listener for the client's resource creation signal.         </term>
+      <listitem>
+        <synopsis>void wl_client_add_resource_created_listener(struct wl_client *client, struct wl_listener *listener)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The client object </simpara></listitem></varlistentry><varlistentry><term>listener</term><listitem><simpara>
+The listener to be added</simpara></listitem></varlistentry></variablelist>
+When a new resource is created for this client the listener will be notified, carrying the new resource as the data argument. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__client_1a4a0a6bb48f63ed80ab4575fda4c5d01a">
+      <term>wl_client_for_each_resource
+            - 
+Iterate over all the resources of a client.         </term>
+      <listitem>
+        <synopsis>void wl_client_for_each_resource(struct wl_client *client, wl_client_for_each_resource_iterator_func_t iterator, void *user_data)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The client object </simpara></listitem></varlistentry><varlistentry><term>iterator</term><listitem><simpara>
+The iterator function </simpara></listitem></varlistentry><varlistentry><term>user_data</term><listitem><simpara>
+The user data pointer</simpara></listitem></varlistentry></variablelist>
+The function pointed by iterator will be called for each resource owned by the client. The user_data will be passed as the second argument of the iterator function. If the iterator function returns WL_ITERATOR_CONTINUE the iteration will continue, if it returns WL_ITERATOR_STOP it will stop.</para>
+        <para>Creating and destroying resources while iterating is safe, but new resources may or may not be picked up by the iterator.</para>
+        <para>
+  See also: <link linkend="Server-wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23">wl_iterator_result</link> 
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__display">
+  <title>wl_display</title>
+  <para/>
+  <variablelist>
+    <varlistentry id="Server-structwl__display_1aa2436b6a0b56cd65d8f6e33b76cd292c">
+      <term>wl_client_create
+            - 
+Create a client for the given file descriptor.         </term>
+      <listitem>
+        <synopsis>struct wl_client * wl_client_create(struct wl_display *display, int fd)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object </simpara></listitem></varlistentry><varlistentry><term>fd</term><listitem><simpara>
+The file descriptor for the socket to the client </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The new client object or NULL on failure.</simpara></listitem></varlistentry></variablelist>
+Given a file descriptor corresponding to one end of a socket, this function will create a <link linkend="Server-structwl__client">wl_client</link> struct and add the new client to the compositors client list. At that point, the client is initialized and ready to run, as if the client had connected to the servers listening socket. When the client eventually sends requests to the compositor, the <link linkend="Server-structwl__client">wl_client</link> argument to the request handler will be the <link linkend="Server-structwl__client">wl_client</link> returned from this function.</para>
+        <para>The other end of the socket can be passed to wl_display_connect_to_fd() on the client side or used with the WAYLAND_SOCKET environment variable on the client side.</para>
+        <para>Listeners added with <link linkend="Server-wayland-server_8c_1a8c1cdf513c91fa498c4d9259eae3ed71">wl_display_add_client_created_listener()</link> will be notified by this function after the client is fully constructed.</para>
+        <para>On failure this function sets errno accordingly and returns NULL. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1ac3dd9a1294b2b6103228a55e08709e9f">
+      <term>wl_display_create
+            - 
+Create Wayland display object.         </term>
+      <listitem>
+        <synopsis>struct wl_display * wl_display_create(void)</synopsis>
+        <para><variablelist><varlistentry><term>Returns:</term><listitem><simpara>The Wayland display object. Null if failed to create</simpara></listitem></varlistentry></variablelist>
+This creates the <link linkend="Server-structwl__display">wl_display</link> object. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1acd9ad2e1ca3ffb0ba0f1b77ae616f8ee">
+      <term>wl_display_destroy
+            - 
+Destroy Wayland display object.         </term>
+      <listitem>
+        <synopsis>void wl_display_destroy(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The Wayland display object which should be destroyed. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>None.</simpara></listitem></varlistentry></variablelist>
+This function emits the <link linkend="Server-structwl__display">wl_display</link> destroy signal, releases all the sockets added to this display, free's all the globals associated with this display, free's memory of additional shared memory formats and destroy the display object.</para>
+        <para>
+  See also: <link linkend="Server-wayland-server-core_8h_1a9ea24547f07538f2a326c42c7793b937">wl_display_add_destroy_listener</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1a3905b9734d8bb84f2c851bb4abbc52f8">
+      <term>wl_display_set_global_filter
+            - 
+Set a filter function for global objects.         </term>
+      <listitem>
+        <synopsis>void wl_display_set_global_filter(struct wl_display *display, wl_display_global_filter_func_t filter, void *data)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The Wayland display object. </simpara></listitem></varlistentry><varlistentry><term>filter</term><listitem><simpara>
+The global filter funtion. </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+User data to be associated with the global filter. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>None.</simpara></listitem></varlistentry></variablelist>
+Set a filter for the <link linkend="Server-structwl__display">wl_display</link> to advertise or hide global objects to clients. The set filter will be used during <link linkend="Server-structwl__global">wl_global</link> advertisment to determine whether a global object should be advertised to a given client, and during <link linkend="Server-structwl__global">wl_global</link> binding to determine whether a given client should be allowed to bind to a global.</para>
+        <para>Clients that try to bind to a global that was filtered out will have an error raised.</para>
+        <para>Setting the filter NULL will result in all globals being advertised to all clients. The default is no filter. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1a43f04f76ea1457edcf37c95de68b29ef">
+      <term>wl_display_get_serial
+            - 
+Get the current serial number.         </term>
+      <listitem>
+        <synopsis>uint32_t wl_display_get_serial(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object</simpara></listitem></varlistentry></variablelist>
+This function returns the most recent serial number, but does not increment it. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1a145f7d3e4b41fc9014c11bf01bd7eb4f">
+      <term>wl_display_next_serial
+            - 
+Get the next serial number.         </term>
+      <listitem>
+        <synopsis>uint32_t wl_display_next_serial(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object</simpara></listitem></varlistentry></variablelist>
+This function increments the display serial number and returns the new value. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1ab50365739904f91579a66f4b054a3ecb">
+      <term>wl_display_destroy_clients
+            - 
+Destroy all clients connected to the display.         </term>
+      <listitem>
+        <synopsis>void wl_display_destroy_clients(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object</simpara></listitem></varlistentry></variablelist>
+This function should be called right before <link linkend="Server-structwl__display_1acd9ad2e1ca3ffb0ba0f1b77ae616f8ee">wl_display_destroy()</link> to ensure all client resources are closed properly. Destroying a client from within <link linkend="Server-structwl__display_1ab50365739904f91579a66f4b054a3ecb">wl_display_destroy_clients()</link> is safe, but creating one will leak resources and raise a warning. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1a54f1cf58cc74cd44c889b2cdf029345d">
+      <term>wl_display_add_socket_fd
+            - 
+Add a socket with an existing fd to Wayland display for the clients to connect.         </term>
+      <listitem>
+        <synopsis>int wl_display_add_socket_fd(struct wl_display *display, int sock_fd)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+Wayland display to which the socket should be added. </simpara></listitem></varlistentry><varlistentry><term>sock_fd</term><listitem><simpara>
+The existing socket file descriptor to be used </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 if success. -1 if failed.</simpara></listitem></varlistentry></variablelist>
+The existing socket fd must already be created, opened, and locked. The fd must be properly set to CLOEXEC and bound to a socket file with both bind() and listen() already called. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1a9fdf7264f0a3a28a75c141db252067b8">
+      <term>wl_display_add_socket
+            - 
+Add a socket to Wayland display for the clients to connect.         </term>
+      <listitem>
+        <synopsis>int wl_display_add_socket(struct wl_display *display, const char *name)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+Wayland display to which the socket should be added. </simpara></listitem></varlistentry><varlistentry><term>name</term><listitem><simpara>
+Name of the Unix socket. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 if success. -1 if failed.</simpara></listitem></varlistentry></variablelist>
+This adds a Unix socket to Wayland display which can be used by clients to connect to Wayland display.</para>
+        <para>If NULL is passed as name, then it would look for WAYLAND_DISPLAY env variable for the socket name. If WAYLAND_DISPLAY is not set, then default wayland-0 is used.</para>
+        <para>The Unix socket will be created in the directory pointed to by environment variable XDG_RUNTIME_DIR. If XDG_RUNTIME_DIR is not set, then this function fails and returns -1.</para>
+        <para>The length of socket path, i.e., the path set in XDG_RUNTIME_DIR and the socket name, must not exceed the maximum length of a Unix socket path. The function also fails if the user do not have write permission in the XDG_RUNTIME_DIR path or if the socket name is already in use. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1a4dc118c686e362aba0b3c6c8874efc3d">
+      <term>wl_display_add_protocol_logger
+            - 
+Adds a new protocol logger.         </term>
+      <listitem>
+        <synopsis>struct wl_protocol_logger * wl_display_add_protocol_logger(struct wl_display *display, wl_protocol_logger_func_t func, void *user_data)</synopsis>
+        <para>When a new protocol message arrives or is sent from the server all the protocol logger functions will be called, carrying the user_data pointer, the type of the message (request or event) and the actual message. The lifetime of the messages passed to the logger function ends when they return so the messages cannot be stored and accessed later.</para>
+        <para>errno is set on error.</para>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object </simpara></listitem></varlistentry><varlistentry><term>func</term><listitem><simpara>
+The function to call to log a new protocol message </simpara></listitem></varlistentry><varlistentry><term>user_data</term><listitem><simpara>
+The user data pointer to pass to func </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The protol logger object on success, NULL on failure.</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-structwl__protocol__logger_1ac5bfbf098cbecb788190bc12e3becad7">wl_protocol_logger_destroy</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1ad806e5d1f937b32f62998c44a0a16421">
+      <term>wl_display_add_shm_format
+            - 
+Add support for a wl_shm pixel format.         </term>
+      <listitem>
+        <synopsis>uint32_t * wl_display_add_shm_format(struct wl_display *display, uint32_t format)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object </simpara></listitem></varlistentry><varlistentry><term>format</term><listitem><simpara>
+The wl_shm pixel format to advertise </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A pointer to the wl_shm format that was added to the list or NULL if adding it to the list failed.</simpara></listitem></varlistentry></variablelist>
+Add the specified wl_shm format to the list of formats the wl_shm object advertises when a client binds to it. Adding a format to the list means that clients will know that the compositor supports this format and may use it for creating wl_shm buffers. The compositor must be able to handle the pixel format when a client requests it.</para>
+        <para>The compositor by default supports WL_SHM_FORMAT_ARGB8888 and WL_SHM_FORMAT_XRGB8888. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__display_1a99b9c187d88633fa5ba86d1424f06d7f">
+      <term>wl_display_get_client_list
+            - 
+Get the list of currently connected clients.         </term>
+      <listitem>
+        <synopsis>struct wl_list * wl_display_get_client_list(struct wl_display *display)</synopsis>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object</simpara></listitem></varlistentry></variablelist>
+This function returns a pointer to the list of clients currently connected to the display. You can iterate on the list by using the wl_client_for_each macro. The returned value is valid for the lifetime of the display. You must not modify the returned list, but only access it.</para>
+        <para>
+  See also: <link linkend="Server-wayland-server-core_8h_1af1e9ad8dd32ea89265936930cd173ec5">wl_client_for_each()</link> 
+
+  See also: <link linkend="Server-structwl__client_1ade7bddc335d60cb95f9d1bd4fb60d25b">wl_client_get_link()</link> 
+
+  See also: <link linkend="Server-structwl__client_1aec831218471327f37b4e1f11b571545d">wl_client_from_link()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__event__loop">
+  <title>wl_event_loop
+                - 
+An event loop context.     </title>
+  <para>Usually you create an event loop context, add sources to it, and call <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link> in a loop to process events.</para>
+  <para>
+  See also: <link linkend="Server-structwl__event__source">wl_event_source</link> 
+</para>
+  <variablelist>
+    <varlistentry id="Server-structwl__event__loop_1afb0958142b950045cd91011c71706979">
+      <term>wl_event_loop_create
+            - 
+Create a new event loop context.         </term>
+      <listitem>
+        <synopsis>struct wl_event_loop * wl_event_loop_create(void)</synopsis>
+        <para><variablelist><varlistentry><term>Returns:</term><listitem><simpara>A new event loop context object.</simpara></listitem></varlistentry></variablelist>
+This creates a new event loop context. Initially this context is empty. Event sources need to be explicitly added to it.</para>
+        <para>Normally the event loop is run by calling <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link> in a loop until the program terminates. Alternatively, an event loop can be embedded in another event loop by its file descriptor, see <link linkend="Server-structwl__event__loop_1a58c8aa06a2d240a49a95a91eddcba8e5">wl_event_loop_get_fd()</link>. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__loop_1ad50f13e2c738e68f7576757aa862513a">
+      <term>wl_event_loop_destroy
+            - 
+Destroy an event loop context.         </term>
+      <listitem>
+        <synopsis>void wl_event_loop_destroy(struct wl_event_loop *loop)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop to be destroyed.</simpara></listitem></varlistentry></variablelist>
+This emits the event loop destroy signal, closes the event loop file descriptor, and frees loop.</para>
+        <para>If the event loop has existing sources, those cannot be safely removed afterwards. Therefore one must call <link linkend="Server-structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f">wl_event_source_remove()</link> on all event sources before destroying the event loop context. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__loop_1aefc44b3062c22d2506ff42460f091396">
+      <term>wl_event_loop_dispatch_idle
+            - 
+Dispatch the idle sources.         </term>
+      <listitem>
+        <synopsis>void wl_event_loop_dispatch_idle(struct wl_event_loop *loop)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop whose idle sources are dispatched.</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-structwl__event__source_1a90d88ae62b26a25f709977c45b300716">wl_event_loop_add_idle()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">
+      <term>wl_event_loop_dispatch
+            - 
+Wait for events and dispatch them.         </term>
+      <listitem>
+        <synopsis>int wl_event_loop_dispatch(struct wl_event_loop *loop, int timeout)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop whose sources to wait for. </simpara></listitem></varlistentry><varlistentry><term>timeout</term><listitem><simpara>
+The polling timeout in milliseconds. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 for success, -1 for polling error.</simpara></listitem></varlistentry></variablelist>
+All the associated event sources are polled. This function blocks until any event source delivers an event (idle sources excluded), or the timeout expires. A timeout of -1 disables the timeout, causing the function to block indefinitely. A timeout of zero causes the poll to always return immediately.</para>
+        <para>All idle sources are dispatched before blocking. An idle source is destroyed when it is dispatched. After blocking, all other ready sources are dispatched. Then, idle sources are dispatched again, in case the dispatched events created idle sources. Finally, all sources marked with <link linkend="Server-structwl__event__source_1aa079264c57dd12168c691c000724efcf">wl_event_source_check()</link> are dispatched in a loop until their dispatch functions all return zero. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__loop_1a58c8aa06a2d240a49a95a91eddcba8e5">
+      <term>wl_event_loop_get_fd
+            - 
+Get the event loop file descriptor.         </term>
+      <listitem>
+        <synopsis>int wl_event_loop_get_fd(struct wl_event_loop *loop)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop context. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The aggregate file descriptor.</simpara></listitem></varlistentry></variablelist>
+This function returns the aggregate file descriptor, that represents all the event sources (idle sources excluded) associated with the given event loop context. When any event source makes an event available, it will be reflected in the aggregate file descriptor.</para>
+        <para>When the aggregate file descriptor delivers an event, one can call <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link> on the event loop context to dispatch all the available events. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__loop_1a6b564d8d4183d71f1fdf06e751d84d51">
+      <term>wl_event_loop_add_destroy_listener
+            - 
+Register a destroy listener for an event loop context.         </term>
+      <listitem>
+        <synopsis>void wl_event_loop_add_destroy_listener(struct wl_event_loop *loop, struct wl_listener *listener)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop context whose destruction to listen for. </simpara></listitem></varlistentry><varlistentry><term>listener</term><listitem><simpara>
+The listener with the callback to be called.</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-structwl__listener">wl_listener</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__loop_1af282cb9f57fadd1fc0dd47ea68c3bae3">
+      <term>wl_event_loop_get_destroy_listener
+            - 
+Get the listener struct for the specified callback.         </term>
+      <listitem>
+        <synopsis>struct wl_listener * wl_event_loop_get_destroy_listener(struct wl_event_loop *loop, wl_notify_func_t notify)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop context to inspect. </simpara></listitem></varlistentry><varlistentry><term>notify</term><listitem><simpara>
+The destroy callback to find. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The <link linkend="Server-structwl__listener">wl_listener</link> registered to the event loop context with the given callback pointer. </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__event__source">
+  <title>wl_event_source
+                - 
+An abstract event source.     </title>
+  <para>This is the generic type for fd, timer, signal, and idle sources. Functions that operate on specific source types must not be used with a different type, even if the function signature allows it. </para>
+  <variablelist>
+    <varlistentry id="Server-structwl__event__source_1a09e702384ed869548c72f3576399c581">
+      <term>wl_event_loop_fd_func_t
+            - 
+File descriptor dispatch function type.         </term>
+      <listitem>
+        <synopsis>typedef int(* wl_event_loop_fd_func_t) (int fd, uint32_t mask, void *data))(int fd, uint32_t mask, void *data)</synopsis>
+        <para>Functions of this type are used as callbacks for file descriptor events.</para>
+        <para><variablelist><varlistentry><term>fd</term><listitem><simpara>
+The file descriptor delivering the event. </simpara></listitem></varlistentry><varlistentry><term>mask</term><listitem><simpara>
+Describes the kind of the event as a bitwise-or of: WL_EVENT_READABLE, WL_EVENT_WRITABLE, WL_EVENT_HANGUP, WL_EVENT_ERROR. </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+The user data argument of the related <link linkend="Server-structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25">wl_event_loop_add_fd()</link> call. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>If the event source is registered for re-check with <link linkend="Server-structwl__event__source_1aa079264c57dd12168c691c000724efcf">wl_event_source_check()</link>: 0 for all done, 1 for needing a re-check. If not registered, the return value is ignored and should be zero.</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25">wl_event_loop_add_fd()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1a59bc490bf28b48e0af908ab91649938a">
+      <term>wl_event_loop_timer_func_t
+            - 
+Timer dispatch function type.         </term>
+      <listitem>
+        <synopsis>typedef int(* wl_event_loop_timer_func_t) (void *data))(void *data)</synopsis>
+        <para>Functions of this type are used as callbacks for timer expiry.</para>
+        <para><variablelist><varlistentry><term>data</term><listitem><simpara>
+The user data argument of the related <link linkend="Server-structwl__event__source_1a39374f19a73472f63fab4267a14adc10">wl_event_loop_add_timer()</link> call. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>If the event source is registered for re-check with <link linkend="Server-structwl__event__source_1aa079264c57dd12168c691c000724efcf">wl_event_source_check()</link>: 0 for all done, 1 for needing a re-check. If not registered, the return value is ignored and should be zero.</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-structwl__event__source_1a39374f19a73472f63fab4267a14adc10">wl_event_loop_add_timer()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1a431b418976144a8ebe6b19bc24206d20">
+      <term>wl_event_loop_signal_func_t
+            - 
+Signal dispatch function type.         </term>
+      <listitem>
+        <synopsis>typedef int(* wl_event_loop_signal_func_t) (int signal_number, void *data))(int signal_number, void *data)</synopsis>
+        <para>Functions of this type are used as callbacks for (POSIX) signals.</para>
+        <para><variablelist><varlistentry><term>signal_number</term><listitem><simpara>
+</simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+The user data argument of the related <link linkend="Server-structwl__event__source_1a1706e2490502a95f24ccb59cbae3e2f8">wl_event_loop_add_signal()</link> call. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>If the event source is registered for re-check with <link linkend="Server-structwl__event__source_1aa079264c57dd12168c691c000724efcf">wl_event_source_check()</link>: 0 for all done, 1 for needing a re-check. If not registered, the return value is ignored and should be zero.</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-structwl__event__source_1a1706e2490502a95f24ccb59cbae3e2f8">wl_event_loop_add_signal()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1ae526dfa099f9ba69285e275c82794a9b">
+      <term>wl_event_loop_idle_func_t
+            - 
+Idle task function type.         </term>
+      <listitem>
+        <synopsis>typedef void(* wl_event_loop_idle_func_t) (void *data))(void *data)</synopsis>
+        <para>Functions of this type are used as callbacks before blocking in <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link>.</para>
+        <para><variablelist><varlistentry><term>data</term><listitem><simpara>
+The user data argument of the related <link linkend="Server-structwl__event__source_1a90d88ae62b26a25f709977c45b300716">wl_event_loop_add_idle()</link> call.</simpara></listitem></varlistentry></variablelist>
+
+  See also: <link linkend="Server-structwl__event__source_1a90d88ae62b26a25f709977c45b300716">wl_event_loop_add_idle()</link> <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25">
+      <term>wl_event_loop_add_fd
+            - 
+Create a file descriptor event source.         </term>
+      <listitem>
+        <synopsis>struct wl_event_source * wl_event_loop_add_fd(struct wl_event_loop *loop, int fd, uint32_t mask, wl_event_loop_fd_func_t func, void *data)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop that will process the new source. </simpara></listitem></varlistentry><varlistentry><term>fd</term><listitem><simpara>
+The file descriptor to watch. </simpara></listitem></varlistentry><varlistentry><term>mask</term><listitem><simpara>
+A bitwise-or of which events to watch for: WL_EVENT_READABLE, WL_EVENT_WRITABLE. </simpara></listitem></varlistentry><varlistentry><term>func</term><listitem><simpara>
+The file descriptor dispatch function. </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+User data. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A new file descriptor event source.</simpara></listitem></varlistentry></variablelist>
+The given file descriptor is initially watched for the events given in mask. This can be changed as needed with <link linkend="Server-structwl__event__source_1afe73f9ff59d489e9f27eb9c0e3058a02">wl_event_source_fd_update()</link>.</para>
+        <para>If it is possible that program execution causes the file descriptor to be read while leaving the data in a buffer without actually processing it, it may be necessary to register the file descriptor source to be re-checked, see <link linkend="Server-structwl__event__source_1aa079264c57dd12168c691c000724efcf">wl_event_source_check()</link>. This will ensure that the dispatch function gets called even if the file descriptor is not readable or writable anymore. This is especially useful with IPC libraries that automatically buffer incoming data, possibly as a side-effect of other operations.</para>
+        <para>
+  See also: <link linkend="Server-structwl__event__source_1a09e702384ed869548c72f3576399c581">wl_event_loop_fd_func_t</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1afe73f9ff59d489e9f27eb9c0e3058a02">
+      <term>wl_event_source_fd_update
+            - 
+Update a file descriptor source's event mask.         </term>
+      <listitem>
+        <synopsis>int wl_event_source_fd_update(struct wl_event_source *source, uint32_t mask)</synopsis>
+        <para><variablelist><varlistentry><term>source</term><listitem><simpara>
+The file descriptor event source to update. </simpara></listitem></varlistentry><varlistentry><term>mask</term><listitem><simpara>
+The new mask, a bitwise-or of: WL_EVENT_READABLE, WL_EVENT_WRITABLE. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success, -1 on failure.</simpara></listitem></varlistentry></variablelist>
+This changes which events, readable and/or writable, cause the dispatch callback to be called on.</para>
+        <para>File descriptors are usually writable to begin with, so they do not need to be polled for writable until a write actually fails. When a write fails, the event mask can be changed to poll for readable and writable, delivering a dispatch callback when it is possible to write more. Once all data has been written, the mask can be changed to poll only for readable to avoid busy-looping on dispatch.</para>
+        <para>
+  See also: <link linkend="Server-structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25">wl_event_loop_add_fd()</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1a39374f19a73472f63fab4267a14adc10">
+      <term>wl_event_loop_add_timer
+            - 
+Create a timer event source.         </term>
+      <listitem>
+        <synopsis>struct wl_event_source * wl_event_loop_add_timer(struct wl_event_loop *loop, wl_event_loop_timer_func_t func, void *data)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop that will process the new source. </simpara></listitem></varlistentry><varlistentry><term>func</term><listitem><simpara>
+The timer dispatch function. </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+User data. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A new timer event source.</simpara></listitem></varlistentry></variablelist>
+The timer is initially disarmed. It needs to be armed with a call to <link linkend="Server-structwl__event__source_1a0164a47e9e8356af90c9d5c1de9f5487">wl_event_source_timer_update()</link> before it can trigger a dispatch call.</para>
+        <para>
+  See also: <link linkend="Server-structwl__event__source_1a59bc490bf28b48e0af908ab91649938a">wl_event_loop_timer_func_t</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1a0164a47e9e8356af90c9d5c1de9f5487">
+      <term>wl_event_source_timer_update
+            - 
+Arm or disarm a timer.         </term>
+      <listitem>
+        <synopsis>int wl_event_source_timer_update(struct wl_event_source *source, int ms_delay)</synopsis>
+        <para><variablelist><varlistentry><term>source</term><listitem><simpara>
+The timer event source to modify. </simpara></listitem></varlistentry><varlistentry><term>ms_delay</term><listitem><simpara>
+The timeout in milliseconds. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success, -1 on failure.</simpara></listitem></varlistentry></variablelist>
+If the timeout is zero, the timer is disarmed.</para>
+        <para>If the timeout is non-zero, the timer is set to expire after the given timeout in milliseconds. When the timer expires, the dispatch function set with <link linkend="Server-structwl__event__source_1a39374f19a73472f63fab4267a14adc10">wl_event_loop_add_timer()</link> is called once from <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link>. If another dispatch is desired after another expiry, <link linkend="Server-structwl__event__source_1a0164a47e9e8356af90c9d5c1de9f5487">wl_event_source_timer_update()</link> needs to be called again. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1a1706e2490502a95f24ccb59cbae3e2f8">
+      <term>wl_event_loop_add_signal
+            - 
+Create a POSIX signal event source.         </term>
+      <listitem>
+        <synopsis>struct wl_event_source * wl_event_loop_add_signal(struct wl_event_loop *loop, int signal_number, wl_event_loop_signal_func_t func, void *data)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop that will process the new source. </simpara></listitem></varlistentry><varlistentry><term>signal_number</term><listitem><simpara>
+Number of the signal to watch for. </simpara></listitem></varlistentry><varlistentry><term>func</term><listitem><simpara>
+The signal dispatch function. </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+User data. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A new signal event source.</simpara></listitem></varlistentry></variablelist>
+This function blocks the normal delivery of the given signal in the calling thread, and creates a "watch" for it. Signal delivery no longer happens asynchronously, but by <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link> calling the dispatch callback function func.</para>
+        <para>It is the caller's responsibility to ensure that all other threads have also blocked the signal.</para>
+        <para>
+  See also: <link linkend="Server-structwl__event__source_1a431b418976144a8ebe6b19bc24206d20">wl_event_loop_signal_func_t</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1a90d88ae62b26a25f709977c45b300716">
+      <term>wl_event_loop_add_idle
+            - 
+Create an idle task.         </term>
+      <listitem>
+        <synopsis>struct wl_event_source * wl_event_loop_add_idle(struct wl_event_loop *loop, wl_event_loop_idle_func_t func, void *data)</synopsis>
+        <para><variablelist><varlistentry><term>loop</term><listitem><simpara>
+The event loop that will process the new task. </simpara></listitem></varlistentry><varlistentry><term>func</term><listitem><simpara>
+The idle task dispatch function. </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+User data. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>A new idle task (an event source).</simpara></listitem></varlistentry></variablelist>
+Idle tasks are dispatched before <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link> goes to sleep. See <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link> for more details.</para>
+        <para>Idle tasks fire once, and are automatically destroyed right after the callback function has been called.</para>
+        <para>An idle task can be cancelled before the callback has been called by <link linkend="Server-structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f">wl_event_source_remove()</link>. Calling <link linkend="Server-structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f">wl_event_source_remove()</link> after or from within the callback results in undefined behaviour.</para>
+        <para>
+  See also: <link linkend="Server-structwl__event__source_1ae526dfa099f9ba69285e275c82794a9b">wl_event_loop_idle_func_t</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1aa079264c57dd12168c691c000724efcf">
+      <term>wl_event_source_check
+            - 
+Mark event source to be re-checked.         </term>
+      <listitem>
+        <synopsis>void wl_event_source_check(struct wl_event_source *source)</synopsis>
+        <para><variablelist><varlistentry><term>source</term><listitem><simpara>
+The event source to be re-checked.</simpara></listitem></varlistentry></variablelist>
+This function permanently marks the event source to be re-checked after the normal dispatch of sources in <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link>. Re-checking will keep iterating over all such event sources until the dispatch function for them all returns zero.</para>
+        <para>Re-checking is used on sources that may become ready to dispatch as a side-effect of dispatching themselves or other event sources, including idle sources. Re-checking ensures all the incoming events have been fully drained before <link linkend="Server-structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b">wl_event_loop_dispatch()</link> returns. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f">
+      <term>wl_event_source_remove
+            - 
+Remove an event source from its event loop.         </term>
+      <listitem>
+        <synopsis>int wl_event_source_remove(struct wl_event_source *source)</synopsis>
+        <para><variablelist><varlistentry><term>source</term><listitem><simpara>
+The event source to be removed. </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>Zero.</simpara></listitem></varlistentry></variablelist>
+The event source is removed from the event loop it was created for, and is effectively destroyed. This invalidates source . The dispatch function of the source will no longer be called through this source. </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__global">
+  <title>wl_global</title>
+  <para/>
+</section><section id="Server-structwl__interface">
+  <title>wl_interface
+                - 
+Protocol object interface.     </title>
+  <para>A <link linkend="Server-structwl__interface">wl_interface</link> describes the API of a protocol object defined in the Wayland protocol specification. The protocol implementation uses a <link linkend="Server-structwl__interface">wl_interface</link> within its marshalling machinery for encoding client requests.</para>
+  <para>The name of a <link linkend="Server-structwl__interface">wl_interface</link> is the name of the corresponding protocol interface, and version represents the version of the interface. The members method_count and event_count represent the number of methods (requests) and events in the respective <link linkend="Server-structwl__message">wl_message</link> members.</para>
+  <para>For example, consider a protocol interface foo, marked as version 1, with two requests and one event.</para>
+  <para>
+    <programlisting>&lt;interface name="foo" version="1"&gt;
+  &lt;request name="a"&gt;&lt;/request&gt;
+  &lt;request name="b"&gt;&lt;/request&gt;
+  &lt;event name="c"&gt;&lt;/event&gt;
+&lt;/interface&gt;
+</programlisting>
+  </para>
+  <para>Given two <link linkend="Server-structwl__message">wl_message</link> arrays foo_requests and foo_events, a <link linkend="Server-structwl__interface">wl_interface</link> for foo might be:</para>
+  <para>
+    <programlisting>struct wl_interface foo_interface = {
+        "foo", 1,
+        2, foo_requests,
+        1, foo_events
+};
+</programlisting>
+  </para>
+  <para><emphasis>Note: The server side of the protocol may define interface implementation types that incorporate the term interface in their name. Take care to not confuse these server-side structs with a <link linkend="Server-structwl__interface">wl_interface</link> variable whose name also ends in interface. For example, while the server may define a type struct wl_foo_interface, the client may define a struct <link linkend="Server-structwl__interface">wl_interface</link> wl_foo_interface.</emphasis>
+
+  See also: <link linkend="Server-structwl__message">wl_message</link> 
+
+  See also: wl_proxy 
+
+  See also: Interfaces 
+
+  See also: Versioning 
+</para>
+</section><section id="Server-structwl__list">
+  <title>wl_list
+                - 
+Doubly-linked list.     </title>
+  <para>On its own, an instance of struct <link linkend="Server-structwl__list">wl_list</link> represents the sentinel head of a doubly-linked list, and must be initialized using <link linkend="Server-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</link>. When empty, the list head's next and prev members point to the list head itself, otherwise next references the first element in the list, and prev refers to the last element in the list.</para>
+  <para>Use the struct <link linkend="Server-structwl__list">wl_list</link> type to represent both the list head and the links between elements within the list. Use <link linkend="Server-structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a">wl_list_empty()</link> to determine if the list is empty in O(1).</para>
+  <para>All elements in the list must be of the same type. The element type must have a struct <link linkend="Server-structwl__list">wl_list</link> member, often named link by convention. Prior to insertion, there is no need to initialize an element's link - invoking <link linkend="Server-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</link> on an individual list element's struct <link linkend="Server-structwl__list">wl_list</link> member is unnecessary if the very next operation is <link linkend="Server-structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98">wl_list_insert()</link>. However, a common idiom is to initialize an element's link prior to removal - ensure safety by invoking <link linkend="Server-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">wl_list_init()</link> before <link linkend="Server-structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83">wl_list_remove()</link>.</para>
+  <para>Consider a list reference struct <link linkend="Server-structwl__list">wl_list</link> foo_list, an element type as struct element, and an element's link member as struct <link linkend="Server-structwl__list">wl_list</link> link.</para>
+  <para>The following code initializes a list and adds three elements to it.</para>
+  <para>
+    <programlisting>struct wl_list foo_list;
+
+struct element {
+        int foo;
+        struct wl_list link;
+};
+struct element e1, e2, e3;
+
+wl_list_init(&amp;foo_list);
+wl_list_insert(&amp;foo_list, &amp;e1.link);   // e1 is the first element
+wl_list_insert(&amp;foo_list, &amp;e2.link);   // e2 is now the first element
+wl_list_insert(&amp;e2.link, &amp;e3.link); // insert e3 after e2
+</programlisting>
+  </para>
+  <para>The list now looks like [e2, e3, e1].</para>
+  <para>The <link linkend="Server-structwl__list">wl_list</link> API provides some iterator macros. For example, to iterate a list in ascending order:</para>
+  <para>
+    <programlisting>struct element *e;
+wl_list_for_each(e, foo_list, link) {
+        do_something_with_element(e);
+}
+</programlisting>
+  </para>
+  <para>See the documentation of each iterator for details. 
+  See also: http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/include/linux/list.h 
+</para>
+  <variablelist>
+    <varlistentry id="Server-structwl__list_1a72c2827d3103691f9e3299babfbf0704">
+      <term>prev
+            - 
+Previous list element.         </term>
+      <listitem>
+        <synopsis>struct wl_list* wl_list::prev</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1aa0454596900ed769fb2f033fbb96bf2c">
+      <term>next
+            - 
+Next list element.         </term>
+      <listitem>
+        <synopsis>struct wl_list* wl_list::next</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1a1d5c9d41e224538b2edf324c7f8b1ac8">
+      <term>wl_list_init
+            - 
+Initializes the list.         </term>
+      <listitem>
+        <synopsis>void wl_list_init(struct wl_list *list)</synopsis>
+        <para><variablelist><varlistentry><term>list</term><listitem><simpara>
+List to initialize </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1aa7eaac0d363c0473bfc3e8172b0dfd98">
+      <term>wl_list_insert
+            - 
+Inserts an element into the list, after the element represented by list.         </term>
+      <listitem>
+        <synopsis>void wl_list_insert(struct wl_list *list, struct wl_list *elm)</synopsis>
+        <para>When list is a reference to the list itself (the head), set the containing struct of elm as the first element in the list.</para>
+        <para><emphasis>Note: If elm is already part of a list, inserting it again will lead to list corruption.</emphasis>
+<variablelist><varlistentry><term>list</term><listitem><simpara>
+List element after which the new element is inserted </simpara></listitem></varlistentry><varlistentry><term>elm</term><listitem><simpara>
+Link of the containing struct to insert into the list </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83">
+      <term>wl_list_remove
+            - 
+Removes an element from the list.         </term>
+      <listitem>
+        <synopsis>void wl_list_remove(struct wl_list *elm)</synopsis>
+        <para><emphasis>Note: This operation leaves elm in an invalid state.</emphasis>
+<variablelist><varlistentry><term>elm</term><listitem><simpara>
+Link of the containing struct to remove from the list </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1a2710186b02864dc2b18a46993aa9c2e0">
+      <term>wl_list_length
+            - 
+Determines the length of the list.         </term>
+      <listitem>
+        <synopsis>int wl_list_length(const struct wl_list *list)</synopsis>
+        <para><emphasis>Note: This is an O(n) operation.</emphasis>
+<variablelist><varlistentry><term>list</term><listitem><simpara>
+List whose length is to be determined</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>Number of elements in the list </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1a5c6aa8f61fa63374f1c77e7e4462a38a">
+      <term>wl_list_empty
+            - 
+Determines if the list is empty.         </term>
+      <listitem>
+        <synopsis>int wl_list_empty(const struct wl_list *list)</synopsis>
+        <para><variablelist><varlistentry><term>list</term><listitem><simpara>
+List whose emptiness is to be determined</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>1 if empty, or 0 if not empty </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1ac714f6eedd52286c8b6d9884cc7c8492">
+      <term>wl_list_insert_list
+            - 
+Inserts all of the elements of one list into another, after the element represented by list.         </term>
+      <listitem>
+        <synopsis>void wl_list_insert_list(struct wl_list *list, struct wl_list *other)</synopsis>
+        <para><emphasis>Note: This leaves other in an invalid state.</emphasis>
+<variablelist><varlistentry><term>list</term><listitem><simpara>
+List element after which the other list elements will be inserted </simpara></listitem></varlistentry><varlistentry><term>other</term><listitem><simpara>
+List of elements to insert </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">
+      <term>wl_list_for_each
+            - 
+Iterates over a list.         </term>
+      <listitem>
+        <synopsis/>
+        <para>This macro expresses a for-each iterator for <link linkend="Server-structwl__list">wl_list</link>. Given a list and <link linkend="Server-structwl__list">wl_list</link> link member name (often named link by convention), this macro assigns each element in the list to pos, which can then be referenced in a trailing code block. For example, given a <link linkend="Server-structwl__list">wl_list</link> of struct message elements:</para>
+        <para>
+          <programlisting>struct message {
+        char *contents;
+        wl_list link;
+};
+
+struct wl_list *message_list;
+// Assume message_list now "contains" many messages
+
+struct message *m;
+wl_list_for_each(m, message_list, link) {
+        do_something_with_message(m);
+}
+</programlisting>
+        </para>
+        <para><variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each list element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>head</term><listitem><simpara>
+Head of the list to iterate over </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Name of the link member within the element struct </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1a43d51e3b5ae8b58f3391f3d43687f852">
+      <term>wl_list_for_each_safe
+            - 
+Iterates over a list, safe against removal of the list element.         </term>
+      <listitem>
+        <synopsis/>
+        <para><emphasis>Note: Only removal of the current element, pos, is safe. Removing any other element during traversal may lead to a loop malfunction.</emphasis>
+
+  See also: <link linkend="Server-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</link>
+<variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each list element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>tmp</term><listitem><simpara>
+Temporary pointer of the same type as pos </simpara></listitem></varlistentry><varlistentry><term>head</term><listitem><simpara>
+Head of the list to iterate over </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Name of the link member within the element struct </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1a2ee1918119b03d36ed3004984efb9dc9">
+      <term>wl_list_for_each_reverse
+            - 
+Iterates backwards over a list.         </term>
+      <listitem>
+        <synopsis/>
+        <para>
+  See also: <link linkend="Server-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</link>
+<variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each list element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>head</term><listitem><simpara>
+Head of the list to iterate over </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Name of the link member within the element struct </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__list_1ac84e06e7914226b2678ff5f351d7f9e8">
+      <term>wl_list_for_each_reverse_safe
+            - 
+Iterates backwards over a list, safe against removal of the list element.         </term>
+      <listitem>
+        <synopsis/>
+        <para><emphasis>Note: Only removal of the current element, pos, is safe. Removing any other element during traversal may lead to a loop malfunction.</emphasis>
+
+  See also: <link linkend="Server-structwl__list_1a449407fe3c8f273e38bc2253093cb6fb">wl_list_for_each()</link>
+<variablelist><varlistentry><term>pos</term><listitem><simpara>
+Cursor that each list element will be assigned to </simpara></listitem></varlistentry><varlistentry><term>tmp</term><listitem><simpara>
+Temporary pointer of the same type as pos </simpara></listitem></varlistentry><varlistentry><term>head</term><listitem><simpara>
+Head of the list to iterate over </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Name of the link member within the element struct </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__listener">
+  <title>wl_listener
+                - 
+A single listener for Wayland signals.     </title>
+  <para><link linkend="Server-structwl__listener">wl_listener</link> provides the means to listen for <link linkend="Server-structwl__signal">wl_signal</link> notifications. Many Wayland objects use <link linkend="Server-structwl__listener">wl_listener</link> for notification of significant events like object destruction.</para>
+  <para>Clients should create <link linkend="Server-structwl__listener">wl_listener</link> objects manually and can register them as listeners to signals using <link linkend="Server-structwl__signal_1aa8bcd3b8e250cfe35ed064d5af589096">wl_signal_add</link>, assuming the signal is directly accessible. For opaque structs like <link linkend="Server-structwl__event__loop">wl_event_loop</link>, adding a listener should be done through provided accessor methods. A listener can only listen to one signal at a time.</para>
+  <para>
+    <programlisting>struct wl_listener your_listener;
+
+your_listener.notify = your_callback_method;
+
+// Direct access
+wl_signal_add(&amp;some_object-&gt;destroy_signal, &amp;your_listener);
+
+// Accessor access
+wl_event_loop *loop = ...;
+wl_event_loop_add_destroy_listener(loop, &amp;your_listener);
+</programlisting>
+  </para>
+  <para>If the listener is part of a larger struct, <link linkend="Server-wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa">wl_container_of</link> can be used to retrieve a pointer to it:</para>
+  <para>
+    <programlisting>void your_listener(struct wl_listener *listener, void *data)
+{
+        struct your_data *data;
+
+        your_data = wl_container_of(listener, data, your_member_name);
+}
+</programlisting>
+  </para>
+  <para>If you need to remove a listener from a signal, use <link linkend="Server-structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83">wl_list_remove()</link>.</para>
+  <para>
+    <programlisting>wl_list_remove(&amp;your_listener.link);
+</programlisting>
+  </para>
+  <para>
+  See also: <link linkend="Server-structwl__signal">wl_signal</link> 
+</para>
+</section><section id="Server-structwl__message">
+  <title>wl_message
+                - 
+Protocol message signature.     </title>
+  <para>A <link linkend="Server-structwl__message">wl_message</link> describes the signature of an actual protocol message, such as a request or event, that adheres to the Wayland protocol wire format. The protocol implementation uses a <link linkend="Server-structwl__message">wl_message</link> within its demarshal machinery for decoding messages between a compositor and its clients. In a sense, a <link linkend="Server-structwl__message">wl_message</link> is to a protocol message like a class is to an object.</para>
+  <para>The name of a <link linkend="Server-structwl__message">wl_message</link> is the name of the corresponding protocol message.</para>
+  <para>The signature is an ordered list of symbols representing the data types of message arguments and, optionally, a protocol version and indicators for nullability. A leading integer in the signature indicates the since version of the protocol message. A ? preceding a data type symbol indicates that the following argument type is nullable. While it is a protocol violation to send messages with non-nullable arguments set to NULL, event handlers in clients might still get called with non-nullable object arguments set to NULL. This can happen when the client destroyed the object being used as argument on its side and an event referencing that object was sent before the server knew about its destruction. As this race cannot be prevented, clients should - as a general rule - program their event handlers such that they can handle object arguments declared non-nullable being NULL gracefully.</para>
+  <para>When no arguments accompany a message, signature is an empty string.</para>
+  <para>Symbols:</para>
+  <para><itemizedlist><listitem><simpara>i: int</simpara></listitem><listitem><simpara>u: uint</simpara></listitem><listitem><simpara>f: fixed</simpara></listitem><listitem><simpara>s: string</simpara></listitem><listitem><simpara>o: object</simpara></listitem><listitem><simpara>n: new_id</simpara></listitem><listitem><simpara>a: array</simpara></listitem><listitem><simpara>h: fd</simpara></listitem><listitem><simpara>?: following argument is nullable</simpara></listitem></itemizedlist>
+</para>
+  <para>While demarshaling primitive arguments is straightforward, when demarshaling messages containing object or new_id arguments, the protocol implementation often must determine the type of the object. The types of a <link linkend="Server-structwl__message">wl_message</link> is an array of <link linkend="Server-structwl__interface">wl_interface</link> references that correspond to o and n arguments in signature, with NULL placeholders for arguments with non-object types.</para>
+  <para>Consider the protocol event <link linkend="Server-structwl__display">wl_display</link> delete_id that has a single uint argument. The <link linkend="Server-structwl__message">wl_message</link> is:</para>
+  <para>
+    <programlisting>{ "delete_id", "u", [NULL] }
+</programlisting>
+  </para>
+  <para>Here, the message name is "delete_id", the signature is "u", and the argument types is [NULL], indicating that the uint argument has no corresponding <link linkend="Server-structwl__interface">wl_interface</link> since it is a primitive argument.</para>
+  <para>In contrast, consider a wl_foo interface supporting protocol request bar that has existed since version 2, and has two arguments: a uint and an object of type wl_baz_interface that may be NULL. Such a <link linkend="Server-structwl__message">wl_message</link> might be:</para>
+  <para>
+    <programlisting>{ "bar", "2u?o", [NULL, &amp;wl_baz_interface] }
+</programlisting>
+  </para>
+  <para>Here, the message name is "bar", and the signature is "2u?o". Notice how the 2 indicates the protocol version, the u indicates the first argument type is uint, and the ?o indicates that the second argument is an object that may be NULL. Lastly, the argument types array indicates that no <link linkend="Server-structwl__interface">wl_interface</link> corresponds to the first argument, while the type wl_baz_interface corresponds to the second argument.</para>
+  <para>
+  See also: <link linkend="Server-unionwl__argument">wl_argument</link> 
+
+  See also: <link linkend="Server-structwl__interface">wl_interface</link> 
+
+  See also: Wire Format 
+</para>
+</section><section id="Server-structwl__object">
+  <title>wl_object</title>
+  <para/>
+</section><section id="Server-structwl__protocol__logger">
+  <title>wl_protocol_logger</title>
+  <para/>
+  <variablelist>
+    <varlistentry id="Server-structwl__protocol__logger_1ac5bfbf098cbecb788190bc12e3becad7">
+      <term>wl_protocol_logger_destroy
+            - 
+Destroys a protocol logger.         </term>
+      <listitem>
+        <synopsis>void wl_protocol_logger_destroy(struct wl_protocol_logger *logger)</synopsis>
+        <para>This function destroys a protocol logger and removes it from the display it was added to with wl_display_add_protocol_logger. The logger object becomes invalid after calling this function.</para>
+        <para>
+  See also: <link linkend="Server-structwl__display_1a4dc118c686e362aba0b3c6c8874efc3d">wl_display_add_protocol_logger</link> 
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__protocol__logger__message">
+  <title>wl_protocol_logger_message</title>
+  <para/>
+</section><section id="Server-structwl__resource">
+  <title>wl_resource</title>
+  <para/>
+  <variablelist>
+    <varlistentry id="Server-structwl__resource_1aabbdc4ffb1abf525d1818c943a8c80d6">
+      <term>wl_resource_get_class
+            - 
+Retrieve the interface name (class) of a resource object.         </term>
+      <listitem>
+        <synopsis>const char * wl_resource_get_class(struct wl_resource *resource)</synopsis>
+        <para><variablelist><varlistentry><term>resource</term><listitem><simpara>
+The resource object </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__resource_1a50388ae686cecfe7a9940c995d5d120b">
+      <term>wl_resource_create
+            - 
+Create a new resource object.         </term>
+      <listitem>
+        <synopsis>struct wl_resource * wl_resource_create(struct wl_client *client, const struct wl_interface *interface, int version, uint32_t id)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The client owner of the new resource. </simpara></listitem></varlistentry><varlistentry><term>interface</term><listitem><simpara>
+The interface of the new resource. </simpara></listitem></varlistentry><varlistentry><term>version</term><listitem><simpara>
+The version of the new resource. </simpara></listitem></varlistentry><varlistentry><term>id</term><listitem><simpara>
+The id of the new resource. If 0, an available id will be used.</simpara></listitem></varlistentry></variablelist>
+Listeners added with wl_client_add_resource_created_listener will be notified at the end of this function. </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__resource__iterator__context">
+  <title>wl_resource_iterator_context</title>
+  <para/>
+</section><section id="Server-structwl__shm__buffer">
+  <title>wl_shm_buffer</title>
+  <para/>
+  <variablelist>
+    <varlistentry id="Server-structwl__shm__buffer_1a9104a38eae80c5ba92c8ab030c70192f">
+      <term>wl_shm_buffer_get_data
+            - 
+Get a pointer to the memory for the SHM buffer.         </term>
+      <listitem>
+        <synopsis>void * wl_shm_buffer_get_data(struct wl_shm_buffer *buffer)</synopsis>
+        <para><variablelist><varlistentry><term>buffer</term><listitem><simpara>
+The buffer object</simpara></listitem></varlistentry></variablelist>
+Returns a pointer which can be used to read the data contained in the given SHM buffer.</para>
+        <para>As this buffer is memory-mapped, reading from it may generate SIGBUS signals. This can happen if the client claims that the buffer is larger than it is or if something truncates the underlying file. To prevent this signal from causing the compositor to crash you should call wl_shm_buffer_begin_access and wl_shm_buffer_end_access around code that reads from the memory. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__shm__buffer_1abc49a49c3586821d6ec4efe7ea915305">
+      <term>wl_shm_buffer_ref_pool
+            - 
+Get a reference to a shm_buffer's shm_pool.         </term>
+      <listitem>
+        <synopsis>struct wl_shm_pool * wl_shm_buffer_ref_pool(struct wl_shm_buffer *buffer)</synopsis>
+        <para><variablelist><varlistentry><term>buffer</term><listitem><simpara>
+The buffer object</simpara></listitem></varlistentry></variablelist>
+Returns a pointer to a buffer's shm_pool and increases the shm_pool refcount.</para>
+        <para>The compositor must remember to call wl_shm_pool_unref when it no longer needs the reference to ensure proper destruction of the pool.</para>
+        <para>
+  See also: <link linkend="Server-structwl__shm__pool_1a2349156a6b7940645a4754e6c1690051">wl_shm_pool_unref</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__shm__buffer_1a809cb5d6b33338c62bbca6daa4138667">
+      <term>wl_shm_buffer_begin_access
+            - 
+Mark that the given SHM buffer is about to be accessed.         </term>
+      <listitem>
+        <synopsis>void wl_shm_buffer_begin_access(struct wl_shm_buffer *buffer)</synopsis>
+        <para><variablelist><varlistentry><term>buffer</term><listitem><simpara>
+The SHM buffer</simpara></listitem></varlistentry></variablelist>
+An SHM buffer is a memory-mapped file given by the client. According to POSIX, reading from a memory-mapped region that extends off the end of the file will cause a SIGBUS signal to be generated. Normally this would cause the compositor to terminate. In order to make the compositor robust against clients that change the size of the underlying file or lie about its size, you should protect access to the buffer by calling this function before reading from the memory and call wl_shm_buffer_end_access afterwards. This will install a signal handler for SIGBUS which will prevent the compositor from crashing.</para>
+        <para>After calling this function the signal handler will remain installed for the lifetime of the compositor process. Note that this function will not work properly if the compositor is also installing its own handler for SIGBUS.</para>
+        <para>If a SIGBUS signal is received for an address within the range of the SHM pool of the given buffer then the client will be sent an error event when wl_shm_buffer_end_access is called. If the signal is for an address outside that range then the signal handler will reraise the signal which would will likely cause the compositor to terminate.</para>
+        <para>It is safe to nest calls to these functions as long as the nested calls are all accessing the same buffer. The number of calls to wl_shm_buffer_end_access must match the number of calls to wl_shm_buffer_begin_access. These functions are thread-safe and it is allowed to simultaneously access different buffers or the same buffer from multiple threads. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__shm__buffer_1a030db6056ef08836e9dee21a8087e2c1">
+      <term>wl_shm_buffer_end_access
+            - 
+Ends the access to a buffer started by wl_shm_buffer_begin_access.         </term>
+      <listitem>
+        <synopsis>void wl_shm_buffer_end_access(struct wl_shm_buffer *buffer)</synopsis>
+        <para><variablelist><varlistentry><term>buffer</term><listitem><simpara>
+The SHM buffer</simpara></listitem></varlistentry></variablelist>
+This should be called after wl_shm_buffer_begin_access once the buffer is no longer being accessed. If a SIGBUS signal was generated in-between these two calls then the resource for the given buffer will be sent an error. </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__shm__pool">
+  <title>wl_shm_pool</title>
+  <para/>
+  <variablelist>
+    <varlistentry id="Server-structwl__shm__pool_1a2349156a6b7940645a4754e6c1690051">
+      <term>wl_shm_pool_unref
+            - 
+Unreference a shm_pool.         </term>
+      <listitem>
+        <synopsis>void wl_shm_pool_unref(struct wl_shm_pool *pool)</synopsis>
+        <para><variablelist><varlistentry><term>pool</term><listitem><simpara>
+The pool object</simpara></listitem></varlistentry></variablelist>
+Drops a reference to a <link linkend="Server-structwl__shm__pool">wl_shm_pool</link> object.</para>
+        <para>This is only necessary if the compositor has explicitly taken a reference with <link linkend="Server-structwl__shm__buffer_1abc49a49c3586821d6ec4efe7ea915305">wl_shm_buffer_ref_pool()</link>, otherwise the pool will be automatically destroyed when appropriate.</para>
+        <para>
+  See also: <link linkend="Server-structwl__shm__buffer_1abc49a49c3586821d6ec4efe7ea915305">wl_shm_buffer_ref_pool</link> 
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__shm__sigbus__data">
+  <title>wl_shm_sigbus_data</title>
+  <para/>
+</section><section id="Server-structwl__signal">
+  <title>wl_signal
+                - 
+A source of a type of observable event.     </title>
+  <para>Signals are recognized points where significant events can be observed. Compositors as well as the server can provide signals. Observers are <link linkend="Server-structwl__listener">wl_listener</link>'s that are added through <link linkend="Server-structwl__signal_1aa8bcd3b8e250cfe35ed064d5af589096">wl_signal_add</link>. Signals are emitted using <link linkend="Server-structwl__signal_1afe73f44f7f1b517c9c0ba90829c93309">wl_signal_emit</link>, which will invoke all listeners until that listener is removed by <link linkend="Server-structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83">wl_list_remove()</link> (or whenever the signal is destroyed).</para>
+  <para>
+  See also: <link linkend="Server-structwl__listener">wl_listener</link> for more information on using <link linkend="Server-structwl__signal">wl_signal</link> 
+</para>
+  <variablelist>
+    <varlistentry id="Server-structwl__signal_1aeb25ddd9c813189203d15723e983b320">
+      <term>wl_signal_init
+            - 
+Initialize a new wl_signal for use.         </term>
+      <listitem>
+        <synopsis>static void wl_signal_init(struct wl_signal *signal)</synopsis>
+        <para><variablelist><varlistentry><term>signal</term><listitem><simpara>
+The signal that will be initialized </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__signal_1aa8bcd3b8e250cfe35ed064d5af589096">
+      <term>wl_signal_add
+            - 
+Add the specified listener to this signal.         </term>
+      <listitem>
+        <synopsis>static void wl_signal_add(struct wl_signal *signal, struct wl_listener *listener)</synopsis>
+        <para><variablelist><varlistentry><term>signal</term><listitem><simpara>
+The signal that will emit events to the listener </simpara></listitem></varlistentry><varlistentry><term>listener</term><listitem><simpara>
+The listener to add </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__signal_1ab0ade7ac929136ad457cc1e0f34f9e10">
+      <term>wl_signal_get
+            - 
+Gets the listener struct for the specified callback.         </term>
+      <listitem>
+        <synopsis>static struct wl_listener * wl_signal_get(struct wl_signal *signal, wl_notify_func_t notify)</synopsis>
+        <para><variablelist><varlistentry><term>signal</term><listitem><simpara>
+The signal that contains the specified listener </simpara></listitem></varlistentry><varlistentry><term>notify</term><listitem><simpara>
+The listener that is the target of this search </simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>the list item that corresponds to the specified listener, or NULL if none was found </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-structwl__signal_1afe73f44f7f1b517c9c0ba90829c93309">
+      <term>wl_signal_emit
+            - 
+Emits this signal, notifying all registered listeners.         </term>
+      <listitem>
+        <synopsis>static void wl_signal_emit(struct wl_signal *signal, void *data)</synopsis>
+        <para><variablelist><varlistentry><term>signal</term><listitem><simpara>
+The signal object that will emit the signal </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+The data that will be emitted with the signal </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section><section id="Server-structwl__socket">
+  <title>wl_socket</title>
+  <para/>
+</section><section id="Server-Functions">
+  <title>Functions</title>
+  <para/>
+  <variablelist>
+    <varlistentry id="Server-wayland-server-core_8h_1af1e9ad8dd32ea89265936930cd173ec5">
+      <term>wl_client_for_each
+            - 
+Iterate over a list of clients.         </term>
+      <listitem>
+        <synopsis/>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a869353bf26daf40e7317cd00473f8dcd">
+      <term>wl_display_global_filter_func_t
+            - 
+A filter function for wl_global objects.         </term>
+      <listitem>
+        <synopsis>typedef bool(* wl_display_global_filter_func_t) (const struct wl_client *client, const struct wl_global *global, void *data))(const struct wl_client *client, const struct wl_global *global, void *data)</synopsis>
+        <para><variablelist><varlistentry><term>client</term><listitem><simpara>
+The client object </simpara></listitem></varlistentry><varlistentry><term>global</term><listitem><simpara>
+The global object to show or hide </simpara></listitem></varlistentry><varlistentry><term>data</term><listitem><simpara>
+The user data pointer</simpara></listitem></varlistentry></variablelist>
+A filter function enables the server to decide which globals to advertise to each client.</para>
+        <para>When a <link linkend="Server-structwl__global">wl_global</link> filter is set, the given callback funtion will be called during <link linkend="Server-structwl__global">wl_global</link> advertisment and binding.</para>
+        <para>This function should return true if the global object should be made visible to the client or false otherwise. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1adf933ad178be05536668da731acc6871">
+      <term>wl_event_loop_create</term>
+      <listitem>
+        <synopsis>struct wl_event_loop* wl_event_loop_create(void)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ad50f13e2c738e68f7576757aa862513a">
+      <term>wl_event_loop_destroy</term>
+      <listitem>
+        <synopsis>void wl_event_loop_destroy(struct wl_event_loop *loop)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a677f7df496a70388151e56a88c46ad36">
+      <term>wl_event_loop_add_fd</term>
+      <listitem>
+        <synopsis>struct wl_event_source* wl_event_loop_add_fd(struct wl_event_loop *loop, int fd, uint32_t mask, wl_event_loop_fd_func_t func, void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1afe73f9ff59d489e9f27eb9c0e3058a02">
+      <term>wl_event_source_fd_update</term>
+      <listitem>
+        <synopsis>int wl_event_source_fd_update(struct wl_event_source *source, uint32_t mask)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a2881e5ca8c07dea463fbd526b6506f7f">
+      <term>wl_event_loop_add_timer</term>
+      <listitem>
+        <synopsis>struct wl_event_source* wl_event_loop_add_timer(struct wl_event_loop *loop, wl_event_loop_timer_func_t func, void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a0baa596851764fb5a91da83642777000">
+      <term>wl_event_loop_add_signal</term>
+      <listitem>
+        <synopsis>struct wl_event_source* wl_event_loop_add_signal(struct wl_event_loop *loop, int signal_number, wl_event_loop_signal_func_t func, void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a0164a47e9e8356af90c9d5c1de9f5487">
+      <term>wl_event_source_timer_update</term>
+      <listitem>
+        <synopsis>int wl_event_source_timer_update(struct wl_event_source *source, int ms_delay)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1afe37015d67b81ae82609f2b8aa78cc4f">
+      <term>wl_event_source_remove</term>
+      <listitem>
+        <synopsis>int wl_event_source_remove(struct wl_event_source *source)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aa079264c57dd12168c691c000724efcf">
+      <term>wl_event_source_check</term>
+      <listitem>
+        <synopsis>void wl_event_source_check(struct wl_event_source *source)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aaa3fdd5590365a4a2106c9814ca9b31b">
+      <term>wl_event_loop_dispatch</term>
+      <listitem>
+        <synopsis>int wl_event_loop_dispatch(struct wl_event_loop *loop, int timeout)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aefc44b3062c22d2506ff42460f091396">
+      <term>wl_event_loop_dispatch_idle</term>
+      <listitem>
+        <synopsis>void wl_event_loop_dispatch_idle(struct wl_event_loop *loop)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a2a1b5d6c1947954b0f74cfeb5f067b76">
+      <term>wl_event_loop_add_idle</term>
+      <listitem>
+        <synopsis>struct wl_event_source* wl_event_loop_add_idle(struct wl_event_loop *loop, wl_event_loop_idle_func_t func, void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a58c8aa06a2d240a49a95a91eddcba8e5">
+      <term>wl_event_loop_get_fd</term>
+      <listitem>
+        <synopsis>int wl_event_loop_get_fd(struct wl_event_loop *loop)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a6b564d8d4183d71f1fdf06e751d84d51">
+      <term>wl_event_loop_add_destroy_listener</term>
+      <listitem>
+        <synopsis>void wl_event_loop_add_destroy_listener(struct wl_event_loop *loop, struct wl_listener *listener)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a2b199278145924742fd2672755d6f8e0">
+      <term>wl_event_loop_get_destroy_listener</term>
+      <listitem>
+        <synopsis>struct wl_listener* wl_event_loop_get_destroy_listener(struct wl_event_loop *loop, wl_notify_func_t notify)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a496bcdc506013f5fd47641777deb9618">
+      <term>wl_display_create</term>
+      <listitem>
+        <synopsis>struct wl_display* wl_display_create(void)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1acd9ad2e1ca3ffb0ba0f1b77ae616f8ee">
+      <term>wl_display_destroy</term>
+      <listitem>
+        <synopsis>void wl_display_destroy(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1afe7a4b1d6fbf166a66f686c830e2946c">
+      <term>wl_display_get_event_loop</term>
+      <listitem>
+        <synopsis>struct wl_event_loop* wl_display_get_event_loop(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a9fdf7264f0a3a28a75c141db252067b8">
+      <term>wl_display_add_socket</term>
+      <listitem>
+        <synopsis>int wl_display_add_socket(struct wl_display *display, const char *name)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1af867e52066bc5fff5bb0c1d971735f8f">
+      <term>wl_display_add_socket_auto</term>
+      <listitem>
+        <synopsis>const char* wl_display_add_socket_auto(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a54f1cf58cc74cd44c889b2cdf029345d">
+      <term>wl_display_add_socket_fd</term>
+      <listitem>
+        <synopsis>int wl_display_add_socket_fd(struct wl_display *display, int sock_fd)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a40e3041d2432d3941b3e8eb96c5284dc">
+      <term>wl_display_terminate</term>
+      <listitem>
+        <synopsis>void wl_display_terminate(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a999da1b9acb5808a3bbad60aaed8a7ff">
+      <term>wl_display_run</term>
+      <listitem>
+        <synopsis>void wl_display_run(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aeb502f6fdde16d9ee08f31aed040355f">
+      <term>wl_display_flush_clients</term>
+      <listitem>
+        <synopsis>void wl_display_flush_clients(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ab50365739904f91579a66f4b054a3ecb">
+      <term>wl_display_destroy_clients</term>
+      <listitem>
+        <synopsis>void wl_display_destroy_clients(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a43f04f76ea1457edcf37c95de68b29ef">
+      <term>wl_display_get_serial</term>
+      <listitem>
+        <synopsis>uint32_t wl_display_get_serial(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a145f7d3e4b41fc9014c11bf01bd7eb4f">
+      <term>wl_display_next_serial</term>
+      <listitem>
+        <synopsis>uint32_t wl_display_next_serial(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a9ea24547f07538f2a326c42c7793b937">
+      <term>wl_display_add_destroy_listener</term>
+      <listitem>
+        <synopsis>void wl_display_add_destroy_listener(struct wl_display *display, struct wl_listener *listener)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a8c1cdf513c91fa498c4d9259eae3ed71">
+      <term>wl_display_add_client_created_listener
+            - 
+Registers a listener for the client connection signal.         </term>
+      <listitem>
+        <synopsis>void wl_display_add_client_created_listener(struct wl_display *display, struct wl_listener *listener)</synopsis>
+        <para>When a new client object is created, listener will be notified, carrying a pointer to the new <link linkend="Server-structwl__client">wl_client</link> object.</para>
+        <para><link linkend="Server-structwl__display_1aa2436b6a0b56cd65d8f6e33b76cd292c">wl_client_create</link> <link linkend="Server-structwl__display">wl_display</link> <link linkend="Server-structwl__listener">wl_listener</link></para>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object </simpara></listitem></varlistentry><varlistentry><term>listener</term><listitem><simpara>
+Signal handler object </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ad2e481a3157b1d182bb665a145230ae9">
+      <term>wl_display_get_destroy_listener</term>
+      <listitem>
+        <synopsis>struct wl_listener* wl_display_get_destroy_listener(struct wl_display *display, wl_notify_func_t notify)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a85f5bc1c041738f5663835c5565ce0b8">
+      <term>wl_global_create</term>
+      <listitem>
+        <synopsis>struct wl_global* wl_global_create(struct wl_display *display, const struct wl_interface *interface, int version, void *data, wl_global_bind_func_t bind)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ab466d94d1f204fb5f07c57e5f558ab7a">
+      <term>wl_global_destroy</term>
+      <listitem>
+        <synopsis>void wl_global_destroy(struct wl_global *global)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a3905b9734d8bb84f2c851bb4abbc52f8">
+      <term>wl_display_set_global_filter</term>
+      <listitem>
+        <synopsis>void wl_display_set_global_filter(struct wl_display *display, wl_display_global_filter_func_t filter, void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a82c2f11ffbb50bdb57e07e275b2362e6">
+      <term>wl_global_get_interface</term>
+      <listitem>
+        <synopsis>const struct wl_interface* wl_global_get_interface(const struct wl_global *global)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ac8aa5d6a692cd28378c051b6a35c41da">
+      <term>wl_global_get_user_data</term>
+      <listitem>
+        <synopsis>void* wl_global_get_user_data(const struct wl_global *global)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1afb954d2c512f4d0140e25cd331c2cd9f">
+      <term>wl_client_create</term>
+      <listitem>
+        <synopsis>struct wl_client* wl_client_create(struct wl_display *display, int fd)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aa3a43d9b00d83d21af1274e186d7cd1d">
+      <term>wl_display_get_client_list</term>
+      <listitem>
+        <synopsis>struct wl_list* wl_display_get_client_list(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a495543089904236f253c1f0095f942a1">
+      <term>wl_client_get_link</term>
+      <listitem>
+        <synopsis>struct wl_list* wl_client_get_link(struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aee7e1851a470ebe47651db71bf24682d">
+      <term>wl_client_from_link</term>
+      <listitem>
+        <synopsis>struct wl_client* wl_client_from_link(struct wl_list *link)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a661c0b1a9deef909c5d43f5efe4cb524">
+      <term>wl_client_destroy</term>
+      <listitem>
+        <synopsis>void wl_client_destroy(struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a6a045ad15d6ca216c4da41ba67c9ef4a">
+      <term>wl_client_flush</term>
+      <listitem>
+        <synopsis>void wl_client_flush(struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a82a97cb3a66c1c56826a09a7b42453d9">
+      <term>wl_client_get_credentials</term>
+      <listitem>
+        <synopsis>void wl_client_get_credentials(struct wl_client *client, pid_t *pid, uid_t *uid, gid_t *gid)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ad5a94921b39efad0985632e865479ca2">
+      <term>wl_client_get_fd</term>
+      <listitem>
+        <synopsis>int wl_client_get_fd(struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a9062fe6277721ec5b4b7d3cec9e34981">
+      <term>wl_client_add_destroy_listener</term>
+      <listitem>
+        <synopsis>void wl_client_add_destroy_listener(struct wl_client *client, struct wl_listener *listener)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a6f20471027c1fe02e79af96426ef5bf4">
+      <term>wl_client_get_destroy_listener</term>
+      <listitem>
+        <synopsis>struct wl_listener* wl_client_get_destroy_listener(struct wl_client *client, wl_notify_func_t notify)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aa589ab039ac7e67a9da5ccdada9fcb4c">
+      <term>wl_client_get_object</term>
+      <listitem>
+        <synopsis>struct wl_resource* wl_client_get_object(struct wl_client *client, uint32_t id)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a12352da895372907cf30449435d8ee5f">
+      <term>wl_client_post_no_memory</term>
+      <listitem>
+        <synopsis>void wl_client_post_no_memory(struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a62a52be27947e43ce7884a68759d1b4e">
+      <term>wl_client_add_resource_created_listener</term>
+      <listitem>
+        <synopsis>void wl_client_add_resource_created_listener(struct wl_client *client, struct wl_listener *listener)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a4a0a6bb48f63ed80ab4575fda4c5d01a">
+      <term>wl_client_for_each_resource</term>
+      <listitem>
+        <synopsis>void wl_client_for_each_resource(struct wl_client *client, wl_client_for_each_resource_iterator_func_t iterator, void *user_data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a67150e8e41fed1358dfd59d46fcda23b">
+      <term>wl_resource_post_event</term>
+      <listitem>
+        <synopsis>void wl_resource_post_event(struct wl_resource *resource, uint32_t opcode,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a97deed922e68853cb3785947926d56a7">
+      <term>wl_resource_post_event_array</term>
+      <listitem>
+        <synopsis>void wl_resource_post_event_array(struct wl_resource *resource, uint32_t opcode, union wl_argument *args)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a67891685eff3a9ebd5371d78ca83d516">
+      <term>wl_resource_queue_event</term>
+      <listitem>
+        <synopsis>void wl_resource_queue_event(struct wl_resource *resource, uint32_t opcode,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a9b63bd8423712f6edebfd6dae9e48225">
+      <term>wl_resource_queue_event_array</term>
+      <listitem>
+        <synopsis>void wl_resource_queue_event_array(struct wl_resource *resource, uint32_t opcode, union wl_argument *args)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a75428b89fa7e6aa97027bb74b348c386">
+      <term>wl_resource_post_error</term>
+      <listitem>
+        <synopsis>void wl_resource_post_error(struct wl_resource *resource, uint32_t code, const char *msg,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aefff369c8182adc3c29ea561e23b9fd8">
+      <term>wl_resource_post_no_memory</term>
+      <listitem>
+        <synopsis>void wl_resource_post_no_memory(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a1a69200af1f06ccbcd218b2328f3c885">
+      <term>wl_client_get_display</term>
+      <listitem>
+        <synopsis>struct wl_display* wl_client_get_display(struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a26b54247cd0b84c9e228e2a2f9227f8c">
+      <term>wl_resource_create</term>
+      <listitem>
+        <synopsis>struct wl_resource* wl_resource_create(struct wl_client *client, const struct wl_interface *interface, int version, uint32_t id)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a9ac84b9077dcf2020f2b847189d4ebc0">
+      <term>wl_resource_set_implementation</term>
+      <listitem>
+        <synopsis>void wl_resource_set_implementation(struct wl_resource *resource, const void *implementation, void *data, wl_resource_destroy_func_t destroy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a6d127d9e4489ae795850a9b32d8c5637">
+      <term>wl_resource_set_dispatcher</term>
+      <listitem>
+        <synopsis>void wl_resource_set_dispatcher(struct wl_resource *resource, wl_dispatcher_func_t dispatcher, const void *implementation, void *data, wl_resource_destroy_func_t destroy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a4fd83132742252516c9a3df7f4eaa4d7">
+      <term>wl_resource_destroy</term>
+      <listitem>
+        <synopsis>void wl_resource_destroy(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ae265d2902bc8e0994b26a3f43e63448c">
+      <term>wl_resource_get_id</term>
+      <listitem>
+        <synopsis>uint32_t wl_resource_get_id(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ab1de3c23a75ddb99ff8c29c0e759a39b">
+      <term>wl_resource_get_link</term>
+      <listitem>
+        <synopsis>struct wl_list* wl_resource_get_link(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a6ed2f937f570b36e7842c5a0bd3d754b">
+      <term>wl_resource_from_link</term>
+      <listitem>
+        <synopsis>struct wl_resource* wl_resource_from_link(struct wl_list *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a4ac3fbd1d228f441c6846f3ebccc9c6e">
+      <term>wl_resource_find_for_client</term>
+      <listitem>
+        <synopsis>struct wl_resource* wl_resource_find_for_client(struct wl_list *list, struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a300147832089811f11d345fbc3f47fe6">
+      <term>wl_resource_get_client</term>
+      <listitem>
+        <synopsis>struct wl_client* wl_resource_get_client(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aa9b40199dbf513b6a25263872b8490c6">
+      <term>wl_resource_set_user_data</term>
+      <listitem>
+        <synopsis>void wl_resource_set_user_data(struct wl_resource *resource, void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a07f2328aa269ff1968afc4836018204f">
+      <term>wl_resource_get_user_data</term>
+      <listitem>
+        <synopsis>void* wl_resource_get_user_data(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a8f0f7d0b0f0fb9f44ccd3694b3dd58d5">
+      <term>wl_resource_get_version</term>
+      <listitem>
+        <synopsis>int wl_resource_get_version(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ab69024ab2f0f502aa70cf18bb2761882">
+      <term>wl_resource_set_destructor</term>
+      <listitem>
+        <synopsis>void wl_resource_set_destructor(struct wl_resource *resource, wl_resource_destroy_func_t destroy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a8849a58c3ba7a528c643591369125844">
+      <term>wl_resource_instance_of</term>
+      <listitem>
+        <synopsis>int wl_resource_instance_of(struct wl_resource *resource, const struct wl_interface *interface, const void *implementation)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ae570127d26c63db09db82afa3a8cda2d">
+      <term>wl_resource_get_class</term>
+      <listitem>
+        <synopsis>const char* wl_resource_get_class(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a6eac87009589e0bdc52830833ca46694">
+      <term>wl_resource_add_destroy_listener</term>
+      <listitem>
+        <synopsis>void wl_resource_add_destroy_listener(struct wl_resource *resource, struct wl_listener *listener)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a46364ef94b5671f41f4cb9587070b23f">
+      <term>wl_resource_get_destroy_listener</term>
+      <listitem>
+        <synopsis>struct wl_listener* wl_resource_get_destroy_listener(struct wl_resource *resource, wl_notify_func_t notify)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a55964fd7a5774ed9f94bfadce6f8a8ce">
+      <term>wl_shm_buffer_get</term>
+      <listitem>
+        <synopsis>struct wl_shm_buffer* wl_shm_buffer_get(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a809cb5d6b33338c62bbca6daa4138667">
+      <term>wl_shm_buffer_begin_access</term>
+      <listitem>
+        <synopsis>void wl_shm_buffer_begin_access(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a030db6056ef08836e9dee21a8087e2c1">
+      <term>wl_shm_buffer_end_access</term>
+      <listitem>
+        <synopsis>void wl_shm_buffer_end_access(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1adeb4b01f2ecca2cbd9002d6d64f16ac4">
+      <term>wl_shm_buffer_get_data</term>
+      <listitem>
+        <synopsis>void* wl_shm_buffer_get_data(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ad132f92b616451c67aeb6a25cc60f282">
+      <term>wl_shm_buffer_get_stride</term>
+      <listitem>
+        <synopsis>int32_t wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1af27bd34e94cc995f25a08a0beadd8bc9">
+      <term>wl_shm_buffer_get_format</term>
+      <listitem>
+        <synopsis>uint32_t wl_shm_buffer_get_format(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ada7167ed92985de64ff9116b09a07708">
+      <term>wl_shm_buffer_get_width</term>
+      <listitem>
+        <synopsis>int32_t wl_shm_buffer_get_width(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1acd6812b7699de5a1b80eb4bf1c78aa0e">
+      <term>wl_shm_buffer_get_height</term>
+      <listitem>
+        <synopsis>int32_t wl_shm_buffer_get_height(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ae4dc5539543e07f3c9b9b69f0566d53f">
+      <term>wl_shm_buffer_ref_pool</term>
+      <listitem>
+        <synopsis>struct wl_shm_pool* wl_shm_buffer_ref_pool(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a2349156a6b7940645a4754e6c1690051">
+      <term>wl_shm_pool_unref</term>
+      <listitem>
+        <synopsis>void wl_shm_pool_unref(struct wl_shm_pool *pool)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1aef08c24892f8fa98431e0610ee487ef7">
+      <term>wl_display_init_shm</term>
+      <listitem>
+        <synopsis>int wl_display_init_shm(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a17e2cee84d163f938f8906b6f9a5089e">
+      <term>wl_display_add_shm_format</term>
+      <listitem>
+        <synopsis>uint32_t* wl_display_add_shm_format(struct wl_display *display, uint32_t format)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a2c1c1d3e116c9491e1e66525e74a85bb">
+      <term>wl_shm_buffer_create</term>
+      <listitem>
+        <synopsis>struct wl_shm_buffer* wl_shm_buffer_create(struct wl_client *client, uint32_t id, int32_t width, int32_t height, int32_t stride, uint32_t format) WL_DEPRECATED</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1a0a0e1384dce2524161299fcd1669d59f">
+      <term>wl_log_set_handler_server</term>
+      <listitem>
+        <synopsis>void wl_log_set_handler_server(wl_log_func_t handler)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ad50c4a699b66a468825fd14d09a9c864">
+      <term>wl_display_add_protocol_logger</term>
+      <listitem>
+        <synopsis>struct wl_protocol_logger* wl_display_add_protocol_logger(struct wl_display *display, wl_protocol_logger_func_t, void *user_data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server-core_8h_1ac5bfbf098cbecb788190bc12e3becad7">
+      <term>wl_protocol_logger_destroy</term>
+      <listitem>
+        <synopsis>void wl_protocol_logger_destroy(struct wl_protocol_logger *logger)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a97deed922e68853cb3785947926d56a7">
+      <term>wl_resource_post_event_array</term>
+      <listitem>
+        <synopsis>void wl_resource_post_event_array(struct wl_resource *resource, uint32_t opcode, union wl_argument *args)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a67150e8e41fed1358dfd59d46fcda23b">
+      <term>wl_resource_post_event</term>
+      <listitem>
+        <synopsis>void wl_resource_post_event(struct wl_resource *resource, uint32_t opcode,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a9b63bd8423712f6edebfd6dae9e48225">
+      <term>wl_resource_queue_event_array</term>
+      <listitem>
+        <synopsis>void wl_resource_queue_event_array(struct wl_resource *resource, uint32_t opcode, union wl_argument *args)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a67891685eff3a9ebd5371d78ca83d516">
+      <term>wl_resource_queue_event</term>
+      <listitem>
+        <synopsis>void wl_resource_queue_event(struct wl_resource *resource, uint32_t opcode,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a75428b89fa7e6aa97027bb74b348c386">
+      <term>wl_resource_post_error</term>
+      <listitem>
+        <synopsis>void wl_resource_post_error(struct wl_resource *resource, uint32_t code, const char *msg,...)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a12352da895372907cf30449435d8ee5f">
+      <term>wl_client_post_no_memory</term>
+      <listitem>
+        <synopsis>void wl_client_post_no_memory(struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1aefff369c8182adc3c29ea561e23b9fd8">
+      <term>wl_resource_post_no_memory</term>
+      <listitem>
+        <synopsis>void wl_resource_post_no_memory(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a4fd83132742252516c9a3df7f4eaa4d7">
+      <term>wl_resource_destroy</term>
+      <listitem>
+        <synopsis>void wl_resource_destroy(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1ae265d2902bc8e0994b26a3f43e63448c">
+      <term>wl_resource_get_id</term>
+      <listitem>
+        <synopsis>uint32_t wl_resource_get_id(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1ab1de3c23a75ddb99ff8c29c0e759a39b">
+      <term>wl_resource_get_link</term>
+      <listitem>
+        <synopsis>struct wl_list* wl_resource_get_link(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a9851271c75c89ed572987126278834d9">
+      <term>wl_resource_from_link</term>
+      <listitem>
+        <synopsis>struct wl_resource* wl_resource_from_link(struct wl_list *link)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a4ac3fbd1d228f441c6846f3ebccc9c6e">
+      <term>wl_resource_find_for_client</term>
+      <listitem>
+        <synopsis>struct wl_resource* wl_resource_find_for_client(struct wl_list *list, struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a300147832089811f11d345fbc3f47fe6">
+      <term>wl_resource_get_client</term>
+      <listitem>
+        <synopsis>struct wl_client* wl_resource_get_client(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1aa9b40199dbf513b6a25263872b8490c6">
+      <term>wl_resource_set_user_data</term>
+      <listitem>
+        <synopsis>void wl_resource_set_user_data(struct wl_resource *resource, void *data)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a07f2328aa269ff1968afc4836018204f">
+      <term>wl_resource_get_user_data</term>
+      <listitem>
+        <synopsis>void* wl_resource_get_user_data(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a8f0f7d0b0f0fb9f44ccd3694b3dd58d5">
+      <term>wl_resource_get_version</term>
+      <listitem>
+        <synopsis>int wl_resource_get_version(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1ab69024ab2f0f502aa70cf18bb2761882">
+      <term>wl_resource_set_destructor</term>
+      <listitem>
+        <synopsis>void wl_resource_set_destructor(struct wl_resource *resource, wl_resource_destroy_func_t destroy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a8849a58c3ba7a528c643591369125844">
+      <term>wl_resource_instance_of</term>
+      <listitem>
+        <synopsis>int wl_resource_instance_of(struct wl_resource *resource, const struct wl_interface *interface, const void *implementation)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a6eac87009589e0bdc52830833ca46694">
+      <term>wl_resource_add_destroy_listener</term>
+      <listitem>
+        <synopsis>void wl_resource_add_destroy_listener(struct wl_resource *resource, struct wl_listener *listener)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a46364ef94b5671f41f4cb9587070b23f">
+      <term>wl_resource_get_destroy_listener</term>
+      <listitem>
+        <synopsis>struct wl_listener* wl_resource_get_destroy_listener(struct wl_resource *resource, wl_notify_func_t notify)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a9062fe6277721ec5b4b7d3cec9e34981">
+      <term>wl_client_add_destroy_listener</term>
+      <listitem>
+        <synopsis>void wl_client_add_destroy_listener(struct wl_client *client, struct wl_listener *listener)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a6f20471027c1fe02e79af96426ef5bf4">
+      <term>wl_client_get_destroy_listener</term>
+      <listitem>
+        <synopsis>struct wl_listener* wl_client_get_destroy_listener(struct wl_client *client, wl_notify_func_t notify)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a661c0b1a9deef909c5d43f5efe4cb524">
+      <term>wl_client_destroy</term>
+      <listitem>
+        <synopsis>void wl_client_destroy(struct wl_client *client)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a85f5bc1c041738f5663835c5565ce0b8">
+      <term>wl_global_create</term>
+      <listitem>
+        <synopsis>struct wl_global* wl_global_create(struct wl_display *display, const struct wl_interface *interface, int version, void *data, wl_global_bind_func_t bind)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1ab466d94d1f204fb5f07c57e5f558ab7a">
+      <term>wl_global_destroy</term>
+      <listitem>
+        <synopsis>void wl_global_destroy(struct wl_global *global)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a82c2f11ffbb50bdb57e07e275b2362e6">
+      <term>wl_global_get_interface</term>
+      <listitem>
+        <synopsis>const struct wl_interface* wl_global_get_interface(const struct wl_global *global)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1ac8aa5d6a692cd28378c051b6a35c41da">
+      <term>wl_global_get_user_data</term>
+      <listitem>
+        <synopsis>void* wl_global_get_user_data(const struct wl_global *global)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1afe7a4b1d6fbf166a66f686c830e2946c">
+      <term>wl_display_get_event_loop</term>
+      <listitem>
+        <synopsis>struct wl_event_loop* wl_display_get_event_loop(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a40e3041d2432d3941b3e8eb96c5284dc">
+      <term>wl_display_terminate</term>
+      <listitem>
+        <synopsis>void wl_display_terminate(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a999da1b9acb5808a3bbad60aaed8a7ff">
+      <term>wl_display_run</term>
+      <listitem>
+        <synopsis>void wl_display_run(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1aeb502f6fdde16d9ee08f31aed040355f">
+      <term>wl_display_flush_clients</term>
+      <listitem>
+        <synopsis>void wl_display_flush_clients(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1af867e52066bc5fff5bb0c1d971735f8f">
+      <term>wl_display_add_socket_auto</term>
+      <listitem>
+        <synopsis>const char* wl_display_add_socket_auto(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a9ea24547f07538f2a326c42c7793b937">
+      <term>wl_display_add_destroy_listener</term>
+      <listitem>
+        <synopsis>void wl_display_add_destroy_listener(struct wl_display *display, struct wl_listener *listener)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a8c1cdf513c91fa498c4d9259eae3ed71">
+      <term>wl_display_add_client_created_listener
+            - 
+Registers a listener for the client connection signal.         </term>
+      <listitem>
+        <synopsis>void wl_display_add_client_created_listener(struct wl_display *display, struct wl_listener *listener)</synopsis>
+        <para>When a new client object is created, listener will be notified, carrying a pointer to the new <link linkend="Server-structwl__client">wl_client</link> object.</para>
+        <para><link linkend="Server-structwl__display_1aa2436b6a0b56cd65d8f6e33b76cd292c">wl_client_create</link> <link linkend="Server-structwl__display">wl_display</link> <link linkend="Server-structwl__listener">wl_listener</link></para>
+        <para><variablelist><varlistentry><term>display</term><listitem><simpara>
+The display object </simpara></listitem></varlistentry><varlistentry><term>listener</term><listitem><simpara>
+Signal handler object </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1ad2e481a3157b1d182bb665a145230ae9">
+      <term>wl_display_get_destroy_listener</term>
+      <listitem>
+        <synopsis>struct wl_listener* wl_display_get_destroy_listener(struct wl_display *display, wl_notify_func_t notify)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a9ac84b9077dcf2020f2b847189d4ebc0">
+      <term>wl_resource_set_implementation</term>
+      <listitem>
+        <synopsis>void wl_resource_set_implementation(struct wl_resource *resource, const void *implementation, void *data, wl_resource_destroy_func_t destroy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a6d127d9e4489ae795850a9b32d8c5637">
+      <term>wl_resource_set_dispatcher</term>
+      <listitem>
+        <synopsis>void wl_resource_set_dispatcher(struct wl_resource *resource, wl_dispatcher_func_t dispatcher, const void *implementation, void *data, wl_resource_destroy_func_t destroy)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8c_1a0a0e1384dce2524161299fcd1669d59f">
+      <term>wl_log_set_handler_server</term>
+      <listitem>
+        <synopsis>void wl_log_set_handler_server(wl_log_func_t handler)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8h_1a86592c8dfc359094d1cfd8e6abb47cb7">
+      <term>wl_client_add_resource</term>
+      <listitem>
+        <synopsis>uint32_t wl_client_add_resource(struct wl_client *client, struct wl_resource *resource) WL_DEPRECATED</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8h_1a8a87f8712025b4d92e5fe718ea9d745d">
+      <term>wl_client_add_object</term>
+      <listitem>
+        <synopsis>struct wl_resource* wl_client_add_object(struct wl_client *client, const struct wl_interface *interface, const void *implementation, uint32_t id, void *data) WL_DEPRECATED</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8h_1ab9570639a66efe77ae813c7edaf29c21">
+      <term>wl_client_new_object</term>
+      <listitem>
+        <synopsis>struct wl_resource* wl_client_new_object(struct wl_client *client, const struct wl_interface *interface, const void *implementation, void *data) WL_DEPRECATED</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8h_1a81dc2de5891114d1ae89449a048f3b6c">
+      <term>wl_display_add_global</term>
+      <listitem>
+        <synopsis>struct wl_global* wl_display_add_global(struct wl_display *display, const struct wl_interface *interface, void *data, wl_global_bind_func_t bind) WL_DEPRECATED</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-server_8h_1ab9bbf24496934f296decd98ebf7940b9">
+      <term>wl_display_remove_global</term>
+      <listitem>
+        <synopsis>void wl_display_remove_global(struct wl_display *display, struct wl_global *global) WL_DEPRECATED</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-shm_8c_1aef08c24892f8fa98431e0610ee487ef7">
+      <term>wl_display_init_shm</term>
+      <listitem>
+        <synopsis>int wl_display_init_shm(struct wl_display *display)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-shm_8c_1a55964fd7a5774ed9f94bfadce6f8a8ce">
+      <term>wl_shm_buffer_get</term>
+      <listitem>
+        <synopsis>struct wl_shm_buffer* wl_shm_buffer_get(struct wl_resource *resource)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-shm_8c_1ad132f92b616451c67aeb6a25cc60f282">
+      <term>wl_shm_buffer_get_stride</term>
+      <listitem>
+        <synopsis>int32_t wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-shm_8c_1af27bd34e94cc995f25a08a0beadd8bc9">
+      <term>wl_shm_buffer_get_format</term>
+      <listitem>
+        <synopsis>uint32_t wl_shm_buffer_get_format(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-shm_8c_1ada7167ed92985de64ff9116b09a07708">
+      <term>wl_shm_buffer_get_width</term>
+      <listitem>
+        <synopsis>int32_t wl_shm_buffer_get_width(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-shm_8c_1acd6812b7699de5a1b80eb4bf1c78aa0e">
+      <term>wl_shm_buffer_get_height</term>
+      <listitem>
+        <synopsis>int32_t wl_shm_buffer_get_height(struct wl_shm_buffer *buffer)</synopsis>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-util_8h_1a3b28bd92b6af30b28f13c09e45269d5b">
+      <term>WL_EXPORT
+            - 
+Visibility attribute.         </term>
+      <listitem>
+        <synopsis/>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-util_8h_1a9ef5a521a018de9c5b28a5ef9909cd33">
+      <term>WL_DEPRECATED
+            - 
+Deprecated attribute.         </term>
+      <listitem>
+        <synopsis/>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-util_8h_1aa7cbf0ab788d6898c97f322630577424">
+      <term>WL_PRINTF
+            - 
+Printf-style argument attribute.         </term>
+      <listitem>
+        <synopsis/>
+        <para><variablelist><varlistentry><term>x</term><listitem><simpara>
+Ordinality of the format string argument </simpara></listitem></varlistentry><varlistentry><term>y</term><listitem><simpara>
+Ordinality of the argument to check against the format string</simpara></listitem></varlistentry></variablelist>
+
+  See also: https://gcc.gnu.org/onlinedocs/gcc-3.2.1/gcc/Function-Attributes.html 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa">
+      <term>wl_container_of
+            - 
+Retrieves a pointer to a containing struct, given a member name.         </term>
+      <listitem>
+        <synopsis/>
+        <para>This macro allows "conversion" from a pointer to a member to its containing struct. This is useful if you have a contained item like a <link linkend="Server-structwl__list">wl_list</link>, <link linkend="Server-structwl__listener">wl_listener</link>, or <link linkend="Server-structwl__signal">wl_signal</link>, provided via a callback or other means, and would like to retrieve the struct that contains it.</para>
+        <para>To demonstrate, the following example retrieves a pointer to example_container given only its destroy_listener member:</para>
+        <para>
+          <programlisting>struct example_container {
+        struct wl_listener destroy_listener;
+        // other members...
+};
+
+void example_container_destroy(struct wl_listener *listener, void *data)
+{
+        struct example_container *ctr;
+
+        ctr = wl_container_of(listener, ctr, destroy_listener);
+        // destroy ctr...
+}
+</programlisting>
+        </para>
+        <para><emphasis>Note: sample need not be a valid pointer. A null or uninitialised pointer is sufficient.</emphasis>
+<variablelist><varlistentry><term>ptr</term><listitem><simpara>
+Valid pointer to the contained member </simpara></listitem></varlistentry><varlistentry><term>sample</term><listitem><simpara>
+Pointer to a struct whose type contains ptr </simpara></listitem></varlistentry><varlistentry><term>member</term><listitem><simpara>
+Named location of ptr within the sample type</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>The container for the specified pointer </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23">
+      <term>wl_iterator_result
+            - 
+Return value of an iterator function.         </term>
+      <listitem>
+        <synopsis/>
+        <para>
+  See also: <link linkend="Server-wayland-server-core_8h_1a3dfebf4109ca3ff4d66d28019a2c2602">wl_client_for_each_resource_iterator_func_t</link> 
+
+  See also: <link linkend="Server-structwl__client_1a4a0a6bb48f63ed80ab4575fda4c5d01a">wl_client_for_each_resource</link> 
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-util_8h_1a546c8b2b06f97d0617000db4fb4feeeb">
+      <term>wl_fixed_t
+            - 
+Fixed-point number.         </term>
+      <listitem>
+        <synopsis>typedef int32_t wl_fixed_t</synopsis>
+        <para>A wl_fixed_t is a 24.8 signed fixed-point number with a sign bit, 23 bits of integer precision and 8 bits of decimal precision. Consider wl_fixed_t as an opaque struct with methods that facilitate conversion to and from double and int types. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd">
+      <term>wl_dispatcher_func_t
+            - 
+Dispatcher function type alias.         </term>
+      <listitem>
+        <synopsis>typedef int(* wl_dispatcher_func_t) (const void *, void *, uint32_t, const struct wl_message *, union wl_argument *))(const void *, void *, uint32_t, const struct wl_message *, union wl_argument *)</synopsis>
+        <para>A dispatcher is a function that handles the emitting of callbacks in client code. For programs directly using the C library, this is done by using libffi to call function pointers. When binding to languages other than C, dispatchers provide a way to abstract the function calling process to be friendlier to other function calling systems.</para>
+        <para>A dispatcher takes five arguments: The first is the dispatcher-specific implementation associated with the target object. The second is the object upon which the callback is being invoked (either wl_proxy or <link linkend="Server-structwl__resource">wl_resource</link>). The third and fourth arguments are the opcode and the <link linkend="Server-structwl__message">wl_message</link> corresponding to the callback. The final argument is an array of arguments received from the other process via the wire protocol.</para>
+        <para><variablelist><varlistentry><term>const void *</term><listitem><simpara>
+Dispatcher-specific implementation data </simpara></listitem></varlistentry><varlistentry><term>void *</term><listitem><simpara>
+Callback invocation target (wl_proxy or <link linkend="Server-structwl__resource">wl_resource</link>) </simpara></listitem></varlistentry><varlistentry><term>uint32_t</term><listitem><simpara>
+Callback opcode </simpara></listitem></varlistentry><varlistentry><term>const struct wl_message *</term><listitem><simpara>
+Callback message signature </simpara></listitem></varlistentry><varlistentry><term>union wl_argument *</term><listitem><simpara>
+Array of received arguments</simpara></listitem></varlistentry></variablelist>
+<variablelist><varlistentry><term>Returns:</term><listitem><simpara>0 on success, or -1 on failure </simpara></listitem></varlistentry></variablelist>
+</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry id="Server-wayland-util_8h_1a8bbe3cc915acdaf00f7a183bf03d809c">
+      <term>wl_log_func_t
+            - 
+Log function type alias.         </term>
+      <listitem>
+        <synopsis>typedef void(* wl_log_func_t) (const char *, va_list))(const char *, va_list)</synopsis>
+        <para>The C implementation of the Wayland protocol abstracts the details of logging. Users may customize the logging behavior, with a function conforming to the wl_log_func_t type, via wl_log_set_handler_client and wl_log_set_handler_server.</para>
+        <para>A wl_log_func_t must conform to the expectations of vprintf, and expects two arguments: a string to write and a corresponding variable argument list. While the string to write may contain format specifiers and use values in the variable argument list, the behavior of any wl_log_func_t depends on the implementation.</para>
+        <para><emphasis>Note: Take care to not confuse this with wl_protocol_logger_func_t, which is a specific server-side logger for requests and events.</emphasis>
+<variablelist><varlistentry><term>const char *</term><listitem><simpara>
+String to write to the log, containing optional format specifiers </simpara></listitem></varlistentry><varlistentry><term>va_list</term><listitem><simpara>
+Variable argument list</simpara></listitem></varlistentry></variablelist>
+
+  See also: wl_log_set_handler_client 
+
+  See also: <link linkend="Server-wayland-server-core_8h_1a0a0e1384dce2524161299fcd1669d59f">wl_log_set_handler_server</link> 
+</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section>

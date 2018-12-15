@@ -1,0 +1,15 @@
+var searchData=
+[
+  ['damage',['damage',['../structwl__surface__interface.html#ad3cff78b33a03a17c9c148edc44d14ea',1,'wl_surface_interface']]],
+  ['damage_5fbuffer',['damage_buffer',['../structwl__surface__interface.html#a922bb3cc09d0819c04cd02f79e79b17f',1,'wl_surface_interface']]],
+  ['data',['data',['../structwl__array.html#af20153b7fcf63135eea72dd5d9e8b87b',1,'wl_array::data()'],['../structwl__global.html#a72c4c64c0f0ddf348caa18d8824c50af',1,'wl_global::data()'],['../structwl__resource.html#a04550a669725ca66765ec5e1f04b98e5',1,'wl_resource::data()'],['../structwl__shm__pool.html#a468e7aecda850725f087053b52db6d66',1,'wl_shm_pool::data()']]],
+  ['debug_5fserver',['debug_server',['../wayland-server_8c.html#a52867feb1b6939f5b17d7cac9b40927f',1,'wayland-server.c']]],
+  ['deprecated_5fdestroy_5fsignal',['deprecated_destroy_signal',['../structwl__resource.html#a1182726dd855c862d13660e1de3c1334',1,'wl_resource']]],
+  ['destroy',['destroy',['../structwl__resource.html#a4b023c453cd12005cefd10ee7fa46925',1,'wl_resource::destroy()'],['../structwl__shm__pool__interface.html#a583620f6259a70f16b1cebf3910718b0',1,'wl_shm_pool_interface::destroy()'],['../structwl__buffer__interface.html#a0fc7d73929c3561ca7666d98399b82eb',1,'wl_buffer_interface::destroy()'],['../structwl__data__offer__interface.html#ac93ae0dae416222450bce3d15276d303',1,'wl_data_offer_interface::destroy()'],['../structwl__data__source__interface.html#a78fcfc7e85393a0a768adc4f42a16cc9',1,'wl_data_source_interface::destroy()'],['../structwl__surface__interface.html#a67fe85608fdf292110ee4adfe20b56f5',1,'wl_surface_interface::destroy()'],['../structwl__region__interface.html#a61b30cc86f6e07db9be9cd62ee4e32d5',1,'wl_region_interface::destroy()'],['../structwl__subcompositor__interface.html#aa45641e4dc19cc41c3a8d29d2946dbd2',1,'wl_subcompositor_interface::destroy()'],['../structwl__subsurface__interface.html#a240554e01c0ef439ebb375ef583e8aba',1,'wl_subsurface_interface::destroy()']]],
+  ['destroy_5fsignal',['destroy_signal',['../structwl__client.html#abead69829272547757152abf1d780519',1,'wl_client::destroy_signal()'],['../structwl__display.html#abb413b6d494454c0fc5eb801b7009e4d',1,'wl_display::destroy_signal()'],['../structwl__resource.html#a7795d0d1661fc92c16d39d9949766f89',1,'wl_resource::destroy_signal()'],['../structwl__resource.html#aa7be4aecb5c00e96bebbd10fbaac7127',1,'wl_resource::destroy_signal()']]],
+  ['dispatcher',['dispatcher',['../structwl__resource.html#a4740b0eb5b24cc61caed50f8c5ba334f',1,'wl_resource']]],
+  ['display',['display',['../structwl__client.html#a1d22bc3d96a9c06bdaabce8cfad616ba',1,'wl_client::display()'],['../structwl__global.html#a3ac41deda1861eebace2336684054527',1,'wl_global::display()']]],
+  ['display_5finterface',['display_interface',['../wayland-server_8c.html#a41aff09d441b40a4e816bc23333701f7',1,'wayland-server.c']]],
+  ['display_5fname',['display_name',['../structwl__socket.html#a9eaeecac943dd82e21b1b3f758b9ed9c',1,'wl_socket']]],
+  ['display_5fresource',['display_resource',['../structwl__client.html#a057a0af40eac725363090aeab0b8121c',1,'wl_client']]]
+];

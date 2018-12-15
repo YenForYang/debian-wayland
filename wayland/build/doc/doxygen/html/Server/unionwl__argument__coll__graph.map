@@ -1,0 +1,6 @@
+<map id="wl_argument" name="wl_argument">
+<area shape="rect" id="node2" href="$structwl__object.html" title="wl_object" alt="" coords="5,109,89,136"/>
+<area shape="rect" id="node3" href="$structwl__interface.html" title="Protocol object interface. " alt="" coords="89,5,192,32"/>
+<area shape="rect" id="node4" href="$structwl__message.html" title="Protocol message signature. " alt="" coords="113,109,216,136"/>
+<area shape="rect" id="node5" href="$structwl__array.html" title="Dynamic array. " alt="" coords="240,109,319,136"/>
+</map>

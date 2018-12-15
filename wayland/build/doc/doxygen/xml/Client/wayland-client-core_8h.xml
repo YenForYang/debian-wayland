@@ -1,0 +1,1055 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="wayland-client-core_8h" kind="file" language="C++">
+    <compoundname>wayland-client-core.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="wayland-util_8h" local="yes">wayland-util.h</includes>
+    <includes local="yes">wayland-version.h</includes>
+    <includedby refid="wayland-client_8h" local="yes">/dev/shm/libwayland/wayland/src/wayland-client.h</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>stdarg.h</label>
+      </node>
+      <node id="1">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="7">
+        <label>wayland-version.h</label>
+      </node>
+      <node id="3">
+        <label>math.h</label>
+      </node>
+      <node id="0">
+        <label>/dev/shm/libwayland/wayland/src/wayland-client-core.h</label>
+        <link refid="wayland-client-core_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wayland-util.h</label>
+        <link refid="wayland-util_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="10">
+        <label>/dev/shm/libwayland/wayland/src/wayland-client.c</label>
+        <link refid="wayland-client_8c"/>
+      </node>
+      <node id="9">
+        <label>/dev/shm/libwayland/wayland/src/wayland-client.h</label>
+        <link refid="wayland-client_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>/dev/shm/libwayland/wayland/src/wayland-client-core.h</label>
+        <link refid="wayland-client-core_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="wayland-client-core_8h_1acfbc75d82d1f8a90e805712b972c4edf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_event_queue_destroy</definition>
+        <argsstring>(struct wl_event_queue *queue)</argsstring>
+        <name>wl_event_queue_destroy</name>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="123" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a090ac75892250e69176e0bebabfc9dff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_marshal</definition>
+        <argsstring>(struct wl_proxy *p, uint32_t opcode,...)</argsstring>
+        <name>wl_proxy_marshal</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="126" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1ac73b3ca33662501fd71e564d29f80fc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_marshal_array</definition>
+        <argsstring>(struct wl_proxy *p, uint32_t opcode, union wl_argument *args)</argsstring>
+        <name>wl_proxy_marshal_array</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>union <ref refid="unionwl__argument" kindref="compound">wl_argument</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="129" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a83b0c474e347e65075246d239c227eca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy* wl_proxy_create</definition>
+        <argsstring>(struct wl_proxy *factory, const struct wl_interface *interface)</argsstring>
+        <name>wl_proxy_create</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>factory</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="133" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a9fc96dd300247a74b07e5e97e7779d78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* wl_proxy_create_wrapper</definition>
+        <argsstring>(void *proxy)</argsstring>
+        <name>wl_proxy_create_wrapper</name>
+        <param>
+          <type>void *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="137" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a0261dbfa5f690667643940ab2ec1ee99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_wrapper_destroy</definition>
+        <argsstring>(void *proxy_wrapper)</argsstring>
+        <name>wl_proxy_wrapper_destroy</name>
+        <param>
+          <type>void *</type>
+          <declname>proxy_wrapper</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="140" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a74b1e45b6cf8d73885bf60a0973ac27b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy* wl_proxy_marshal_constructor</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface,...)</argsstring>
+        <name>wl_proxy_marshal_constructor</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="143" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1ac50a545bda02164d6a8998df8656702f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy* wl_proxy_marshal_constructor_versioned</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface, uint32_t version,...)</argsstring>
+        <name>wl_proxy_marshal_constructor_versioned</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>version</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="149" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a7f71ea679958ca01e5febf391795a256" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy* wl_proxy_marshal_array_constructor</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface)</argsstring>
+        <name>wl_proxy_marshal_array_constructor</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>union <ref refid="unionwl__argument" kindref="compound">wl_argument</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="156" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a4d365f3486201a1c8da23d93a649dfa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy* wl_proxy_marshal_array_constructor_versioned</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface, uint32_t version)</argsstring>
+        <name>wl_proxy_marshal_array_constructor_versioned</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>union <ref refid="unionwl__argument" kindref="compound">wl_argument</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a2d3fe909fed5b7ace56ca01178763381" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_destroy</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_destroy</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="168" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a29a8596b88ede807f96a63c128c6e8b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_proxy_add_listener</definition>
+        <argsstring>(struct wl_proxy *proxy, void(**implementation)(void), void *data)</argsstring>
+        <name>wl_proxy_add_listener</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>void(**)(void)</type>
+          <declname>implementation</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="171" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1acb35a3a56239c15ad86856b4753d0684" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void* wl_proxy_get_listener</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_listener</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="175" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a1d4975c4e2f01bddd3beaf28dd3e2818" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_proxy_add_dispatcher</definition>
+        <argsstring>(struct wl_proxy *proxy, wl_dispatcher_func_t dispatcher_func, const void *dispatcher_data, void *data)</argsstring>
+        <name>wl_proxy_add_dispatcher</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type><ref refid="wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd" kindref="member">wl_dispatcher_func_t</ref></type>
+          <declname>dispatcher_func</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>dispatcher_data</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="178" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a97fa4ee5b728a372cff9ac5164153fef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_set_user_data</definition>
+        <argsstring>(struct wl_proxy *proxy, void *user_data)</argsstring>
+        <name>wl_proxy_set_user_data</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="183" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a46da640b2112269327958ff4efd3e79f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* wl_proxy_get_user_data</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_user_data</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="186" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a918c3bff4543bcfd0d6cb689d0666db2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_proxy_get_version</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_version</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="189" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1acd609baf53e8691c5307fdaf12d4d176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_proxy_get_id</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_id</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="192" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a26926726c79c73604235728d23c10b1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* wl_proxy_get_class</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_class</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="195" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1acc5f51ea5d172df68f61018b2879e0cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_set_queue</definition>
+        <argsstring>(struct wl_proxy *proxy, struct wl_event_queue *queue)</argsstring>
+        <name>wl_proxy_set_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="198" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a86382b9754bbb891860e6ab4ff5efa20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+        <definition>struct wl_display* wl_display_connect</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>wl_display_connect</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="201" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a7ef5808b89561fb447cd012e9b9c7235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+        <definition>struct wl_display* wl_display_connect_to_fd</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>wl_display_connect_to_fd</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="204" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a9150a7e3213a58b469a6966e60a9f108" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_display_disconnect</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_disconnect</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="207" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a2d5d249e81cbf43c3521d4bce575f1ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_get_fd</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_get_fd</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="210" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a30a9c4f020f3e77581c7a81ecdb4913d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_dispatch</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_dispatch</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="213" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1ae027b09801474ac7c6b0f1ef25ff6e17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_dispatch_queue</definition>
+        <argsstring>(struct wl_display *display, struct wl_event_queue *queue)</argsstring>
+        <name>wl_display_dispatch_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="216" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a8a14a809eb2c083a806db2ee15523041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_dispatch_queue_pending</definition>
+        <argsstring>(struct wl_display *display, struct wl_event_queue *queue)</argsstring>
+        <name>wl_display_dispatch_queue_pending</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="220" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1ac4b6b5ad31932bc3830ff362d2938560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_dispatch_pending</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_dispatch_pending</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="224" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a1ceca1c6f280ac1308ee0e16cd186f94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_get_error</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_get_error</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="227" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a8fbec062c9430f8cbdf71a12ec443f7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_display_get_protocol_error</definition>
+        <argsstring>(struct wl_display *display, const struct wl_interface **interface, uint32_t *id)</argsstring>
+        <name>wl_display_get_protocol_error</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> **</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="230" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a8463b6e5f4cf9a2a3ad2d543aedcf429" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_flush</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_flush</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="235" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a73f44c38fa4e535f5eaf700933b0b2e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_roundtrip_queue</definition>
+        <argsstring>(struct wl_display *display, struct wl_event_queue *queue)</argsstring>
+        <name>wl_display_roundtrip_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="238" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1ab60f38c2f80980ac84f347e932793390" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_roundtrip</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_roundtrip</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="242" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a6607ab92946184c1ecefba21987b0a83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+        <definition>struct wl_event_queue* wl_display_create_queue</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_create_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="245" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a40039c1169b153269a3dc0796a54ddb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_prepare_read_queue</definition>
+        <argsstring>(struct wl_display *display, struct wl_event_queue *queue)</argsstring>
+        <name>wl_display_prepare_read_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="248" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a040dca18775e3177883f06bd6fdf395f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_prepare_read</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_prepare_read</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="252" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a978fcabf13f1915e565435ab097bd590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_display_cancel_read</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_cancel_read</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="255" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a1b1619d9b0930a6d1b70ccd1488335b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_display_read_events</definition>
+        <argsstring>(struct wl_display *display)</argsstring>
+        <name>wl_display_read_events</name>
+        <param>
+          <type>struct <ref refid="classwl__display" kindref="compound">wl_display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="258" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="wayland-client-core_8h_1a2201f511aa0db7cdb2ecdcb01d61dc9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_log_set_handler_client</definition>
+        <argsstring>(wl_log_func_t handler)</argsstring>
+        <name>wl_log_set_handler_client</name>
+        <param>
+          <type><ref refid="wayland-util_8h_1a8bbe3cc915acdaf00f7a183bf03d809c" kindref="member">wl_log_func_t</ref></type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="261" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2190" bodyend="2193"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>©<sp/>2008<sp/>Kristian<sp/>Høgsberg</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>a<sp/>copy<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>&quot;Software&quot;),<sp/>to<sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>without<sp/>limitation<sp/>the<sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>(including<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>next<sp/>paragraph)<sp/>shall<sp/>be<sp/>included<sp/>in<sp/>all<sp/>copies<sp/>or<sp/>substantial</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>EXPRESS<sp/>OR<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY,<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>NONINFRINGEMENT.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>WAYLAND_CLIENT_CORE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WAYLAND_CLIENT_CORE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="wayland-util_8h" kindref="compound">wayland-util.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;wayland-version.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classwl__display" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classwl__event__queue" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__display" kindref="compound">wl_display</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><ref refid="classwl__event__queue_1acfbc75d82d1f8a90e805712b972c4edf" kindref="member">wl_event_queue_destroy</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref><sp/>*queue);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><ref refid="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" kindref="member">wl_proxy_marshal</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*p,<sp/>uint32_t<sp/>opcode,<sp/>...);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><ref refid="classwl__proxy_1a8f4cc90edff2f7bd3dfbb2db57f7d873" kindref="member">wl_proxy_marshal_array</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*p,<sp/>uint32_t<sp/>opcode,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"><sp/><ref refid="unionwl__argument" kindref="compound">wl_argument</ref><sp/>*args);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><ref refid="classwl__proxy_1a5917991abd28c23949ad200e9399e813" kindref="member">wl_proxy_create</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*factory,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__interface" kindref="compound">wl_interface</ref><sp/>*interface);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><ref refid="classwl__proxy_1afb9d0eb81d1fd4931f566aed090d6f28" kindref="member">wl_proxy_create_wrapper</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*proxy);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><ref refid="classwl__proxy_1a0261dbfa5f690667643940ab2ec1ee99" kindref="member">wl_proxy_wrapper_destroy</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*proxy_wrapper);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><ref refid="classwl__proxy_1aa2d70d86a2467bf20867fb93699a6d28" kindref="member">wl_proxy_marshal_constructor</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>opcode,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__interface" kindref="compound">wl_interface</ref><sp/>*interface,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><ref refid="classwl__proxy_1a397e6d324ce0c262afe09d365be2b8e2" kindref="member">wl_proxy_marshal_constructor_versioned</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>opcode,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__interface" kindref="compound">wl_interface</ref><sp/>*interface,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>version,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><ref refid="classwl__proxy_1a8e89b859b28d48949a1b4b00e9a39f05" kindref="member">wl_proxy_marshal_array_constructor</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>opcode,<sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"><sp/><ref refid="unionwl__argument" kindref="compound">wl_argument</ref><sp/>*args,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__interface" kindref="compound">wl_interface</ref><sp/>*interface);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><ref refid="classwl__proxy_1ae61b4c579eba754bdbefd04c0e3f8b13" kindref="member">wl_proxy_marshal_array_constructor_versioned</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>opcode,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"><sp/><ref refid="unionwl__argument" kindref="compound">wl_argument</ref><sp/>*args,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__interface" kindref="compound">wl_interface</ref><sp/>*interface,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>version);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><ref refid="classwl__proxy_1a2d3fe909fed5b7ace56ca01178763381" kindref="member">wl_proxy_destroy</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><ref refid="classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7" kindref="member">wl_proxy_add_listener</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(**implementation)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">),<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><ref refid="classwl__proxy_1a30175804b647e683773172d50812c88f" kindref="member">wl_proxy_get_listener</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><ref refid="classwl__proxy_1a45ec4f95c2cead639976b27bf4af55c1" kindref="member">wl_proxy_add_dispatcher</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd" kindref="member">wl_dispatcher_func_t</ref><sp/>dispatcher_func,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>dispatcher_data,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><ref refid="classwl__proxy_1a97fa4ee5b728a372cff9ac5164153fef" kindref="member">wl_proxy_set_user_data</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*user_data);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><ref refid="classwl__proxy_1abc50a9d788e0007f144a7bea7f170c3f" kindref="member">wl_proxy_get_user_data</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal">uint32_t</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><ref refid="classwl__proxy_1a918c3bff4543bcfd0d6cb689d0666db2" kindref="member">wl_proxy_get_version</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">uint32_t</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><ref refid="classwl__proxy_1acd609baf53e8691c5307fdaf12d4d176" kindref="member">wl_proxy_get_id</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><ref refid="classwl__proxy_1a365697bb1c59f3714e5654348d7b480a" kindref="member">wl_proxy_get_class</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><ref refid="classwl__proxy_1acc5f51ea5d172df68f61018b2879e0cc" kindref="member">wl_proxy_set_queue</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref><sp/>*proxy,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref><sp/>*queue);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><ref refid="classwl__display_1af048371dfef7577bd39a3c04b78d0374" kindref="member">wl_display_connect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><ref refid="classwl__display_1a90663db371e1b11704be98c1568c5206" kindref="member">wl_display_connect_to_fd</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><ref refid="classwl__display_1a9150a7e3213a58b469a6966e60a9f108" kindref="member">wl_display_disconnect</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><ref refid="classwl__display_1a2d5d249e81cbf43c3521d4bce575f1ca" kindref="member">wl_display_get_fd</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><ref refid="classwl__display_1a30a9c4f020f3e77581c7a81ecdb4913d" kindref="member">wl_display_dispatch</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><ref refid="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" kindref="member">wl_display_dispatch_queue</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref><sp/>*queue);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><ref refid="classwl__display_1a8a14a809eb2c083a806db2ee15523041" kindref="member">wl_display_dispatch_queue_pending</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref><sp/>*queue);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><ref refid="classwl__display_1ac4b6b5ad31932bc3830ff362d2938560" kindref="member">wl_display_dispatch_pending</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><ref refid="classwl__display_1a1ceca1c6f280ac1308ee0e16cd186f94" kindref="member">wl_display_get_error</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">uint32_t</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><ref refid="classwl__display_1a8fbec062c9430f8cbdf71a12ec443f7d" kindref="member">wl_display_get_protocol_error</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structwl__interface" kindref="compound">wl_interface</ref><sp/>**interface,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>*</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><ref refid="classwl__display_1a8463b6e5f4cf9a2a3ad2d543aedcf429" kindref="member">wl_display_flush</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><ref refid="classwl__display_1a73f44c38fa4e535f5eaf700933b0b2e6" kindref="member">wl_display_roundtrip_queue</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display,</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref><sp/>*queue);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><ref refid="classwl__display_1ab60f38c2f80980ac84f347e932793390" kindref="member">wl_display_roundtrip</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref><sp/>*</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><ref refid="classwl__display_1a9a44f497851dc7bd5b683121104015ac" kindref="member">wl_display_create_queue</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><ref refid="classwl__display_1a40039c1169b153269a3dc0796a54ddb0" kindref="member">wl_display_prepare_read_queue</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display,</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref><sp/>*queue);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><ref refid="classwl__display_1a040dca18775e3177883f06bd6fdf395f" kindref="member">wl_display_prepare_read</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><ref refid="classwl__display_1a978fcabf13f1915e565435ab097bd590" kindref="member">wl_display_cancel_read</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><ref refid="classwl__display_1a1b1619d9b0930a6d1b70ccd1488335b4" kindref="member">wl_display_read_events</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classwl__display" kindref="compound">wl_display</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><ref refid="wayland-client-core_8h_1a2201f511aa0db7cdb2ecdcb01d61dc9f" kindref="member">wl_log_set_handler_client</ref>(<ref refid="wayland-util_8h_1a8bbe3cc915acdaf00f7a183bf03d809c" kindref="member">wl_log_func_t</ref><sp/>handler);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h"/>
+  </compounddef>
+</doxygen>

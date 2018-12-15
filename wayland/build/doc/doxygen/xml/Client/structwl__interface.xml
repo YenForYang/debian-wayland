@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__interface" kind="struct" language="C++" prot="public">
+    <compoundname>wl_interface</compoundname>
+    <includes refid="wayland-util_8h" local="no">wayland-util.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__interface_1a3ee0780631cad42bcc90a8deb76caec8" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* wl_interface::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Interface name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="204" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__interface_1ac7b9bc6c0352b4100213109094ca55fa" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_interface::version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <briefdescription>
+<para>Interface version. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="206" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__interface_1a520ae9776d4d26ea132d5a0768098d3d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_interface::method_count</definition>
+        <argsstring></argsstring>
+        <name>method_count</name>
+        <briefdescription>
+<para>Number of methods (requests) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="208" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__interface_1a6bc4aaa8fbc7aafd1c9da58deedf50da" prot="public" static="no" mutable="no">
+        <type>const struct <ref refid="structwl__message" kindref="compound">wl_message</ref> *</type>
+        <definition>const struct wl_message* wl_interface::methods</definition>
+        <argsstring></argsstring>
+        <name>methods</name>
+        <briefdescription>
+<para>Method (request) signatures. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="210" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__interface_1a142461320927b0eb7a8e27c7bcaafc39" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_interface::event_count</definition>
+        <argsstring></argsstring>
+        <name>event_count</name>
+        <briefdescription>
+<para>Number of events. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="212" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__interface_1a67ed5c9c748afbec4ba89d2cad8cfbd0" prot="public" static="no" mutable="no">
+        <type>const struct <ref refid="structwl__message" kindref="compound">wl_message</ref> *</type>
+        <definition>const struct wl_message* wl_interface::events</definition>
+        <argsstring></argsstring>
+        <name>events</name>
+        <briefdescription>
+<para>Event signatures. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="214" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Protocol object interface. </para>    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="structwl__interface" kindref="compound">wl_interface</ref> describes the API of a protocol object defined in the Wayland protocol specification. The protocol implementation uses a <ref refid="structwl__interface" kindref="compound">wl_interface</ref> within its marshalling machinery for encoding client requests.</para><para>The <computeroutput>name</computeroutput> of a <ref refid="structwl__interface" kindref="compound">wl_interface</ref> is the name of the corresponding protocol interface, and <computeroutput>version</computeroutput> represents the version of the interface. The members <computeroutput>method_count</computeroutput> and <computeroutput>event_count</computeroutput> represent the number of <computeroutput>methods</computeroutput> (requests) and <computeroutput>events</computeroutput> in the respective <ref refid="structwl__message" kindref="compound">wl_message</ref> members.</para><para>For example, consider a protocol interface <computeroutput>foo</computeroutput>, marked as version <computeroutput>1</computeroutput>, with two requests and one event.</para><para><programlisting><codeline><highlight class="normal">&lt;interface<sp/>name=&quot;foo&quot;<sp/>version=&quot;1&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;request<sp/>name=&quot;a&quot;&gt;&lt;/request&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;request<sp/>name=&quot;b&quot;&gt;&lt;/request&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;event<sp/>name=&quot;c&quot;&gt;&lt;/event&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/interface&gt;</highlight></codeline>
+</programlisting></para><para>Given two <ref refid="structwl__message" kindref="compound">wl_message</ref> arrays <computeroutput>foo_requests</computeroutput> and <computeroutput>foo_events</computeroutput>, a <ref refid="structwl__interface" kindref="compound">wl_interface</ref> for <computeroutput>foo</computeroutput> might be:</para><para><programlisting><codeline><highlight class="normal">struct<sp/>wl_interface<sp/>foo_interface<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;foo&quot;,<sp/>1,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,<sp/>foo_requests,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>foo_events</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para><para><simplesect kind="note"><para>The server side of the protocol may define interface <emphasis>implementation types</emphasis> that incorporate the term <computeroutput>interface</computeroutput> in their name. Take care to not confuse these server-side <computeroutput>struct</computeroutput>s with a <ref refid="structwl__interface" kindref="compound">wl_interface</ref> variable whose name also ends in <computeroutput>interface</computeroutput>. For example, while the server may define a type <computeroutput>struct wl_foo_interface</computeroutput>, the client may define a <computeroutput>struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> wl_foo_interface</computeroutput>.</para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__message" kindref="compound">wl_message</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> </para></simplesect>
+<simplesect kind="see"><para><ulink url="https://wayland.freedesktop.org/docs/html/ch04.html#sect-Protocol-Interfaces">Interfaces</ulink> </para></simplesect>
+<simplesect kind="see"><para><ulink url="https://wayland.freedesktop.org/docs/html/ch04.html#sect-Protocol-Versioning">Versioning</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="11">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="202" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="202" bodyend="215"/>
+    <listofallmembers>
+      <member refid="structwl__interface_1a142461320927b0eb7a8e27c7bcaafc39" prot="public" virt="non-virtual"><scope>wl_interface</scope><name>event_count</name></member>
+      <member refid="structwl__interface_1a67ed5c9c748afbec4ba89d2cad8cfbd0" prot="public" virt="non-virtual"><scope>wl_interface</scope><name>events</name></member>
+      <member refid="structwl__interface_1a520ae9776d4d26ea132d5a0768098d3d" prot="public" virt="non-virtual"><scope>wl_interface</scope><name>method_count</name></member>
+      <member refid="structwl__interface_1a6bc4aaa8fbc7aafd1c9da58deedf50da" prot="public" virt="non-virtual"><scope>wl_interface</scope><name>methods</name></member>
+      <member refid="structwl__interface_1a3ee0780631cad42bcc90a8deb76caec8" prot="public" virt="non-virtual"><scope>wl_interface</scope><name>name</name></member>
+      <member refid="structwl__interface_1ac7b9bc6c0352b4100213109094ca55fa" prot="public" virt="non-virtual"><scope>wl_interface</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

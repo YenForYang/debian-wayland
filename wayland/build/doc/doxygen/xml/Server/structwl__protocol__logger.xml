@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__protocol__logger" kind="struct" language="C++" prot="public">
+    <compoundname>wl_protocol_logger</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__protocol__logger_1a728637455ccd2b69949f34304cb32b8f" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></type>
+        <definition>struct wl_list wl_protocol_logger::link</definition>
+        <argsstring></argsstring>
+        <name>link</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="129" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__protocol__logger_1aec3f6877750bee41e198ee0ba86ec74a" prot="public" static="no" mutable="no">
+        <type><ref refid="wayland-server-core_8h_1a420c37c10e960e6fb0968e2c30628006" kindref="member">wl_protocol_logger_func_t</ref></type>
+        <definition>wl_protocol_logger_func_t wl_protocol_logger::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="135" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__protocol__logger_1a6346ce5a1d65a1f6c8600da6cb1e0f88" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* wl_protocol_logger::user_data</definition>
+        <argsstring></argsstring>
+        <name>user_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="136" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structwl__protocol__logger_1ac5bfbf098cbecb788190bc12e3becad7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_protocol_logger_destroy</definition>
+        <argsstring>(struct wl_protocol_logger *logger)</argsstring>
+        <name>wl_protocol_logger_destroy</name>
+        <param>
+          <type>struct <ref refid="structwl__protocol__logger" kindref="compound">wl_protocol_logger</ref> *</type>
+          <declname>logger</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a protocol logger. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function destroys a protocol logger and removes it from the display it was added to with <emphasis>wl_display_add_protocol_logger</emphasis>. The <emphasis>logger</emphasis> object becomes invalid after calling this function.</para><para><simplesect kind="see"><para><ref refid="structwl__display_1a4dc118c686e362aba0b3c6c8874efc3d" kindref="member">wl_display_add_protocol_logger</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="1758" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="1758" bodyend="1762"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="73">
+        <label>wl_client</label>
+        <link refid="structwl__client"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>display_resource</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="75" relation="usage">
+          <edgelabel>display</edgelabel>
+        </childnode>
+      </node>
+      <node id="68">
+        <label>wl_resource</label>
+        <link refid="structwl__resource"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>deprecated_destroy_signal</edgelabel>
+          <edgelabel>destroy_signal</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="66" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="73" relation="usage">
+          <edgelabel>client</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>destroy</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>dispatcher</edgelabel>
+        </childnode>
+      </node>
+      <node id="77">
+        <label>wl_array</label>
+        <link refid="structwl__array"/>
+      </node>
+      <node id="78">
+        <label>wl_argument</label>
+        <link refid="unionwl__argument"/>
+        <childnode refid="70" relation="usage">
+          <edgelabel>o</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>a</edgelabel>
+        </childnode>
+      </node>
+      <node id="75">
+        <label>wl_display</label>
+        <link refid="structwl__display"/>
+        <childnode refid="76" relation="usage">
+          <edgelabel>loop</edgelabel>
+        </childnode>
+        <childnode refid="66" relation="usage">
+          <edgelabel>client_list</edgelabel>
+          <edgelabel>global_list</edgelabel>
+          <edgelabel>registry_resource_list</edgelabel>
+          <edgelabel>socket_list</edgelabel>
+          <edgelabel>protocol_loggers</edgelabel>
+        </childnode>
+        <childnode refid="73" relation="usage">
+          <edgelabel>global_filter</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>additional_shm_formats</edgelabel>
+        </childnode>
+      </node>
+      <node id="65">
+        <label>wl_protocol_logger</label>
+        <link refid="structwl__protocol__logger"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="67" relation="usage">
+          <edgelabel>func</edgelabel>
+        </childnode>
+      </node>
+      <node id="74">
+        <label>wl_event_source</label>
+        <link refid="structwl__event__source"/>
+      </node>
+      <node id="76">
+        <label>wl_event_loop</label>
+        <link refid="structwl__event__loop"/>
+      </node>
+      <node id="66">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="72">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="71" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>wl_protocol_logger_message</label>
+        <link refid="structwl__protocol__logger__message"/>
+        <childnode refid="68" relation="usage">
+          <edgelabel>resource</edgelabel>
+        </childnode>
+        <childnode refid="78" relation="usage">
+          <edgelabel>arguments</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>message</edgelabel>
+        </childnode>
+      </node>
+      <node id="70">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="71" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="71">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="72" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>wl_signal</label>
+        <link refid="structwl__signal"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>listener_list</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="133" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="133" bodyend="137"/>
+    <listofallmembers>
+      <member refid="structwl__protocol__logger_1aec3f6877750bee41e198ee0ba86ec74a" prot="public" virt="non-virtual"><scope>wl_protocol_logger</scope><name>func</name></member>
+      <member refid="structwl__protocol__logger_1a728637455ccd2b69949f34304cb32b8f" prot="public" virt="non-virtual"><scope>wl_protocol_logger</scope><name>link</name></member>
+      <member refid="structwl__protocol__logger_1a6346ce5a1d65a1f6c8600da6cb1e0f88" prot="public" virt="non-virtual"><scope>wl_protocol_logger</scope><name>user_data</name></member>
+      <member refid="structwl__protocol__logger_1ac5bfbf098cbecb788190bc12e3becad7" prot="public" virt="non-virtual"><scope>wl_protocol_logger</scope><name>wl_protocol_logger_destroy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__socket" kind="struct" language="C++" prot="public">
+    <compoundname>wl_socket</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__socket_1a84107d8f8948c572733d9dbcce799cd6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_socket::fd</definition>
+        <argsstring></argsstring>
+        <name>fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="63" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__socket_1addbfff96411375cc5db3a446a42a3dd5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_socket::fd_lock</definition>
+        <argsstring></argsstring>
+        <name>fd_lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="64" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__socket_1a13ffab6a53a117753bf5082483e77be0" prot="public" static="no" mutable="no">
+        <type>struct sockaddr_un</type>
+        <definition>struct sockaddr_un wl_socket::addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="64" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__socket_1a27d2689a9962252d1859549ae871acab" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char wl_socket::lock_addr[UNIX_PATH_MAX+LOCK_SUFFIXLEN]</definition>
+        <argsstring>[UNIX_PATH_MAX+LOCK_SUFFIXLEN]</argsstring>
+        <name>lock_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="66" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__socket_1af83312cad236ce24a5c9cfcb9eb05809" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></type>
+        <definition>struct wl_list wl_socket::link</definition>
+        <argsstring></argsstring>
+        <name>link</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="66" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__socket_1a17f6d70de4250ca21b6e6ed00fbdedc5" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+        <definition>struct wl_event_source* wl_socket::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="68" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__socket_1a9eaeecac943dd82e21b1b3f758b9ed9c" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* wl_socket::display_name</definition>
+        <argsstring></argsstring>
+        <name>display_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="69" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="163">
+        <label>wl_socket</label>
+        <link refid="structwl__socket"/>
+        <childnode refid="164" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="165" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+      </node>
+      <node id="165">
+        <label>wl_event_source</label>
+        <link refid="structwl__event__source"/>
+      </node>
+      <node id="164">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="164" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="62" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="62" bodyend="70"/>
+    <listofallmembers>
+      <member refid="structwl__socket_1a13ffab6a53a117753bf5082483e77be0" prot="public" virt="non-virtual"><scope>wl_socket</scope><name>addr</name></member>
+      <member refid="structwl__socket_1a9eaeecac943dd82e21b1b3f758b9ed9c" prot="public" virt="non-virtual"><scope>wl_socket</scope><name>display_name</name></member>
+      <member refid="structwl__socket_1a84107d8f8948c572733d9dbcce799cd6" prot="public" virt="non-virtual"><scope>wl_socket</scope><name>fd</name></member>
+      <member refid="structwl__socket_1addbfff96411375cc5db3a446a42a3dd5" prot="public" virt="non-virtual"><scope>wl_socket</scope><name>fd_lock</name></member>
+      <member refid="structwl__socket_1af83312cad236ce24a5c9cfcb9eb05809" prot="public" virt="non-virtual"><scope>wl_socket</scope><name>link</name></member>
+      <member refid="structwl__socket_1a27d2689a9962252d1859549ae871acab" prot="public" virt="non-virtual"><scope>wl_socket</scope><name>lock_addr</name></member>
+      <member refid="structwl__socket_1a17f6d70de4250ca21b6e6ed00fbdedc5" prot="public" virt="non-virtual"><scope>wl_socket</scope><name>source</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,497 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__event__source" kind="struct" language="C++" prot="public">
+    <compoundname>wl_event_source</compoundname>
+    <includes refid="wayland-server-core_8h" local="no">wayland-server-core.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structwl__event__source_1a09e702384ed869548c72f3576399c581" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* wl_event_loop_fd_func_t) (int fd, uint32_t mask, void *data)</definition>
+        <argsstring>)(int fd, uint32_t mask, void *data)</argsstring>
+        <name>wl_event_loop_fd_func_t</name>
+        <briefdescription>
+<para>File descriptor dispatch function type. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions of this type are used as callbacks for file descriptor events.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file descriptor delivering the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Describes the kind of the event as a bitwise-or of: <computeroutput>WL_EVENT_READABLE</computeroutput>, <computeroutput>WL_EVENT_WRITABLE</computeroutput>, <computeroutput>WL_EVENT_HANGUP</computeroutput>, <computeroutput>WL_EVENT_ERROR</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user data argument of the related <ref refid="structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25" kindref="member">wl_event_loop_add_fd()</ref> call. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If the event source is registered for re-check with <ref refid="structwl__event__source_1aa079264c57dd12168c691c000724efcf" kindref="member">wl_event_source_check()</ref>: 0 for all done, 1 for needing a re-check. If not registered, the return value is ignored and should be zero.</para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25" kindref="member">wl_event_loop_add_fd()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="63" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server-core.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structwl__event__source_1a59bc490bf28b48e0af908ab91649938a" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* wl_event_loop_timer_func_t) (void *data)</definition>
+        <argsstring>)(void *data)</argsstring>
+        <name>wl_event_loop_timer_func_t</name>
+        <briefdescription>
+<para>Timer dispatch function type. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions of this type are used as callbacks for timer expiry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user data argument of the related <ref refid="structwl__event__source_1a39374f19a73472f63fab4267a14adc10" kindref="member">wl_event_loop_add_timer()</ref> call. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If the event source is registered for re-check with <ref refid="structwl__event__source_1aa079264c57dd12168c691c000724efcf" kindref="member">wl_event_source_check()</ref>: 0 for all done, 1 for needing a re-check. If not registered, the return value is ignored and should be zero.</para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__event__source_1a39374f19a73472f63fab4267a14adc10" kindref="member">wl_event_loop_add_timer()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="78" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server-core.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structwl__event__source_1a431b418976144a8ebe6b19bc24206d20" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* wl_event_loop_signal_func_t) (int signal_number, void *data)</definition>
+        <argsstring>)(int signal_number, void *data)</argsstring>
+        <name>wl_event_loop_signal_func_t</name>
+        <briefdescription>
+<para>Signal dispatch function type. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions of this type are used as callbacks for (POSIX) signals.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signal_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user data argument of the related <ref refid="structwl__event__source_1a1706e2490502a95f24ccb59cbae3e2f8" kindref="member">wl_event_loop_add_signal()</ref> call. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If the event source is registered for re-check with <ref refid="structwl__event__source_1aa079264c57dd12168c691c000724efcf" kindref="member">wl_event_source_check()</ref>: 0 for all done, 1 for needing a re-check. If not registered, the return value is ignored and should be zero.</para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__event__source_1a1706e2490502a95f24ccb59cbae3e2f8" kindref="member">wl_event_loop_add_signal()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="94" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server-core.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structwl__event__source_1ae526dfa099f9ba69285e275c82794a9b" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* wl_event_loop_idle_func_t) (void *data)</definition>
+        <argsstring>)(void *data)</argsstring>
+        <name>wl_event_loop_idle_func_t</name>
+        <briefdescription>
+<para>Idle task function type. </para>        </briefdescription>
+        <detaileddescription>
+<para>Functions of this type are used as callbacks before blocking in <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user data argument of the related <ref refid="structwl__event__source_1a90d88ae62b26a25f709977c45b300716" kindref="member">wl_event_loop_add_idle()</ref> call.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structwl__event__source_1a90d88ae62b26a25f709977c45b300716" kindref="member">wl_event_loop_add_idle()</ref> <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="107" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server-core.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+        <definition>struct wl_event_source * wl_event_loop_add_fd</definition>
+        <argsstring>(struct wl_event_loop *loop, int fd, uint32_t mask, wl_event_loop_fd_func_t func, void *data)</argsstring>
+        <name>wl_event_loop_add_fd</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type><ref refid="structwl__event__source_1a09e702384ed869548c72f3576399c581" kindref="member">wl_event_loop_fd_func_t</ref></type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Create a file descriptor event source. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop that will process the new source. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file descriptor to watch. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A bitwise-or of which events to watch for: <computeroutput>WL_EVENT_READABLE</computeroutput>, <computeroutput>WL_EVENT_WRITABLE</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file descriptor dispatch function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new file descriptor event source.</para></simplesect>
+The given file descriptor is initially watched for the events given in <computeroutput>mask</computeroutput>. This can be changed as needed with <ref refid="structwl__event__source_1afe73f9ff59d489e9f27eb9c0e3058a02" kindref="member">wl_event_source_fd_update()</ref>.</para><para>If it is possible that program execution causes the file descriptor to be read while leaving the data in a buffer without actually processing it, it may be necessary to register the file descriptor source to be re-checked, see <ref refid="structwl__event__source_1aa079264c57dd12168c691c000724efcf" kindref="member">wl_event_source_check()</ref>. This will ensure that the dispatch function gets called even if the file descriptor is not readable or writable anymore. This is especially useful with IPC libraries that automatically buffer incoming data, possibly as a side-effect of other operations.</para><para><simplesect kind="see"><para><ref refid="structwl__event__source_1a09e702384ed869548c72f3576399c581" kindref="member">wl_event_loop_fd_func_t</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="158" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="158" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__source_1afe73f9ff59d489e9f27eb9c0e3058a02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_event_source_fd_update</definition>
+        <argsstring>(struct wl_event_source *source, uint32_t mask)</argsstring>
+        <name>wl_event_source_fd_update</name>
+        <param>
+          <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+<para>Update a file descriptor source&apos;s event mask. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file descriptor event source to update. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new mask, a bitwise-or of: <computeroutput>WL_EVENT_READABLE</computeroutput>, <computeroutput>WL_EVENT_WRITABLE</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on failure.</para></simplesect>
+This changes which events, readable and/or writable, cause the dispatch callback to be called on.</para><para>File descriptors are usually writable to begin with, so they do not need to be polled for writable until a write actually fails. When a write fails, the event mask can be changed to poll for readable and writable, delivering a dispatch callback when it is possible to write more. Once all data has been written, the mask can be changed to poll only for readable to avoid busy-looping on dispatch.</para><para><simplesect kind="see"><para><ref refid="structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25" kindref="member">wl_event_loop_add_fd()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="198" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="198" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__source_1a39374f19a73472f63fab4267a14adc10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+        <definition>struct wl_event_source * wl_event_loop_add_timer</definition>
+        <argsstring>(struct wl_event_loop *loop, wl_event_loop_timer_func_t func, void *data)</argsstring>
+        <name>wl_event_loop_add_timer</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <param>
+          <type><ref refid="structwl__event__source_1a59bc490bf28b48e0af908ab91649938a" kindref="member">wl_event_loop_timer_func_t</ref></type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Create a timer event source. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop that will process the new source. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timer dispatch function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new timer event source.</para></simplesect>
+The timer is initially disarmed. It needs to be armed with a call to <ref refid="structwl__event__source_1a0164a47e9e8356af90c9d5c1de9f5487" kindref="member">wl_event_source_timer_update()</ref> before it can trigger a dispatch call.</para><para><simplesect kind="see"><para><ref refid="structwl__event__source_1a59bc490bf28b48e0af908ab91649938a" kindref="member">wl_event_loop_timer_func_t</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="257" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="257" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__source_1a0164a47e9e8356af90c9d5c1de9f5487" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_event_source_timer_update</definition>
+        <argsstring>(struct wl_event_source *source, int ms_delay)</argsstring>
+        <name>wl_event_source_timer_update</name>
+        <param>
+          <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ms_delay</declname>
+        </param>
+        <briefdescription>
+<para>Arm or disarm a timer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timer event source to modify. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ms_delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout in milliseconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, -1 on failure.</para></simplesect>
+If the timeout is zero, the timer is disarmed.</para><para>If the timeout is non-zero, the timer is set to expire after the given timeout in milliseconds. When the timer expires, the dispatch function set with <ref refid="structwl__event__source_1a39374f19a73472f63fab4267a14adc10" kindref="member">wl_event_loop_add_timer()</ref> is called once from <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref>. If another dispatch is desired after another expiry, <ref refid="structwl__event__source_1a0164a47e9e8356af90c9d5c1de9f5487" kindref="member">wl_event_source_timer_update()</ref> needs to be called again. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="292" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="292" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__source_1a1706e2490502a95f24ccb59cbae3e2f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+        <definition>struct wl_event_source * wl_event_loop_add_signal</definition>
+        <argsstring>(struct wl_event_loop *loop, int signal_number, wl_event_loop_signal_func_t func, void *data)</argsstring>
+        <name>wl_event_loop_add_signal</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>signal_number</declname>
+        </param>
+        <param>
+          <type><ref refid="structwl__event__source_1a431b418976144a8ebe6b19bc24206d20" kindref="member">wl_event_loop_signal_func_t</ref></type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Create a POSIX signal event source. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop that will process the new source. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>signal_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the signal to watch for. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The signal dispatch function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new signal event source.</para></simplesect>
+This function blocks the normal delivery of the given signal in the calling thread, and creates a &quot;watch&quot; for it. Signal delivery no longer happens asynchronously, but by <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref> calling the dispatch callback function <computeroutput>func</computeroutput>.</para><para>It is the caller&apos;s responsibility to ensure that all other threads have also blocked the signal.</para><para><simplesect kind="see"><para><ref refid="structwl__event__source_1a431b418976144a8ebe6b19bc24206d20" kindref="member">wl_event_loop_signal_func_t</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="358" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="358" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__source_1a90d88ae62b26a25f709977c45b300716" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+        <definition>struct wl_event_source * wl_event_loop_add_idle</definition>
+        <argsstring>(struct wl_event_loop *loop, wl_event_loop_idle_func_t func, void *data)</argsstring>
+        <name>wl_event_loop_add_idle</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <param>
+          <type><ref refid="structwl__event__source_1ae526dfa099f9ba69285e275c82794a9b" kindref="member">wl_event_loop_idle_func_t</ref></type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Create an idle task. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop that will process the new task. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The idle task dispatch function. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new idle task (an event source).</para></simplesect>
+Idle tasks are dispatched before <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref> goes to sleep. See <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref> for more details.</para><para>Idle tasks fire once, and are automatically destroyed right after the callback function has been called.</para><para>An idle task can be cancelled before the callback has been called by <ref refid="structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f" kindref="member">wl_event_source_remove()</ref>. Calling <ref refid="structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f" kindref="member">wl_event_source_remove()</ref> after or from within the callback results in undefined behaviour.</para><para><simplesect kind="see"><para><ref refid="structwl__event__source_1ae526dfa099f9ba69285e275c82794a9b" kindref="member">wl_event_loop_idle_func_t</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="417" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="417" bodyend="437"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__source_1aa079264c57dd12168c691c000724efcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_event_source_check</definition>
+        <argsstring>(struct wl_event_source *source)</argsstring>
+        <name>wl_event_source_check</name>
+        <param>
+          <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Mark event source to be re-checked. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event source to be re-checked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This function permanently marks the event source to be re-checked after the normal dispatch of sources in <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref>. Re-checking will keep iterating over all such event sources until the dispatch function for them all returns zero.</para><para>Re-checking is used on sources that may become ready to dispatch as a side-effect of dispatching themselves or other event sources, including idle sources. Re-checking ensures all the incoming events have been fully drained before <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref> returns. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="456" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="456" bodyend="459"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_event_source_remove</definition>
+        <argsstring>(struct wl_event_source *source)</argsstring>
+        <name>wl_event_source_remove</name>
+        <param>
+          <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Remove an event source from its event loop. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event source to be removed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Zero.</para></simplesect>
+The event source is removed from the event loop it was created for, and is effectively destroyed. This invalidates <computeroutput>source</computeroutput> . The dispatch function of the source will no longer be called through this source. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="474" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="474" bodyend="490"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An abstract event source. </para>    </briefdescription>
+    <detaileddescription>
+<para>This is the generic type for fd, timer, signal, and idle sources. Functions that operate on specific source types must not be used with a different type, even if the function signature allows it. </para>    </detaileddescription>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="119" column="1"/>
+    <listofallmembers>
+      <member refid="structwl__event__source_1a0e7ce1f52dfe04c73b6a7c2263c7ef25" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_loop_add_fd</name></member>
+      <member refid="structwl__event__source_1a90d88ae62b26a25f709977c45b300716" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_loop_add_idle</name></member>
+      <member refid="structwl__event__source_1a1706e2490502a95f24ccb59cbae3e2f8" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_loop_add_signal</name></member>
+      <member refid="structwl__event__source_1a39374f19a73472f63fab4267a14adc10" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_loop_add_timer</name></member>
+      <member refid="structwl__event__source_1a09e702384ed869548c72f3576399c581" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_loop_fd_func_t</name></member>
+      <member refid="structwl__event__source_1ae526dfa099f9ba69285e275c82794a9b" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_loop_idle_func_t</name></member>
+      <member refid="structwl__event__source_1a431b418976144a8ebe6b19bc24206d20" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_loop_signal_func_t</name></member>
+      <member refid="structwl__event__source_1a59bc490bf28b48e0af908ab91649938a" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_loop_timer_func_t</name></member>
+      <member refid="structwl__event__source_1aa079264c57dd12168c691c000724efcf" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_source_check</name></member>
+      <member refid="structwl__event__source_1afe73f9ff59d489e9f27eb9c0e3058a02" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_source_fd_update</name></member>
+      <member refid="structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_source_remove</name></member>
+      <member refid="structwl__event__source_1a0164a47e9e8356af90c9d5c1de9f5487" prot="public" virt="non-virtual"><scope>wl_event_source</scope><name>wl_event_source_timer_update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

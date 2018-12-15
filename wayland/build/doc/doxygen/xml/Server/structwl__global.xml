@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__global" kind="struct" language="C++" prot="public">
+    <compoundname>wl_global</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__global_1a3ac41deda1861eebace2336684054527" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__display" kindref="compound">wl_display</ref> *</type>
+        <definition>struct wl_display* wl_global::display</definition>
+        <argsstring></argsstring>
+        <name>display</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="108" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__global_1ae1d0a630338a47aab0af3c3a00a31459" prot="public" static="no" mutable="no">
+        <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+        <definition>const struct wl_interface* wl_global::interface</definition>
+        <argsstring></argsstring>
+        <name>interface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="109" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__global_1a0c07ec0d4bae8e6b8e746f183f23ecc5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_global::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="110" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__global_1a9fbdb3d5a4f47de7b3c8184af910244b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_global::version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="111" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__global_1a72c4c64c0f0ddf348caa18d8824c50af" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* wl_global::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="112" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__global_1acc985dddfc0a75b454187c062c054e67" prot="public" static="no" mutable="no">
+        <type><ref refid="wayland-server-core_8h_1aa43e45303203c14431e00fedaa3ec156" kindref="member">wl_global_bind_func_t</ref></type>
+        <definition>wl_global_bind_func_t wl_global::bind</definition>
+        <argsstring></argsstring>
+        <name>bind</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="113" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__global_1ac7dcf03d4c788d132038d52d2fdcc19e" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></type>
+        <definition>struct wl_list wl_global::link</definition>
+        <argsstring></argsstring>
+        <name>link</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="113" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="39">
+        <label>wl_client</label>
+        <link refid="structwl__client"/>
+        <childnode refid="38" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>display_resource</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="46" relation="usage">
+          <edgelabel>display</edgelabel>
+        </childnode>
+      </node>
+      <node id="40">
+        <label>wl_resource</label>
+        <link refid="structwl__resource"/>
+        <childnode refid="41" relation="usage">
+          <edgelabel>deprecated_destroy_signal</edgelabel>
+          <edgelabel>destroy_signal</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>client</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>destroy</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>dispatcher</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>wl_array</label>
+        <link refid="structwl__array"/>
+      </node>
+      <node id="46">
+        <label>wl_display</label>
+        <link refid="structwl__display"/>
+        <childnode refid="47" relation="usage">
+          <edgelabel>loop</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>client_list</edgelabel>
+          <edgelabel>global_list</edgelabel>
+          <edgelabel>registry_resource_list</edgelabel>
+          <edgelabel>socket_list</edgelabel>
+          <edgelabel>protocol_loggers</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>global_filter</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>additional_shm_formats</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>wl_event_source</label>
+        <link refid="structwl__event__source"/>
+      </node>
+      <node id="47">
+        <label>wl_event_loop</label>
+        <link refid="structwl__event__loop"/>
+      </node>
+      <node id="38">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="38" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>wl_global</label>
+        <link refid="structwl__global"/>
+        <childnode refid="38" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>bind</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+        <childnode refid="46" relation="usage">
+          <edgelabel>display</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="43" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="43" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>wl_signal</label>
+        <link refid="structwl__signal"/>
+        <childnode refid="38" relation="usage">
+          <edgelabel>listener_list</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="107" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="107" bodyend="115"/>
+    <listofallmembers>
+      <member refid="structwl__global_1acc985dddfc0a75b454187c062c054e67" prot="public" virt="non-virtual"><scope>wl_global</scope><name>bind</name></member>
+      <member refid="structwl__global_1a72c4c64c0f0ddf348caa18d8824c50af" prot="public" virt="non-virtual"><scope>wl_global</scope><name>data</name></member>
+      <member refid="structwl__global_1a3ac41deda1861eebace2336684054527" prot="public" virt="non-virtual"><scope>wl_global</scope><name>display</name></member>
+      <member refid="structwl__global_1ae1d0a630338a47aab0af3c3a00a31459" prot="public" virt="non-virtual"><scope>wl_global</scope><name>interface</name></member>
+      <member refid="structwl__global_1ac7dcf03d4c788d132038d52d2fdcc19e" prot="public" virt="non-virtual"><scope>wl_global</scope><name>link</name></member>
+      <member refid="structwl__global_1a0c07ec0d4bae8e6b8e746f183f23ecc5" prot="public" virt="non-virtual"><scope>wl_global</scope><name>name</name></member>
+      <member refid="structwl__global_1a9fbdb3d5a4f47de7b3c8184af910244b" prot="public" virt="non-virtual"><scope>wl_global</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

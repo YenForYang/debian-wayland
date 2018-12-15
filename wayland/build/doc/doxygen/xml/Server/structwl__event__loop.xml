@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__event__loop" kind="struct" language="C++" prot="public">
+    <compoundname>wl_event_loop</compoundname>
+    <includes refid="wayland-server-core_8h" local="no">wayland-server-core.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structwl__event__loop_1afb0958142b950045cd91011c71706979" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+        <definition>struct wl_event_loop * wl_event_loop_create</definition>
+        <argsstring>(void)</argsstring>
+        <name>wl_event_loop_create</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Create a new event loop context. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A new event loop context object.</para></simplesect>
+This creates a new event loop context. Initially this context is empty. Event sources need to be explicitly added to it.</para><para>Normally the event loop is run by calling <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref> in a loop until the program terminates. Alternatively, an event loop can be embedded in another event loop by its file descriptor, see <ref refid="structwl__event__loop_1a58c8aa06a2d240a49a95a91eddcba8e5" kindref="member">wl_event_loop_get_fd()</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="518" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="518" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__loop_1ad50f13e2c738e68f7576757aa862513a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_event_loop_destroy</definition>
+        <argsstring>(struct wl_event_loop *loop)</argsstring>
+        <name>wl_event_loop_destroy</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <briefdescription>
+<para>Destroy an event loop context. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop to be destroyed.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This emits the event loop destroy signal, closes the event loop file descriptor, and frees <computeroutput>loop</computeroutput>.</para><para>If the event loop has existing sources, those cannot be safely removed afterwards. Therefore one must call <ref refid="structwl__event__source_1afe37015d67b81ae82609f2b8aa78cc4f" kindref="member">wl_event_source_remove()</ref> on all event sources before destroying the event loop context. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="554" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="554" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__loop_1aefc44b3062c22d2506ff42460f091396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_event_loop_dispatch_idle</definition>
+        <argsstring>(struct wl_event_loop *loop)</argsstring>
+        <name>wl_event_loop_dispatch_idle</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <briefdescription>
+<para>Dispatch the idle sources. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop whose idle sources are dispatched.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structwl__event__source_1a90d88ae62b26a25f709977c45b300716" kindref="member">wl_event_loop_add_idle()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="593" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="593" bodyend="603"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_event_loop_dispatch</definition>
+        <argsstring>(struct wl_event_loop *loop, int timeout)</argsstring>
+        <name>wl_event_loop_dispatch</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Wait for events and dispatch them. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop whose sources to wait for. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The polling timeout in milliseconds. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 for success, -1 for polling error.</para></simplesect>
+All the associated event sources are polled. This function blocks until any event source delivers an event (idle sources excluded), or the timeout expires. A timeout of -1 disables the timeout, causing the function to block indefinitely. A timeout of zero causes the poll to always return immediately.</para><para>All idle sources are dispatched before blocking. An idle source is destroyed when it is dispatched. After blocking, all other ready sources are dispatched. Then, idle sources are dispatched again, in case the dispatched events created idle sources. Finally, all sources marked with <ref refid="structwl__event__source_1aa079264c57dd12168c691c000724efcf" kindref="member">wl_event_source_check()</ref> are dispatched in a loop until their dispatch functions all return zero. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="626" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="626" bodyend="651"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__loop_1a58c8aa06a2d240a49a95a91eddcba8e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_event_loop_get_fd</definition>
+        <argsstring>(struct wl_event_loop *loop)</argsstring>
+        <name>wl_event_loop_get_fd</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <briefdescription>
+<para>Get the event loop file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop context. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The aggregate file descriptor.</para></simplesect>
+This function returns the aggregate file descriptor, that represents all the event sources (idle sources excluded) associated with the given event loop context. When any event source makes an event available, it will be reflected in the aggregate file descriptor.</para><para>When the aggregate file descriptor delivers an event, one can call <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref> on the event loop context to dispatch all the available events. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="670" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="670" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__loop_1a6b564d8d4183d71f1fdf06e751d84d51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_event_loop_add_destroy_listener</definition>
+        <argsstring>(struct wl_event_loop *loop, struct wl_listener *listener)</argsstring>
+        <name>wl_event_loop_add_destroy_listener</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structwl__listener" kindref="compound">wl_listener</ref> *</type>
+          <declname>listener</declname>
+        </param>
+        <briefdescription>
+<para>Register a destroy listener for an event loop context. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop context whose destruction to listen for. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>listener</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The listener with the callback to be called.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structwl__listener" kindref="compound">wl_listener</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="684" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="684" bodyend="688"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__event__loop_1af282cb9f57fadd1fc0dd47ea68c3bae3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__listener" kindref="compound">wl_listener</ref> *</type>
+        <definition>struct wl_listener * wl_event_loop_get_destroy_listener</definition>
+        <argsstring>(struct wl_event_loop *loop, wl_notify_func_t notify)</argsstring>
+        <name>wl_event_loop_get_destroy_listener</name>
+        <param>
+          <type>struct <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <param>
+          <type><ref refid="wayland-server-core_8h_1a1db9aad922e07db2a6ad50d151d49a50" kindref="member">wl_notify_func_t</ref></type>
+          <declname>notify</declname>
+        </param>
+        <briefdescription>
+<para>Get the listener struct for the specified callback. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>loop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event loop context to inspect. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>notify</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destroy callback to find. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="structwl__listener" kindref="compound">wl_listener</ref> registered to the event loop context with the given callback pointer. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/event-loop.c" line="700" column="1" bodyfile="/dev/shm/libwayland/wayland/src/event-loop.c" bodystart="700" bodyend="704"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An event loop context. </para>    </briefdescription>
+    <detaileddescription>
+<para>Usually you create an event loop context, add sources to it, and call <ref refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" kindref="member">wl_event_loop_dispatch()</ref> in a loop to process events.</para><para><simplesect kind="see"><para><ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="109" column="1"/>
+    <listofallmembers>
+      <member refid="structwl__event__loop_1a6b564d8d4183d71f1fdf06e751d84d51" prot="public" virt="non-virtual"><scope>wl_event_loop</scope><name>wl_event_loop_add_destroy_listener</name></member>
+      <member refid="structwl__event__loop_1afb0958142b950045cd91011c71706979" prot="public" virt="non-virtual"><scope>wl_event_loop</scope><name>wl_event_loop_create</name></member>
+      <member refid="structwl__event__loop_1ad50f13e2c738e68f7576757aa862513a" prot="public" virt="non-virtual"><scope>wl_event_loop</scope><name>wl_event_loop_destroy</name></member>
+      <member refid="structwl__event__loop_1aaa3fdd5590365a4a2106c9814ca9b31b" prot="public" virt="non-virtual"><scope>wl_event_loop</scope><name>wl_event_loop_dispatch</name></member>
+      <member refid="structwl__event__loop_1aefc44b3062c22d2506ff42460f091396" prot="public" virt="non-virtual"><scope>wl_event_loop</scope><name>wl_event_loop_dispatch_idle</name></member>
+      <member refid="structwl__event__loop_1af282cb9f57fadd1fc0dd47ea68c3bae3" prot="public" virt="non-virtual"><scope>wl_event_loop</scope><name>wl_event_loop_get_destroy_listener</name></member>
+      <member refid="structwl__event__loop_1a58c8aa06a2d240a49a95a91eddcba8e5" prot="public" virt="non-virtual"><scope>wl_event_loop</scope><name>wl_event_loop_get_fd</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

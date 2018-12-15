@@ -1,0 +1,828 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classwl__proxy" kind="class" language="C++" prot="public">
+    <compoundname>wl_proxy</compoundname>
+    <includes refid="wayland-client-core_8h" local="no">wayland-client-core.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwl__proxy_1a5917991abd28c23949ad200e9399e813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy * wl_proxy_create</definition>
+        <argsstring>(struct wl_proxy *factory, const struct wl_interface *interface)</argsstring>
+        <name>wl_proxy_create</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>factory</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <briefdescription>
+<para>Create a proxy object with a given interface. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>factory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Factory proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interface the proxy object should use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A newly allocated proxy object or NULL on failure</para></simplesect>
+This function creates a new proxy object with the supplied interface. The proxy object will have an id assigned from the client id space. The id should be created on the compositor side by sending an appropriate request with <ref refid="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" kindref="member">wl_proxy_marshal()</ref>.</para><para>The proxy will inherit the display and event queue of the factory object.</para><para><simplesect kind="note"><para>This should not normally be used by non-generated code.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__display" kindref="compound">wl_display</ref>, <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref>, <ref refid="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" kindref="member">wl_proxy_marshal()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="453" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="453" bodyend="463"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a2d3fe909fed5b7ace56ca01178763381" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_destroy</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_destroy</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+<para>Destroy a proxy object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy to be destroyed</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<computeroutput>proxy</computeroutput> must not be a proxy wrapper. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="522" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="522" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_proxy_add_listener</definition>
+        <argsstring>(struct wl_proxy *proxy, void(**implementation)(void), void *data)</argsstring>
+        <name>wl_proxy_add_listener</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>void(**)(void)</type>
+          <declname>implementation</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Set a proxy&apos;s listener. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>implementation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The listener to be added to proxy </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User data to be associated with the proxy </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success or -1 on failure</para></simplesect>
+Set proxy&apos;s listener to <computeroutput>implementation</computeroutput> and its user data to <computeroutput>data</computeroutput>. If a listener has already been set, this function fails and nothing is changed.</para><para><computeroutput>implementation</computeroutput> is a vector of function pointers. For an opcode <computeroutput>n</computeroutput>, <computeroutput>implementation</computeroutput>[n] should point to the handler of <computeroutput>n</computeroutput> for the given object.</para><para><computeroutput>proxy</computeroutput> must not be a proxy wrapper. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="554" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="554" bodyend="569"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a30175804b647e683773172d50812c88f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * wl_proxy_get_listener</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_listener</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+<para>Get a proxy&apos;s listener. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The address of the proxy&apos;s listener or NULL if no listener is set</para></simplesect>
+Gets the address to the proxy&apos;s listener; which is the listener set with <ref refid="classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7" kindref="member">wl_proxy_add_listener</ref>.</para><para>This function is useful in clients with multiple listeners on the same interface to allow the identification of which code to execute. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="585" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="585" bodyend="588"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a45ec4f95c2cead639976b27bf4af55c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_proxy_add_dispatcher</definition>
+        <argsstring>(struct wl_proxy *proxy, wl_dispatcher_func_t dispatcher, const void *implementation, void *data)</argsstring>
+        <name>wl_proxy_add_dispatcher</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type><ref refid="wayland-util_8h_1abdec454d1dffed08d355d225e21ac8bd" kindref="member">wl_dispatcher_func_t</ref></type>
+          <declname>dispatcher</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>implementation</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Set a proxy&apos;s listener (with dispatcher) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dispatcher</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dispatcher to be used for this proxy </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>implementation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dispatcher-specific listener implementation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User data to be associated with the proxy </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success or -1 on failure</para></simplesect>
+Set proxy&apos;s listener to use <computeroutput>dispatcher_func</computeroutput> as its dispatcher and <computeroutput>dispatcher_data</computeroutput> as its dispatcher-specific implementation and its user data to <computeroutput>data</computeroutput>. If a listener has already been set, this function fails and nothing is changed.</para><para>The exact details of dispatcher_data depend on the dispatcher used. This function is intended to be used by language bindings, not user code.</para><para><computeroutput>proxy</computeroutput> must not be a proxy wrapper. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="611" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="611" bodyend="628"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a8e89b859b28d48949a1b4b00e9a39f05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy * wl_proxy_marshal_array_constructor</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface)</argsstring>
+        <name>wl_proxy_marshal_array_constructor</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>union <ref refid="unionwl__argument" kindref="compound">wl_argument</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <briefdescription>
+<para>Prepare a request to be sent to the compositor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opcode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Opcode of the request to be sent </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extra arguments for the given request </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interface to use for the new proxy</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This function translates a request given an opcode, an interface and a <ref refid="unionwl__argument" kindref="compound">wl_argument</ref> array to the wire format and writes it to the connection buffer.</para><para>For new-id arguments, this function will allocate a new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> and send the ID to the server. The new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will inherit their version from their parent.</para><para><simplesect kind="note"><para>This is intended to be used by language bindings and not in non-generated code.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" kindref="member">wl_proxy_marshal()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="683" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="683" bodyend="690"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1ae61b4c579eba754bdbefd04c0e3f8b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy * wl_proxy_marshal_array_constructor_versioned</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args, const struct wl_interface *interface, uint32_t version)</argsstring>
+        <name>wl_proxy_marshal_array_constructor_versioned</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>union <ref refid="unionwl__argument" kindref="compound">wl_argument</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+<para>Prepare a request to be sent to the compositor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opcode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Opcode of the request to be sent </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extra arguments for the given request </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interface to use for the new proxy </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The protocol object version for the new proxy</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Translates the request given by opcode and the extra arguments into the wire format and write it to the connection buffer. This version takes an array of the union type <ref refid="unionwl__argument" kindref="compound">wl_argument</ref>.</para><para>For new-id arguments, this function will allocate a new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> and send the ID to the server. The new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will have the version specified.</para><para><simplesect kind="note"><para>This is intended to be used by language bindings and not in non-generated code.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" kindref="member">wl_proxy_marshal()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="718" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="718" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_marshal</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode,...)</argsstring>
+        <name>wl_proxy_marshal</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Prepare a request to be sent to the compositor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opcode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Opcode of the request to be sent </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extra arguments for the given request</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This function is similar to <ref refid="classwl__proxy_1aa2d70d86a2467bf20867fb93699a6d28" kindref="member">wl_proxy_marshal_constructor()</ref>, except it doesn&apos;t create proxies for new-id arguments.</para><para><simplesect kind="note"><para>This should not normally be used by non-generated code.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__proxy_1a5917991abd28c23949ad200e9399e813" kindref="member">wl_proxy_create()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="774" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="774" bodyend="785"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1aa2d70d86a2467bf20867fb93699a6d28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy * wl_proxy_marshal_constructor</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface,...)</argsstring>
+        <name>wl_proxy_marshal_constructor</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Prepare a request to be sent to the compositor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opcode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Opcode of the request to be sent </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interface to use for the new proxy </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extra arguments for the given request </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> for the new_id argument or NULL on error</para></simplesect>
+This function translates a request given an opcode, an interface and extra arguments to the wire format and writes it to the connection buffer. The types of the extra arguments must correspond to the argument types of the method associated with the opcode in the interface.</para><para>For new-id arguments, this function will allocate a new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> and send the ID to the server. The new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will inherit their version from their parent.</para><para><simplesect kind="note"><para>This should not normally be used by non-generated code. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="810" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="810" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a397e6d324ce0c262afe09d365be2b8e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+        <definition>struct wl_proxy * wl_proxy_marshal_constructor_versioned</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, const struct wl_interface *interface, uint32_t version,...)</argsstring>
+        <name>wl_proxy_marshal_constructor_versioned</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="structwl__interface" kindref="compound">wl_interface</ref> *</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>version</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Prepare a request to be sent to the compositor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opcode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Opcode of the request to be sent </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interface to use for the new proxy </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The protocol object version of the new proxy </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extra arguments for the given request </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> for the new_id argument or NULL on error</para></simplesect>
+Translates the request given by opcode and the extra arguments into the wire format and write it to the connection buffer.</para><para>For new-id arguments, this function will allocate a new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> and send the ID to the server. The new <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> will be returned on success or NULL on error with errno set accordingly. The newly created proxy will have the version specified.</para><para><simplesect kind="note"><para>This should not normally be used by non-generated code. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="848" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="848" bodyend="863"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a8f4cc90edff2f7bd3dfbb2db57f7d873" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_marshal_array</definition>
+        <argsstring>(struct wl_proxy *proxy, uint32_t opcode, union wl_argument *args)</argsstring>
+        <name>wl_proxy_marshal_array</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>opcode</declname>
+        </param>
+        <param>
+          <type>union <ref refid="unionwl__argument" kindref="compound">wl_argument</ref> *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Prepare a request to be sent to the compositor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>opcode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Opcode of the request to be sent </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extra arguments for the given request</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This function is similar to <ref refid="classwl__proxy_1a8e89b859b28d48949a1b4b00e9a39f05" kindref="member">wl_proxy_marshal_array_constructor()</ref>, except it doesn&apos;t create proxies for new-id arguments.</para><para><simplesect kind="note"><para>This is intended to be used by language bindings and not in non-generated code.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" kindref="member">wl_proxy_marshal()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="882" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="882" bodyend="886"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a97fa4ee5b728a372cff9ac5164153fef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_set_user_data</definition>
+        <argsstring>(struct wl_proxy *proxy, void *user_data)</argsstring>
+        <name>wl_proxy_set_user_data</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Set the user data associated with a proxy. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to be associated with proxy</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Set the user data associated with <computeroutput>proxy</computeroutput>. When events for this proxy are received, <computeroutput>user_data</computeroutput> will be supplied to its listener. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="2007" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2007" bodyend="2010"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1abc50a9d788e0007f144a7bea7f170c3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * wl_proxy_get_user_data</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_user_data</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+<para>Get the user data associated with a proxy. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The user data associated with proxy </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="2020" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2020" bodyend="2023"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a918c3bff4543bcfd0d6cb689d0666db2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_proxy_get_version</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_version</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+<para>Get the protocol object version of a proxy object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The protocol object version of the proxy or 0</para></simplesect>
+Gets the protocol object version of a proxy object, or 0 if the proxy was created with unversioned API.</para><para>A returned value of 0 means that no version information is available, so the caller must make safe assumptions about the object&apos;s real version.</para><para><ref refid="classwl__display" kindref="compound">wl_display</ref>&apos;s version will always return 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="2042" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2042" bodyend="2045"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1acd609baf53e8691c5307fdaf12d4d176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t wl_proxy_get_id</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_id</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+<para>Get the id of a proxy object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The id the object associated with the proxy </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="2055" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2055" bodyend="2058"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a365697bb1c59f3714e5654348d7b480a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * wl_proxy_get_class</definition>
+        <argsstring>(struct wl_proxy *proxy)</argsstring>
+        <name>wl_proxy_get_class</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+<para>Get the interface name (class) of a proxy object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The interface name of the object associated with the proxy </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="2068" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2068" bodyend="2071"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1acc5f51ea5d172df68f61018b2879e0cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_set_queue</definition>
+        <argsstring>(struct wl_proxy *proxy, struct wl_event_queue *queue)</argsstring>
+        <name>wl_proxy_set_queue</name>
+        <param>
+          <type>struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> *</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+<para>Assign a proxy to an event queue. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event queue that will handle this proxy or NULL</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Assign proxy to event queue. Events coming from <computeroutput>proxy</computeroutput> will be queued in <computeroutput>queue</computeroutput> from now. If queue is NULL, then the display&apos;s default queue is set to the proxy.</para><para><simplesect kind="note"><para>By default, the queue set in proxy is the one inherited from parent.</para></simplesect>
+<simplesect kind="see"><para><ref refid="classwl__display_1ae027b09801474ac7c6b0f1ef25ff6e17" kindref="member">wl_display_dispatch_queue()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="2089" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2089" bodyend="2095"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1afb9d0eb81d1fd4931f566aed090d6f28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * wl_proxy_create_wrapper</definition>
+        <argsstring>(void *proxy)</argsstring>
+        <name>wl_proxy_create_wrapper</name>
+        <param>
+          <type>void *</type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+<para>Create a proxy wrapper for making queue assignments thread-safe. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy object to be wrapped </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A proxy wrapper for the given proxy or NULL on failure</para></simplesect>
+A proxy wrapper is type of &apos;struct <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref>&apos; instance that can be used when sending requests instead of using the original proxy. A proxy wrapper does not have an implementation or dispatcher, and events received on the object is still emitted on the original proxy. Trying to set an implementation or dispatcher will have no effect but result in a warning being logged.</para><para>Setting the proxy queue of the proxy wrapper will make new objects created using the proxy wrapper use the set proxy queue. Even though there is no implementation nor dispatcher, the proxy queue can be changed. This will affect the default queue of new objects created by requests sent via the proxy wrapper.</para><para>A proxy wrapper can only be destroyed using <ref refid="classwl__proxy_1a0261dbfa5f690667643940ab2ec1ee99" kindref="member">wl_proxy_wrapper_destroy()</ref>.</para><para>A proxy wrapper must be destroyed before the proxy it was created from.</para><para>If a user reads and dispatches events on more than one thread, it is necessary to use a proxy wrapper when sending requests on objects when the intention is that a newly created proxy is to use a proxy queue different from the proxy the request was sent on, as creating the new proxy and then setting the queue is not thread safe.</para><para>For example, a module that runs using its own proxy queue that needs to do display roundtrip must wrap the <ref refid="classwl__display" kindref="compound">wl_display</ref> proxy object before sending the wl_display.sync request. For example:</para><para><programlisting><codeline><highlight class="normal">struct<sp/>wl_event_queue<sp/>*queue<sp/>=<sp/>...;</highlight></codeline>
+<codeline><highlight class="normal">struct<sp/>wl_display<sp/>*wrapped_display;</highlight></codeline>
+<codeline><highlight class="normal">struct<sp/>wl_callback<sp/>*callback;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wrapped_display<sp/>=<sp/>wl_proxy_create_wrapper(display);</highlight></codeline>
+<codeline><highlight class="normal">wl_proxy_set_queue((struct<sp/>wl_proxy<sp/>*)<sp/>wrapped_display,<sp/>queue);</highlight></codeline>
+<codeline><highlight class="normal">callback<sp/>=<sp/>wl_display_sync(wrapped_display);</highlight></codeline>
+<codeline><highlight class="normal">wl_proxy_wrapper_destroy(wrapped_display);</highlight></codeline>
+<codeline><highlight class="normal">wl_callback_add_listener(callback,<sp/>...);</highlight></codeline>
+</programlisting> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="2146" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2146" bodyend="2168"/>
+      </memberdef>
+      <memberdef kind="function" id="classwl__proxy_1a0261dbfa5f690667643940ab2ec1ee99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_proxy_wrapper_destroy</definition>
+        <argsstring>(void *proxy_wrapper)</argsstring>
+        <name>wl_proxy_wrapper_destroy</name>
+        <param>
+          <type>void *</type>
+          <declname>proxy_wrapper</declname>
+        </param>
+        <briefdescription>
+<para>Destroy a proxy wrapper. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proxy_wrapper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy wrapper to be destroyed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="2176" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="2176" bodyend="2187"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a protocol object on the client side. </para>    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> acts as a client side proxy to an object existing in the compositor. The proxy is responsible for converting requests made by the clients with <ref refid="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" kindref="member">wl_proxy_marshal()</ref> into Wayland&apos;s wire format. Events coming from the compositor are also handled by the proxy, which will in turn call the handler set with <ref refid="classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7" kindref="member">wl_proxy_add_listener()</ref>.</para><para><simplesect kind="note"><para>With the exception of function <ref refid="classwl__proxy_1acc5f51ea5d172df68f61018b2879e0cc" kindref="member">wl_proxy_set_queue()</ref>, functions accessing a <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> are not normally used by client code. Clients should normally use the higher level interface generated by the scanner to interact with compositor objects. </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="37" column="1"/>
+    <listofallmembers>
+      <member refid="classwl__proxy_1a45ec4f95c2cead639976b27bf4af55c1" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_add_dispatcher</name></member>
+      <member refid="classwl__proxy_1a29a8596b88ede807f96a63c128c6e8b7" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_add_listener</name></member>
+      <member refid="classwl__proxy_1a5917991abd28c23949ad200e9399e813" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_create</name></member>
+      <member refid="classwl__proxy_1afb9d0eb81d1fd4931f566aed090d6f28" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_create_wrapper</name></member>
+      <member refid="classwl__proxy_1a2d3fe909fed5b7ace56ca01178763381" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_destroy</name></member>
+      <member refid="classwl__proxy_1a365697bb1c59f3714e5654348d7b480a" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_get_class</name></member>
+      <member refid="classwl__proxy_1acd609baf53e8691c5307fdaf12d4d176" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_get_id</name></member>
+      <member refid="classwl__proxy_1a30175804b647e683773172d50812c88f" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_get_listener</name></member>
+      <member refid="classwl__proxy_1abc50a9d788e0007f144a7bea7f170c3f" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_get_user_data</name></member>
+      <member refid="classwl__proxy_1a918c3bff4543bcfd0d6cb689d0666db2" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_get_version</name></member>
+      <member refid="classwl__proxy_1a1430215e7558bfea8179c1a5d7201a7f" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_marshal</name></member>
+      <member refid="classwl__proxy_1a8f4cc90edff2f7bd3dfbb2db57f7d873" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_marshal_array</name></member>
+      <member refid="classwl__proxy_1a8e89b859b28d48949a1b4b00e9a39f05" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_marshal_array_constructor</name></member>
+      <member refid="classwl__proxy_1ae61b4c579eba754bdbefd04c0e3f8b13" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_marshal_array_constructor_versioned</name></member>
+      <member refid="classwl__proxy_1aa2d70d86a2467bf20867fb93699a6d28" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_marshal_constructor</name></member>
+      <member refid="classwl__proxy_1a397e6d324ce0c262afe09d365be2b8e2" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_marshal_constructor_versioned</name></member>
+      <member refid="classwl__proxy_1acc5f51ea5d172df68f61018b2879e0cc" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_set_queue</name></member>
+      <member refid="classwl__proxy_1a97fa4ee5b728a372cff9ac5164153fef" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_set_user_data</name></member>
+      <member refid="classwl__proxy_1a0261dbfa5f690667643940ab2ec1ee99" prot="public" virt="non-virtual"><scope>wl_proxy</scope><name>wl_proxy_wrapper_destroy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

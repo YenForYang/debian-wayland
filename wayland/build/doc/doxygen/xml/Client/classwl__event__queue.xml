@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classwl__event__queue" kind="class" language="C++" prot="public">
+    <compoundname>wl_event_queue</compoundname>
+    <includes refid="wayland-client-core_8h" local="no">wayland-client-core.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwl__event__queue_1acfbc75d82d1f8a90e805712b972c4edf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_event_queue_destroy</definition>
+        <argsstring>(struct wl_event_queue *queue)</argsstring>
+        <name>wl_event_queue_destroy</name>
+        <param>
+          <type>struct <ref refid="classwl__event__queue" kindref="compound">wl_event_queue</ref> *</type>
+          <declname>queue</declname>
+        </param>
+        <briefdescription>
+<para>Destroy an event queue. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event queue to be destroyed</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Destroy the given event queue. Any pending event on that queue is discarded.</para><para>The <ref refid="classwl__display" kindref="compound">wl_display</ref> object used to create the queue should not be destroyed until all event queues created with it are destroyed with this function. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-client.c" line="319" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client.c" bodystart="319" bodyend="327"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A queue for <ref refid="classwl__proxy" kindref="compound">wl_proxy</ref> object events. </para>    </briefdescription>
+    <detaileddescription>
+<para>Event queues allows the events on a display to be handled in a thread-safe manner. See <ref refid="classwl__display" kindref="compound">wl_display</ref> for details. </para>    </detaileddescription>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-client-core.h" line="112" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-client-core.h" bodystart="110" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="classwl__event__queue_1acfbc75d82d1f8a90e805712b972c4edf" prot="public" virt="non-virtual"><scope>wl_event_queue</scope><name>wl_event_queue_destroy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

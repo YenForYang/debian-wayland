@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__shm__pool" kind="struct" language="C++" prot="public">
+    <compoundname>wl_shm_pool</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__shm__pool_1a828e8a2c88c2e7b37c98df767aed9909" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__resource" kindref="compound">wl_resource</ref> *</type>
+        <definition>struct wl_resource* wl_shm_pool::resource</definition>
+        <argsstring></argsstring>
+        <name>resource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="56" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__pool_1ab3b7954e5221998a8052a5dcbadd0b94" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_shm_pool::internal_refcount</definition>
+        <argsstring></argsstring>
+        <name>internal_refcount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="57" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__pool_1ae644ecae8a4f5c25bdf8b5efe1697561" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_shm_pool::external_refcount</definition>
+        <argsstring></argsstring>
+        <name>external_refcount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="58" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__pool_1a468e7aecda850725f087053b52db6d66" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* wl_shm_pool::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="59" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__pool_1af4de46c4ae845b291c7cc6aa212dcda8" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t wl_shm_pool::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="60" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__pool_1a4a26c02a1bd9c19f5f8207d62d10a247" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t wl_shm_pool::new_size</definition>
+        <argsstring></argsstring>
+        <name>new_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="61" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structwl__shm__pool_1a2349156a6b7940645a4754e6c1690051" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_shm_pool_unref</definition>
+        <argsstring>(struct wl_shm_pool *pool)</argsstring>
+        <name>wl_shm_pool_unref</name>
+        <param>
+          <type>struct <ref refid="structwl__shm__pool" kindref="compound">wl_shm_pool</ref> *</type>
+          <declname>pool</declname>
+        </param>
+        <briefdescription>
+<para>Unreference a shm_pool. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pool object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Drops a reference to a <ref refid="structwl__shm__pool" kindref="compound">wl_shm_pool</ref> object.</para><para>This is only necessary if the compositor has explicitly taken a reference with <ref refid="structwl__shm__buffer_1abc49a49c3586821d6ec4efe7ea915305" kindref="member">wl_shm_buffer_ref_pool()</ref>, otherwise the pool will be automatically destroyed when appropriate.</para><para><simplesect kind="see"><para><ref refid="structwl__shm__buffer_1abc49a49c3586821d6ec4efe7ea915305" kindref="member">wl_shm_buffer_ref_pool</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="456" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="456" bodyend="459"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="140">
+        <label>wl_client</label>
+        <link refid="structwl__client"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="134" relation="usage">
+          <edgelabel>display_resource</edgelabel>
+        </childnode>
+        <childnode refid="141" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="142" relation="usage">
+          <edgelabel>display</edgelabel>
+        </childnode>
+      </node>
+      <node id="134">
+        <label>wl_resource</label>
+        <link refid="structwl__resource"/>
+        <childnode refid="135" relation="usage">
+          <edgelabel>deprecated_destroy_signal</edgelabel>
+          <edgelabel>destroy_signal</edgelabel>
+        </childnode>
+        <childnode refid="137" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="140" relation="usage">
+          <edgelabel>client</edgelabel>
+        </childnode>
+        <childnode refid="134" relation="usage">
+          <edgelabel>destroy</edgelabel>
+        </childnode>
+        <childnode refid="139" relation="usage">
+          <edgelabel>dispatcher</edgelabel>
+        </childnode>
+      </node>
+      <node id="144">
+        <label>wl_array</label>
+        <link refid="structwl__array"/>
+      </node>
+      <node id="142">
+        <label>wl_display</label>
+        <link refid="structwl__display"/>
+        <childnode refid="143" relation="usage">
+          <edgelabel>loop</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>client_list</edgelabel>
+          <edgelabel>global_list</edgelabel>
+          <edgelabel>registry_resource_list</edgelabel>
+          <edgelabel>socket_list</edgelabel>
+          <edgelabel>protocol_loggers</edgelabel>
+        </childnode>
+        <childnode refid="140" relation="usage">
+          <edgelabel>global_filter</edgelabel>
+        </childnode>
+        <childnode refid="144" relation="usage">
+          <edgelabel>additional_shm_formats</edgelabel>
+        </childnode>
+      </node>
+      <node id="141">
+        <label>wl_event_source</label>
+        <link refid="structwl__event__source"/>
+      </node>
+      <node id="143">
+        <label>wl_event_loop</label>
+        <link refid="structwl__event__loop"/>
+      </node>
+      <node id="136">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="139">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="138" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="137">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="138" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="138">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="139" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+      <node id="135">
+        <label>wl_signal</label>
+        <link refid="structwl__signal"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>listener_list</edgelabel>
+        </childnode>
+      </node>
+      <node id="133">
+        <label>wl_shm_pool</label>
+        <link refid="structwl__shm__pool"/>
+        <childnode refid="134" relation="usage">
+          <edgelabel>resource</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="55" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="55" bodyend="62"/>
+    <listofallmembers>
+      <member refid="structwl__shm__pool_1a468e7aecda850725f087053b52db6d66" prot="public" virt="non-virtual"><scope>wl_shm_pool</scope><name>data</name></member>
+      <member refid="structwl__shm__pool_1ae644ecae8a4f5c25bdf8b5efe1697561" prot="public" virt="non-virtual"><scope>wl_shm_pool</scope><name>external_refcount</name></member>
+      <member refid="structwl__shm__pool_1ab3b7954e5221998a8052a5dcbadd0b94" prot="public" virt="non-virtual"><scope>wl_shm_pool</scope><name>internal_refcount</name></member>
+      <member refid="structwl__shm__pool_1a4a26c02a1bd9c19f5f8207d62d10a247" prot="public" virt="non-virtual"><scope>wl_shm_pool</scope><name>new_size</name></member>
+      <member refid="structwl__shm__pool_1a828e8a2c88c2e7b37c98df767aed9909" prot="public" virt="non-virtual"><scope>wl_shm_pool</scope><name>resource</name></member>
+      <member refid="structwl__shm__pool_1af4de46c4ae845b291c7cc6aa212dcda8" prot="public" virt="non-virtual"><scope>wl_shm_pool</scope><name>size</name></member>
+      <member refid="structwl__shm__pool_1a2349156a6b7940645a4754e6c1690051" prot="public" virt="non-virtual"><scope>wl_shm_pool</scope><name>wl_shm_pool_unref</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

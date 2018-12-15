@@ -1,0 +1,588 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__client" kind="struct" language="C++" prot="public">
+    <compoundname>wl_client</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__client_1a2b9ba402199671abbd4f7d7ad36b31f8" prot="public" static="no" mutable="no">
+        <type>struct wl_connection *</type>
+        <definition>struct wl_connection* wl_client::connection</definition>
+        <argsstring></argsstring>
+        <name>connection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="73" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1a851bbb4ea60e722d4ff4260394491e11" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__event__source" kindref="compound">wl_event_source</ref> *</type>
+        <definition>struct wl_event_source* wl_client::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="74" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1a1d22bc3d96a9c06bdaabce8cfad616ba" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__display" kindref="compound">wl_display</ref> *</type>
+        <definition>struct wl_display* wl_client::display</definition>
+        <argsstring></argsstring>
+        <name>display</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="75" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1a057a0af40eac725363090aeab0b8121c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__resource" kindref="compound">wl_resource</ref> *</type>
+        <definition>struct wl_resource* wl_client::display_resource</definition>
+        <argsstring></argsstring>
+        <name>display_resource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="76" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1a2f868addcc86bfb4de9d50d4b28c18e7" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></type>
+        <definition>struct wl_list wl_client::link</definition>
+        <argsstring></argsstring>
+        <name>link</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="76" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1ad6f2be727c9dc10831a9ba39caf74c2b" prot="public" static="no" mutable="no">
+        <type>struct wl_map</type>
+        <definition>struct wl_map wl_client::objects</definition>
+        <argsstring></argsstring>
+        <name>objects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="76" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1abead69829272547757152abf1d780519" prot="public" static="no" mutable="no">
+        <type>struct wl_priv_signal</type>
+        <definition>struct wl_priv_signal wl_client::destroy_signal</definition>
+        <argsstring></argsstring>
+        <name>destroy_signal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="76" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1a9780e51f9406d6c7f15d08b6fd2b46b1" prot="public" static="no" mutable="no">
+        <type>struct ucred</type>
+        <definition>struct ucred wl_client::ucred</definition>
+        <argsstring></argsstring>
+        <name>ucred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="76" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1acc5b5780b11a183c0b8314373f3c70e7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_client::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="81" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__client_1adf241e87b420a24141f11cafc589bd5c" prot="public" static="no" mutable="no">
+        <type>struct wl_priv_signal</type>
+        <definition>struct wl_priv_signal wl_client::resource_created_signal</definition>
+        <argsstring></argsstring>
+        <name>resource_created_signal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="81" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structwl__client_1a6a045ad15d6ca216c4da41ba67c9ef4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_client_flush</definition>
+        <argsstring>(struct wl_client *client)</argsstring>
+        <name>wl_client_flush</name>
+        <param>
+          <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <briefdescription>
+<para>Flush pending events to the client. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Events sent to clients are queued in a buffer and written to the socket later - typically when the compositor has handled all requests and goes back to block in the event loop. This function flushes all queued up events for a client immediately. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="455" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="455" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__client_1a9b2abda633c67a4cd06ea5d9be0482f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__display" kindref="compound">wl_display</ref> *</type>
+        <definition>struct wl_display * wl_client_get_display</definition>
+        <argsstring>(struct wl_client *client)</argsstring>
+        <name>wl_client_get_display</name>
+        <param>
+          <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <briefdescription>
+<para>Get the display object for the given client. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The display object the client is associated with. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="468" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="468" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_client_get_credentials</definition>
+        <argsstring>(struct wl_client *client, pid_t *pid, uid_t *uid, gid_t *gid)</argsstring>
+        <name>wl_client_get_credentials</name>
+        <param>
+          <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>pid_t *</type>
+          <declname>pid</declname>
+        </param>
+        <param>
+          <type>uid_t *</type>
+          <declname>uid</declname>
+        </param>
+        <param>
+          <type>gid_t *</type>
+          <declname>gid</declname>
+        </param>
+        <briefdescription>
+<para>Return Unix credentials for the client. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the process ID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the user ID </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the group ID</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This function returns the process ID, the user ID and the group ID for the given client. The credentials come from getsockopt() with SO_PEERCRED, on the client socket fd. All the pointers can be NULL, if the caller is not interested in a particular ID.</para><para>Be aware that for clients that a compositor forks and execs and then connects using socketpair(), this function will return the credentials for the compositor. The credentials for the socketpair are set at creation time in the compositor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="574" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="574" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__client_1ad5a94921b39efad0985632e865479ca2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_client_get_fd</definition>
+        <argsstring>(struct wl_client *client)</argsstring>
+        <name>wl_client_get_fd</name>
+        <param>
+          <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <briefdescription>
+<para>Get the file descriptor for the client. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The display object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The file descriptor to use for the connection</para></simplesect>
+This function returns the file descriptor for the given client.</para><para>Be sure to use the file descriptor from the client for inspection only. If the caller does anything to the file descriptor that changes its state, it will likely cause problems.</para><para>See also <ref refid="structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9" kindref="member">wl_client_get_credentials()</ref>. It is recommended that you evaluate whether <ref refid="structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9" kindref="member">wl_client_get_credentials()</ref> can be applied to your use case instead of this function.</para><para>If you would like to distinguish just between the client and the compositor itself from the client&apos;s request, it can be done by getting the client credentials and by checking the PID of the client and the compositor&apos;s PID. Regarding the case in which the socketpair() is being used, you need to be careful. Please note the documentation for <ref refid="structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9" kindref="member">wl_client_get_credentials()</ref>.</para><para>This function can be used for a compositor to validate a request from a client if there are additional information provided from the client&apos;s file descriptor. For instance, suppose you can get the security contexts from the client&apos;s file descriptor. The compositor can validate the client&apos;s request with the contexts and make a decision whether it permits or deny it. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="615" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="615" bodyend="618"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__client_1ab9d04dffa9409db43154230c64bc1f84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__resource" kindref="compound">wl_resource</ref> *</type>
+        <definition>struct wl_resource * wl_client_get_object</definition>
+        <argsstring>(struct wl_client *client, uint32_t id)</argsstring>
+        <name>wl_client_get_object</name>
+        <param>
+          <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Look up an object in the client name space. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object id </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The object or NULL if there is not object for the given ID</para></simplesect>
+This looks up an object in the client object name space by its object ID. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="632" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="632" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__client_1ade7bddc335d60cb95f9d1bd4fb60d25b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+        <definition>struct wl_list * wl_client_get_link</definition>
+        <argsstring>(struct wl_client *client)</argsstring>
+        <name>wl_client_get_link</name>
+        <param>
+          <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <briefdescription>
+<para>Get the link by which a client is inserted in the client list. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="wayland-server-core_8h_1af1e9ad8dd32ea89265936930cd173ec5" kindref="member">wl_client_for_each()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__display_1a99b9c187d88633fa5ba86d1424f06d7f" kindref="member">wl_display_get_client_list()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__client_1aec831218471327f37b4e1f11b571545d" kindref="member">wl_client_from_link()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="1851" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="1851" bodyend="1854"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__client_1aec831218471327f37b4e1f11b571545d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+        <definition>struct wl_client * wl_client_from_link</definition>
+        <argsstring>(struct wl_list *link)</argsstring>
+        <name>wl_client_from_link</name>
+        <param>
+          <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref> *</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Get a <ref refid="structwl__client" kindref="compound">wl_client</ref> by its link. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The link of a <ref refid="structwl__client" kindref="compound">wl_client</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="wayland-server-core_8h_1af1e9ad8dd32ea89265936930cd173ec5" kindref="member">wl_client_for_each()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__display_1a99b9c187d88633fa5ba86d1424f06d7f" kindref="member">wl_display_get_client_list()</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structwl__client_1ade7bddc335d60cb95f9d1bd4fb60d25b" kindref="member">wl_client_get_link()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="1867" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="1867" bodyend="1870"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__client_1a62a52be27947e43ce7884a68759d1b4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_client_add_resource_created_listener</definition>
+        <argsstring>(struct wl_client *client, struct wl_listener *listener)</argsstring>
+        <name>wl_client_add_resource_created_listener</name>
+        <param>
+          <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structwl__listener" kindref="compound">wl_listener</ref> *</type>
+          <declname>listener</declname>
+        </param>
+        <briefdescription>
+<para>Add a listener for the client&apos;s resource creation signal. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>listener</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The listener to be added</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+When a new resource is created for this client the listener will be notified, carrying the new resource as the data argument. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="1883" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="1883" bodyend="1887"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__client_1a4a0a6bb48f63ed80ab4575fda4c5d01a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_client_for_each_resource</definition>
+        <argsstring>(struct wl_client *client, wl_client_for_each_resource_iterator_func_t iterator, void *user_data)</argsstring>
+        <name>wl_client_for_each_resource</name>
+        <param>
+          <type>struct <ref refid="structwl__client" kindref="compound">wl_client</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type><ref refid="wayland-server-core_8h_1a3dfebf4109ca3ff4d66d28019a2c2602" kindref="member">wl_client_for_each_resource_iterator_func_t</ref></type>
+          <declname>iterator</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Iterate over all the resources of a client. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iterator function </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user data pointer</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+The function pointed by <emphasis>iterator</emphasis> will be called for each resource owned by the client. The <emphasis>user_data</emphasis> will be passed as the second argument of the iterator function. If the <emphasis>iterator</emphasis> function returns <emphasis>WL_ITERATOR_CONTINUE</emphasis> the iteration will continue, if it returns <emphasis>WL_ITERATOR_STOP</emphasis> it will stop.</para><para>Creating and destroying resources while iterating is safe, but new resources may or may not be picked up by the iterator.</para><para><simplesect kind="see"><para><ref refid="wayland-util_8h_1adb093d005a4b7e04111b7e385349cf23" kindref="member">wl_iterator_result</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="1923" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="1923" bodyend="1933"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>wl_client</label>
+        <link refid="structwl__client"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>display_resource</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>display</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>wl_resource</label>
+        <link refid="structwl__resource"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>deprecated_destroy_signal</edgelabel>
+          <edgelabel>destroy_signal</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>client</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>destroy</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>dispatcher</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>wl_array</label>
+        <link refid="structwl__array"/>
+      </node>
+      <node id="17">
+        <label>wl_display</label>
+        <link refid="structwl__display"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>loop</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>client_list</edgelabel>
+          <edgelabel>global_list</edgelabel>
+          <edgelabel>registry_resource_list</edgelabel>
+          <edgelabel>socket_list</edgelabel>
+          <edgelabel>protocol_loggers</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>global_filter</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>additional_shm_formats</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>wl_event_source</label>
+        <link refid="structwl__event__source"/>
+      </node>
+      <node id="18">
+        <label>wl_event_loop</label>
+        <link refid="structwl__event__loop"/>
+      </node>
+      <node id="10">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>wl_signal</label>
+        <link refid="structwl__signal"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>listener_list</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server.c" line="72" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server.c" bodystart="72" bodyend="83"/>
+    <listofallmembers>
+      <member refid="structwl__client_1a2b9ba402199671abbd4f7d7ad36b31f8" prot="public" virt="non-virtual"><scope>wl_client</scope><name>connection</name></member>
+      <member refid="structwl__client_1abead69829272547757152abf1d780519" prot="public" virt="non-virtual"><scope>wl_client</scope><name>destroy_signal</name></member>
+      <member refid="structwl__client_1a1d22bc3d96a9c06bdaabce8cfad616ba" prot="public" virt="non-virtual"><scope>wl_client</scope><name>display</name></member>
+      <member refid="structwl__client_1a057a0af40eac725363090aeab0b8121c" prot="public" virt="non-virtual"><scope>wl_client</scope><name>display_resource</name></member>
+      <member refid="structwl__client_1acc5b5780b11a183c0b8314373f3c70e7" prot="public" virt="non-virtual"><scope>wl_client</scope><name>error</name></member>
+      <member refid="structwl__client_1a2f868addcc86bfb4de9d50d4b28c18e7" prot="public" virt="non-virtual"><scope>wl_client</scope><name>link</name></member>
+      <member refid="structwl__client_1ad6f2be727c9dc10831a9ba39caf74c2b" prot="public" virt="non-virtual"><scope>wl_client</scope><name>objects</name></member>
+      <member refid="structwl__client_1adf241e87b420a24141f11cafc589bd5c" prot="public" virt="non-virtual"><scope>wl_client</scope><name>resource_created_signal</name></member>
+      <member refid="structwl__client_1a851bbb4ea60e722d4ff4260394491e11" prot="public" virt="non-virtual"><scope>wl_client</scope><name>source</name></member>
+      <member refid="structwl__client_1a9780e51f9406d6c7f15d08b6fd2b46b1" prot="public" virt="non-virtual"><scope>wl_client</scope><name>ucred</name></member>
+      <member refid="structwl__client_1a62a52be27947e43ce7884a68759d1b4e" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_add_resource_created_listener</name></member>
+      <member refid="structwl__client_1a6a045ad15d6ca216c4da41ba67c9ef4a" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_flush</name></member>
+      <member refid="structwl__client_1a4a0a6bb48f63ed80ab4575fda4c5d01a" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_for_each_resource</name></member>
+      <member refid="structwl__client_1aec831218471327f37b4e1f11b571545d" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_from_link</name></member>
+      <member refid="structwl__client_1a82a97cb3a66c1c56826a09a7b42453d9" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_get_credentials</name></member>
+      <member refid="structwl__client_1a9b2abda633c67a4cd06ea5d9be0482f3" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_get_display</name></member>
+      <member refid="structwl__client_1ad5a94921b39efad0985632e865479ca2" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_get_fd</name></member>
+      <member refid="structwl__client_1ade7bddc335d60cb95f9d1bd4fb60d25b" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_get_link</name></member>
+      <member refid="structwl__client_1ab9d04dffa9409db43154230c64bc1f84" prot="public" virt="non-virtual"><scope>wl_client</scope><name>wl_client_get_object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

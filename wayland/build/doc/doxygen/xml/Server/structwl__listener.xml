@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__listener" kind="class" language="C++" prot="public">
+    <compoundname>wl_listener</compoundname>
+    <includes refid="wayland-server-core_8h" local="no">wayland-server-core.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__listener_1aa6f65339ec407b0caeb98bebdc3b628f" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__list" kindref="compound">wl_list</ref></type>
+        <definition>struct wl_list wl_listener::link</definition>
+        <argsstring></argsstring>
+        <name>link</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="659" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server-core.h" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__listener_1a8c0294987041c6d06a483370664d9cca" prot="public" static="no" mutable="no">
+        <type><ref refid="wayland-server-core_8h_1a1db9aad922e07db2a6ad50d151d49a50" kindref="member">wl_notify_func_t</ref></type>
+        <definition>wl_notify_func_t wl_listener::notify</definition>
+        <argsstring></argsstring>
+        <name>notify</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="389" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server-core.h" bodystart="389" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A single listener for Wayland signals. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="structwl__listener" kindref="compound">wl_listener</ref> provides the means to listen for <ref refid="structwl__signal" kindref="compound">wl_signal</ref> notifications. Many Wayland objects use <ref refid="structwl__listener" kindref="compound">wl_listener</ref> for notification of significant events like object destruction.</para><para>Clients should create <ref refid="structwl__listener" kindref="compound">wl_listener</ref> objects manually and can register them as listeners to signals using <ref refid="structwl__signal_1aa8bcd3b8e250cfe35ed064d5af589096" kindref="member">wl_signal_add</ref>, assuming the signal is directly accessible. For opaque structs like <ref refid="structwl__event__loop" kindref="compound">wl_event_loop</ref>, adding a listener should be done through provided accessor methods. A listener can only listen to one signal at a time.</para><para><programlisting><codeline><highlight class="normal">struct<sp/>wl_listener<sp/>your_listener;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">your_listener.notify<sp/>=<sp/>your_callback_method;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Direct<sp/>access</highlight></codeline>
+<codeline><highlight class="normal">wl_signal_add(&amp;some_object-&gt;destroy_signal,<sp/>&amp;your_listener);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Accessor<sp/>access</highlight></codeline>
+<codeline><highlight class="normal">wl_event_loop<sp/>*loop<sp/>=<sp/>...;</highlight></codeline>
+<codeline><highlight class="normal">wl_event_loop_add_destroy_listener(loop,<sp/>&amp;your_listener);</highlight></codeline>
+</programlisting></para><para>If the listener is part of a larger struct, <ref refid="wayland-util_8h_1a09e3b64ee2195e1b80191aa1884d45aa" kindref="member">wl_container_of</ref> can be used to retrieve a pointer to it:</para><para><programlisting><codeline><highlight class="normal">void<sp/>your_listener(struct<sp/>wl_listener<sp/>*listener,<sp/>void<sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>struct<sp/>your_data<sp/>*data;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>your_data<sp/>=<sp/>wl_container_of(listener,<sp/>data,<sp/>your_member_name);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para>If you need to remove a listener from a signal, use <ref refid="structwl__list_1aa16d739aaa041dde9d34ad4bcb4d4c83" kindref="member">wl_list_remove()</ref>.</para><para><programlisting><codeline><highlight class="normal">wl_list_remove(&amp;your_listener.link);</highlight></codeline>
+</programlisting></para><para><simplesect kind="see"><para><ref refid="structwl__signal" kindref="compound">wl_signal</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="55">
+        <label>wl_listener</label>
+        <link refid="structwl__listener"/>
+        <childnode refid="55" relation="usage">
+          <edgelabel>notify</edgelabel>
+        </childnode>
+        <childnode refid="56" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="56" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-server-core.h" line="387" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-server-core.h" bodystart="387" bodyend="390"/>
+    <listofallmembers>
+      <member refid="structwl__listener_1aa6f65339ec407b0caeb98bebdc3b628f" prot="public" virt="non-virtual"><scope>wl_listener</scope><name>link</name></member>
+      <member refid="structwl__listener_1a8c0294987041c6d06a483370664d9cca" prot="public" virt="non-virtual"><scope>wl_listener</scope><name>notify</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

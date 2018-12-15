@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__array" kind="class" language="C++" prot="public">
+    <compoundname>wl_array</compoundname>
+    <includes refid="wayland-util_8h" local="no">wayland-util.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__array_1ae246c66cbd633063e2649c503d764d3f" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t wl_array::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+<para>Array size. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="507" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="507" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__array_1a4b33519c8f628d650631ebecee45b771" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t wl_array::alloc</definition>
+        <argsstring></argsstring>
+        <name>alloc</name>
+        <briefdescription>
+<para>Allocated space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="509" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="509" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* wl_array::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+<para>Array data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="511" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="511" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structwl__array_1ada9b770427b901be34eaf3683cf04d5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_array_init</definition>
+        <argsstring>(struct wl_array *array)</argsstring>
+        <name>wl_array_init</name>
+        <param>
+          <type>struct <ref refid="structwl__array" kindref="compound">wl_array</ref> *</type>
+          <declname>array</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the array. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array to initialize </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="522" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__array_1a0e8845f61f1e1fccfce050830ed5b279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wl_array_release</definition>
+        <argsstring>(struct wl_array *array)</argsstring>
+        <name>wl_array_release</name>
+        <param>
+          <type>struct <ref refid="structwl__array" kindref="compound">wl_array</ref> *</type>
+          <declname>array</declname>
+        </param>
+        <briefdescription>
+<para>Releases the array data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Leaves the array in an invalid state.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array whose data is to be released </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="534" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__array_1a3c3d1079a20b0609f6e4914ea21c2d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * wl_array_add</definition>
+        <argsstring>(struct wl_array *array, size_t size)</argsstring>
+        <name>wl_array_add</name>
+        <param>
+          <type>struct <ref refid="structwl__array" kindref="compound">wl_array</ref> *</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Increases the size of the array by <computeroutput>size</computeroutput> bytes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array whose size is to be increased </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to increase the size of the array by</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the beginning of the newly appended space, or NULL when resizing fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="548" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structwl__array_1a4de64390294de78da813dcfb16f47617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wl_array_copy</definition>
+        <argsstring>(struct wl_array *array, struct wl_array *source)</argsstring>
+        <name>wl_array_copy</name>
+        <param>
+          <type>struct <ref refid="structwl__array" kindref="compound">wl_array</ref> *</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structwl__array" kindref="compound">wl_array</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Copies the contents of <computeroutput>source</computeroutput> to <computeroutput>array</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination array to copy to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source array to copy from</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success, or -1 on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="561" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="related">
+      <memberdef kind="define" id="structwl__array_1ab050f7375dcae916506142763080ed80" prot="public" static="no">
+        <name>wl_array_for_each</name>
+        <param><defname>pos</defname></param>
+        <param><defname>array</defname></param>
+        <initializer>for (pos = (array)-&gt;<ref refid="structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b" kindref="member">data</ref>;					\
+	     (const char *) pos &lt; ((const char *) (array)-&gt;<ref refid="structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b" kindref="member">data</ref> + (array)-&gt;<ref refid="structwl__array_1ae246c66cbd633063e2649c503d764d3f" kindref="member">size</ref>); \
+	     (pos)++)</initializer>
+        <briefdescription>
+<para>Iterates over an array. </para>        </briefdescription>
+        <detaileddescription>
+<para>This macro expresses a for-each iterator for <ref refid="structwl__array" kindref="compound">wl_array</ref>. It assigns each element in the array to <computeroutput>pos</computeroutput>, which can then be referenced in a trailing code block. <computeroutput>pos</computeroutput> must be a pointer to the array element type, and all array elements must be of the same type and size.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cursor that each array element will be assigned to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array to iterate over</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structwl__list_1a449407fe3c8f273e38bc2253093cb6fb" kindref="member">wl_list_for_each()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="578" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="577" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Dynamic array. </para>    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="structwl__array" kindref="compound">wl_array</ref> is a dynamic array that can only grow until released. It is intended for relatively small allocations whose size is variable or not known in advance. While construction of a <ref refid="structwl__array" kindref="compound">wl_array</ref> does not require all elements to be of the same size, <ref refid="structwl__array_1ab050f7375dcae916506142763080ed80" kindref="member">wl_array_for_each()</ref> does require all elements to have the same type and size. </para>    </detaileddescription>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-util.h" line="505" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-util.h" bodystart="505" bodyend="512"/>
+    <listofallmembers>
+      <member refid="structwl__array_1a4b33519c8f628d650631ebecee45b771" prot="public" virt="non-virtual"><scope>wl_array</scope><name>alloc</name></member>
+      <member refid="structwl__array_1af20153b7fcf63135eea72dd5d9e8b87b" prot="public" virt="non-virtual"><scope>wl_array</scope><name>data</name></member>
+      <member refid="structwl__array_1ae246c66cbd633063e2649c503d764d3f" prot="public" virt="non-virtual"><scope>wl_array</scope><name>size</name></member>
+      <member refid="structwl__array_1a3c3d1079a20b0609f6e4914ea21c2d03" prot="public" virt="non-virtual"><scope>wl_array</scope><name>wl_array_add</name></member>
+      <member refid="structwl__array_1a4de64390294de78da813dcfb16f47617" prot="public" virt="non-virtual"><scope>wl_array</scope><name>wl_array_copy</name></member>
+      <member refid="structwl__array_1ab050f7375dcae916506142763080ed80" prot="public" virt="non-virtual"><scope>wl_array</scope><name>wl_array_for_each</name></member>
+      <member refid="structwl__array_1ada9b770427b901be34eaf3683cf04d5a" prot="public" virt="non-virtual"><scope>wl_array</scope><name>wl_array_init</name></member>
+      <member refid="structwl__array_1a0e8845f61f1e1fccfce050830ed5b279" prot="public" virt="non-virtual"><scope>wl_array</scope><name>wl_array_release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

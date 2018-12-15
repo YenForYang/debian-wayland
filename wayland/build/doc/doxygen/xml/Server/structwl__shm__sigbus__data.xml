@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structwl__shm__sigbus__data" kind="struct" language="C++" prot="public">
+    <compoundname>wl_shm_sigbus_data</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structwl__shm__sigbus__data_1aaa529b50c8bda30bd5229e79e88fe658" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structwl__shm__pool" kindref="compound">wl_shm_pool</ref> *</type>
+        <definition>struct wl_shm_pool* wl_shm_sigbus_data::current_pool</definition>
+        <argsstring></argsstring>
+        <name>current_pool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="74" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__sigbus__data_1a01a1e17825e65cdf587ebdb698acf23d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_shm_sigbus_data::access_count</definition>
+        <argsstring></argsstring>
+        <name>access_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="75" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structwl__shm__sigbus__data_1a963de4dc248750a802d7a97258ce2a25" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wl_shm_sigbus_data::fallback_mapping_used</definition>
+        <argsstring></argsstring>
+        <name>fallback_mapping_used</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="76" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="154">
+        <label>wl_client</label>
+        <link refid="structwl__client"/>
+        <childnode refid="150" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="148" relation="usage">
+          <edgelabel>display_resource</edgelabel>
+        </childnode>
+        <childnode refid="155" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="156" relation="usage">
+          <edgelabel>display</edgelabel>
+        </childnode>
+      </node>
+      <node id="148">
+        <label>wl_resource</label>
+        <link refid="structwl__resource"/>
+        <childnode refid="149" relation="usage">
+          <edgelabel>deprecated_destroy_signal</edgelabel>
+          <edgelabel>destroy_signal</edgelabel>
+        </childnode>
+        <childnode refid="151" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+        <childnode refid="150" relation="usage">
+          <edgelabel>link</edgelabel>
+        </childnode>
+        <childnode refid="154" relation="usage">
+          <edgelabel>client</edgelabel>
+        </childnode>
+        <childnode refid="148" relation="usage">
+          <edgelabel>destroy</edgelabel>
+        </childnode>
+        <childnode refid="153" relation="usage">
+          <edgelabel>dispatcher</edgelabel>
+        </childnode>
+      </node>
+      <node id="158">
+        <label>wl_array</label>
+        <link refid="structwl__array"/>
+      </node>
+      <node id="156">
+        <label>wl_display</label>
+        <link refid="structwl__display"/>
+        <childnode refid="157" relation="usage">
+          <edgelabel>loop</edgelabel>
+        </childnode>
+        <childnode refid="150" relation="usage">
+          <edgelabel>client_list</edgelabel>
+          <edgelabel>global_list</edgelabel>
+          <edgelabel>registry_resource_list</edgelabel>
+          <edgelabel>socket_list</edgelabel>
+          <edgelabel>protocol_loggers</edgelabel>
+        </childnode>
+        <childnode refid="154" relation="usage">
+          <edgelabel>global_filter</edgelabel>
+        </childnode>
+        <childnode refid="158" relation="usage">
+          <edgelabel>additional_shm_formats</edgelabel>
+        </childnode>
+      </node>
+      <node id="155">
+        <label>wl_event_source</label>
+        <link refid="structwl__event__source"/>
+      </node>
+      <node id="157">
+        <label>wl_event_loop</label>
+        <link refid="structwl__event__loop"/>
+      </node>
+      <node id="150">
+        <label>wl_list</label>
+        <link refid="structwl__list"/>
+        <childnode refid="150" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="153">
+        <label>wl_message</label>
+        <link refid="structwl__message"/>
+        <childnode refid="152" relation="usage">
+          <edgelabel>types</edgelabel>
+        </childnode>
+      </node>
+      <node id="146">
+        <label>wl_shm_sigbus_data</label>
+        <link refid="structwl__shm__sigbus__data"/>
+        <childnode refid="147" relation="usage">
+          <edgelabel>current_pool</edgelabel>
+        </childnode>
+      </node>
+      <node id="151">
+        <label>wl_object</label>
+        <link refid="structwl__object"/>
+        <childnode refid="152" relation="usage">
+          <edgelabel>interface</edgelabel>
+        </childnode>
+      </node>
+      <node id="152">
+        <label>wl_interface</label>
+        <link refid="structwl__interface"/>
+        <childnode refid="153" relation="usage">
+          <edgelabel>events</edgelabel>
+          <edgelabel>methods</edgelabel>
+        </childnode>
+      </node>
+      <node id="149">
+        <label>wl_signal</label>
+        <link refid="structwl__signal"/>
+        <childnode refid="150" relation="usage">
+          <edgelabel>listener_list</edgelabel>
+        </childnode>
+      </node>
+      <node id="147">
+        <label>wl_shm_pool</label>
+        <link refid="structwl__shm__pool"/>
+        <childnode refid="148" relation="usage">
+          <edgelabel>resource</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/dev/shm/libwayland/wayland/src/wayland-shm.c" line="73" column="1" bodyfile="/dev/shm/libwayland/wayland/src/wayland-shm.c" bodystart="73" bodyend="77"/>
+    <listofallmembers>
+      <member refid="structwl__shm__sigbus__data_1a01a1e17825e65cdf587ebdb698acf23d" prot="public" virt="non-virtual"><scope>wl_shm_sigbus_data</scope><name>access_count</name></member>
+      <member refid="structwl__shm__sigbus__data_1aaa529b50c8bda30bd5229e79e88fe658" prot="public" virt="non-virtual"><scope>wl_shm_sigbus_data</scope><name>current_pool</name></member>
+      <member refid="structwl__shm__sigbus__data_1a963de4dc248750a802d7a97258ce2a25" prot="public" virt="non-virtual"><scope>wl_shm_sigbus_data</scope><name>fallback_mapping_used</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

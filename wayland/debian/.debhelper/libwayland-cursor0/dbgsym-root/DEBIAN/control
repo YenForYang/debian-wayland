@@ -1,0 +1,15 @@
+Package: libwayland-cursor0-dbgsym
+Source: wayland
+Version: 1.16.0-2
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Installed-Size: 31
+Depends: libwayland-cursor0 (= 1.16.0-2)
+Breaks: libwayland-cursor0 (<< 1.10.0-2)
+Replaces: libwayland-cursor0 (<< 1.10.0-2)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libwayland-cursor0
+Build-Ids: b3860e100cdccdc410cde9327f0cd14bd1c38b10

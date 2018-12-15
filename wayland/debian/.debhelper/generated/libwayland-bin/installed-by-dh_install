@@ -1,0 +1,3 @@
+debian/tmp/usr/bin/wayland-scanner
+debian/tmp/usr/share/aclocal/wayland-scanner.m4
+debian/tmp/usr/share/wayland/wayland-scanner.mk
